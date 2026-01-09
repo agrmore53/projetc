@@ -124,11 +124,11 @@ export default function MembroPage() {
         </header>
 
         {/* Welcome Section */}
-        <section className="text-center mb-16 animate-fadeInUp">
-          <h2 className="font-display text-4xl md:text-5xl mb-4">
+        <section className="text-center mb-10 md:mb-16 animate-fadeInUp">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-3 md:mb-4">
             Bem-vindo à <span className="gold-text">Mentoria Elite</span>
           </h2>
-          <p className="text-[var(--gray)] text-lg">
+          <p className="text-[var(--gray)] text-base md:text-lg px-4">
             Sua jornada do zero ao primeiro milhão começa agora.
           </p>
         </section>
@@ -141,14 +141,14 @@ export default function MembroPage() {
             </div>
             <h3 className="font-display text-2xl">Boas-Vindas</h3>
           </div>
-          <div className="glass card">
-            <p className="text-[var(--gray)] text-lg mb-4">
+          <div className="glass card p-5 sm:p-8 md:p-10">
+            <p className="text-[var(--gray)] text-base sm:text-lg mb-4">
               Parabéns por tomar a decisão de construir seu próprio negócio de software. A partir de agora, você faz parte de um grupo seleto de pessoas que decidiram <span className="text-[var(--gold)] font-semibold">sair da média</span>.
             </p>
-            <p className="text-[var(--gray)] text-lg mb-4">
+            <p className="text-[var(--gray)] text-base sm:text-lg mb-4">
               Nos próximos meses, vamos juntos transformar sua ideia em um software lucrativo, com receita recorrente e potencial de escala.
             </p>
-            <p className="text-[var(--gray)] text-lg">
+            <p className="text-[var(--gray)] text-base sm:text-lg">
               Seu comprometimento é o ingrediente mais importante dessa jornada. Estou aqui para guiar cada passo, mas a <span className="text-[var(--gold)] font-semibold">execução é sua</span>.
             </p>
           </div>
@@ -162,15 +162,15 @@ export default function MembroPage() {
             </div>
             <h3 className="font-display text-2xl">O Que Está Incluso</h3>
           </div>
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             {inclusos.map((item, index) => (
-              <div key={index} className="glass p-6 flex items-start gap-4 hover:border-[var(--gold)]/40 transition-all">
-                <div className="w-12 h-12 border border-[var(--gold)] rounded-xl flex items-center justify-center shrink-0">
-                  <item.icon className="w-6 h-6 text-[var(--gold)]" />
+              <div key={index} className="glass p-4 sm:p-6 flex items-start gap-3 sm:gap-4 hover:border-[var(--gold)]/40 transition-all">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 border border-[var(--gold)] rounded-xl flex items-center justify-center shrink-0">
+                  <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-[var(--gold)]" />
                 </div>
-                <div>
-                  <h4 className="font-display text-lg mb-1">{item.title}</h4>
-                  <p className="text-[var(--gray)] text-sm">{item.desc}</p>
+                <div className="min-w-0">
+                  <h4 className="font-display text-base sm:text-lg mb-1">{item.title}</h4>
+                  <p className="text-[var(--gray)] text-xs sm:text-sm">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -319,16 +319,16 @@ export default function MembroPage() {
               {materiais.map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-4 p-5 bg-white/5 rounded-2xl border border-[var(--gold)]/10 hover:border-[var(--gold)]/30 transition-all hover:translate-x-1"
+                  className="flex flex-col sm:flex-row items-start sm:items-center gap-4 p-4 sm:p-5 bg-white/5 rounded-2xl border border-[var(--gold)]/10 hover:border-[var(--gold)]/30 transition-all hover:translate-x-1"
                 >
-                  <div className="w-12 h-12 border border-[var(--gold)] rounded-xl flex items-center justify-center shrink-0">
-                    <item.icon className="w-6 h-6 text-[var(--gold)]" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 border border-[var(--gold)] rounded-xl flex items-center justify-center shrink-0">
+                    <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-[var(--gold)]" />
                   </div>
-                  <div className="flex-1">
-                    <h4 className="font-display text-lg">{item.title}</h4>
-                    <p className="text-[var(--gray)] text-sm">{item.desc}</p>
+                  <div className="flex-1 min-w-0">
+                    <h4 className="font-display text-base sm:text-lg">{item.title}</h4>
+                    <p className="text-[var(--gray)] text-xs sm:text-sm">{item.desc}</p>
                   </div>
-                  <span className={`px-4 py-2 rounded-full text-xs uppercase tracking-wider ${
+                  <span className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[10px] sm:text-xs uppercase tracking-wider whitespace-nowrap ${
                     item.status === 'available'
                       ? 'bg-[var(--gold)]/20 text-[var(--gold)]'
                       : 'bg-white/10 text-[var(--gray)]'
@@ -351,16 +351,16 @@ export default function MembroPage() {
 
         {/* Contact Section */}
         <section className="mb-12 animate-fadeInUp" style={{ animationDelay: '0.5s' }}>
-          <div className="glass-strong card text-center border-2 border-[var(--gold)]">
-            <h3 className="font-display text-2xl mb-2">
+          <div className="glass-strong card text-center border-2 border-[var(--gold)] p-6 sm:p-10">
+            <h3 className="font-display text-xl sm:text-2xl mb-2">
               <span className="gold-text">Contato Direto com o Mentor</span>
             </h3>
-            <p className="text-[var(--gray)] mb-6">
+            <p className="text-[var(--gray)] text-sm sm:text-base mb-4 sm:mb-6">
               Para dúvidas, agendamentos ou suporte, entre em contato:
             </p>
-            <div className="font-display text-3xl text-[var(--gold)]">
+            <a href="https://wa.me/5579998838881" className="font-display text-2xl sm:text-3xl text-[var(--gold)] hover:opacity-80 transition-opacity">
               79 99883-8881
-            </div>
+            </a>
           </div>
         </section>
 
