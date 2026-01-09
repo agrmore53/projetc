@@ -358,8 +358,8 @@ export default function MembroPage() {
             <p className="text-[var(--gray)] text-sm sm:text-base mb-4 sm:mb-6">
               Para dúvidas, agendamentos ou suporte, entre em contato:
             </p>
-            <a href="https://wa.me/5579998838881" className="font-display text-2xl sm:text-3xl text-[var(--gold)] hover:opacity-80 transition-opacity">
-              79 99883-8881
+            <a href="https://wa.me/5548998649898" className="font-display text-2xl sm:text-3xl text-[var(--gold)] hover:opacity-80 transition-opacity">
+              48 99864-9898
             </a>
           </div>
         </section>
