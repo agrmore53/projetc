@@ -89,7 +89,7 @@ const jornaisBrasil: Record<string, string[]> = {
   'RR': ['Folha de Boa Vista - https://folhabv.com.br', 'Roraima em Tempo - https://roraimaemtempo.com'],
   'SC': ['NSC Total - https://nsctotal.com.br', 'Diário Catarinense - https://diariocatarinense.com.br'],
   'SP': ['Folha de S.Paulo - https://folha.uol.com.br', 'Estadão - https://estadao.com.br'],
-  'SE': ['Correio de Sergipe - https://correiodesergio.com.br', 'Infonet - https://infonet.com.br'],
+  'SE': ['Jornal da Cidade - https://jornaldacidade.net', 'Infonet - https://infonet.com.br'],
   'TO': ['Jornal do Tocantins - https://jornaldotocantins.com.br', 'T1 Notícias - https://t1noticias.com.br']
 }
 
