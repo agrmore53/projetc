@@ -595,6 +595,36 @@ export default function PesquisaPage() {
                   />
                 </div>
 
+                {/* Legenda das Métricas */}
+                <div className="bg-[var(--gold)]/10 border border-[var(--gold)]/30 rounded-xl p-4">
+                  <p className="text-[var(--gold)] font-semibold text-sm mb-3">Como avaliar as métricas:</p>
+                  <div className="grid sm:grid-cols-2 gap-4 text-xs text-[var(--gray)]">
+                    <div>
+                      <p className="font-semibold text-white mb-2">Frequência - "Quantas vezes aparece?"</p>
+                      <ul className="space-y-1">
+                        <li><span className="text-[var(--gold)]">1</span> = Raro (encontrou só 1 vez)</li>
+                        <li><span className="text-[var(--gold)]">2</span> = Pouco frequente (2-3 vezes)</li>
+                        <li><span className="text-[var(--gold)]">3</span> = Moderado (alguns estados)</li>
+                        <li><span className="text-[var(--gold)]">4</span> = Frequente (muitos estados)</li>
+                        <li><span className="text-[var(--gold)]">5</span> = Muito frequente (quase todo lugar)</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-white mb-2">Urgência - "Quão grave é o problema?"</p>
+                      <ul className="space-y-1">
+                        <li><span className="text-[var(--gold)]">1</span> = Baixa (incômodo leve)</li>
+                        <li><span className="text-[var(--gold)]">2</span> = Pouca (incomoda mas dá pra conviver)</li>
+                        <li><span className="text-[var(--gold)]">3</span> = Média (causa prejuízo real)</li>
+                        <li><span className="text-[var(--gold)]">4</span> = Alta (problema sério)</li>
+                        <li><span className="text-[var(--gold)]">5</span> = Crítica (pessoas sofrendo muito)</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <p className="text-[var(--gold)] text-xs mt-3 text-center">
+                    Frequência alta + Urgência alta = Melhor oportunidade de software
+                  </p>
+                </div>
+
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label className="input-label">Frequência (1-5) *</label>
@@ -614,7 +644,6 @@ export default function PesquisaPage() {
                         </button>
                       ))}
                     </div>
-                    <p className="text-[var(--gray)] text-xs mt-1">1 = Raro, 5 = Muito frequente</p>
                   </div>
                   <div>
                     <label className="input-label">Urgência (1-5) *</label>
@@ -634,7 +663,6 @@ export default function PesquisaPage() {
                         </button>
                       ))}
                     </div>
-                    <p className="text-[var(--gray)] text-xs mt-1">1 = Baixa, 5 = Crítica</p>
                   </div>
                 </div>
 
