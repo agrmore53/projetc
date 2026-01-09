@@ -81,6 +81,7 @@ export default function MembroPage() {
 
   const materiais = [
     { icon: FileText, title: 'Plano de Mentoria Completo', desc: 'Roadmap de 30 dias a 5 anos', status: 'available' },
+    { icon: BarChart3, title: 'Pesquisa de Mercado', desc: 'Identificação de dores Brasil/EUA', status: 'available', link: '/membro/pesquisa' },
     { icon: FileText, title: 'Templates de Validação', desc: 'Scripts e planilhas de validação', status: 'soon' },
     { icon: BarChart3, title: 'Planilha de Métricas SaaS', desc: 'Controle MRR, churn, CAC, LTV', status: 'soon' },
     { icon: PlayCircle, title: 'Aulas Gravadas', desc: 'Gravações das sessões', status: 'soon' },
@@ -316,35 +317,46 @@ export default function MembroPage() {
               Todos os materiais da mentoria estarão disponíveis nesta área:
             </p>
             <div className="space-y-4">
-              {materiais.map((item, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col sm:flex-row items-start sm:items-center gap-4 p-4 sm:p-5 bg-white/5 rounded-2xl border border-[var(--gold)]/10 hover:border-[var(--gold)]/30 transition-all hover:translate-x-1"
-                >
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 border border-[var(--gold)] rounded-xl flex items-center justify-center shrink-0">
-                    <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-[var(--gold)]" />
+              {materiais.map((item, index) => {
+                const content = (
+                  <>
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 border border-[var(--gold)] rounded-xl flex items-center justify-center shrink-0">
+                      <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-[var(--gold)]" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-display text-base sm:text-lg">{item.title}</h4>
+                      <p className="text-[var(--gray)] text-xs sm:text-sm">{item.desc}</p>
+                    </div>
+                    <span className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[10px] sm:text-xs uppercase tracking-wider whitespace-nowrap ${
+                      item.status === 'available'
+                        ? 'bg-[var(--gold)]/20 text-[var(--gold)]'
+                        : 'bg-white/10 text-[var(--gray)]'
+                    }`}>
+                      {item.status === 'available' ? (
+                        <span className="flex items-center gap-1">
+                          <CheckCircle className="w-3 h-3" /> Disponível
+                        </span>
+                      ) : (
+                        <span className="flex items-center gap-1">
+                          <Clock className="w-3 h-3" /> Em breve
+                        </span>
+                      )}
+                    </span>
+                  </>
+                )
+
+                const className = "flex flex-col sm:flex-row items-start sm:items-center gap-4 p-4 sm:p-5 bg-white/5 rounded-2xl border border-[var(--gold)]/10 hover:border-[var(--gold)]/30 transition-all hover:translate-x-1"
+
+                return item.link ? (
+                  <a key={index} href={item.link} className={className}>
+                    {content}
+                  </a>
+                ) : (
+                  <div key={index} className={className}>
+                    {content}
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <h4 className="font-display text-base sm:text-lg">{item.title}</h4>
-                    <p className="text-[var(--gray)] text-xs sm:text-sm">{item.desc}</p>
-                  </div>
-                  <span className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[10px] sm:text-xs uppercase tracking-wider whitespace-nowrap ${
-                    item.status === 'available'
-                      ? 'bg-[var(--gold)]/20 text-[var(--gold)]'
-                      : 'bg-white/10 text-[var(--gray)]'
-                  }`}>
-                    {item.status === 'available' ? (
-                      <span className="flex items-center gap-1">
-                        <CheckCircle className="w-3 h-3" /> Disponível
-                      </span>
-                    ) : (
-                      <span className="flex items-center gap-1">
-                        <Clock className="w-3 h-3" /> Em breve
-                      </span>
-                    )}
-                  </span>
-                </div>
-              ))}
+                )
+              })}
             </div>
           </div>
         </section>
