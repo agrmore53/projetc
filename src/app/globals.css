@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
-@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --gold: #D4AF37;
@@ -13,19 +16,6 @@
   --gray-light: #AAAAAA;
   --background: #0A0A0A;
   --foreground: #FFFFFF;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-gold: var(--gold);
-  --color-gold-light: var(--gold-light);
-  --color-gold-dark: var(--gold-dark);
-  --color-black-light: var(--black-light);
-  --color-black-lighter: var(--black-lighter);
-  --color-gray: var(--gray);
-  --font-sans: 'Inter', sans-serif;
-  --font-display: 'Playfair Display', serif;
 }
 
 * {
