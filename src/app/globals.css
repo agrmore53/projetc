@@ -130,6 +130,12 @@ body {
   color: var(--gray);
 }
 
+/* Fix para options do select em tema escuro */
+.input-field option {
+  background: var(--black-light);
+  color: var(--white);
+}
+
 /* Labels */
 .input-label {
   display: block;
