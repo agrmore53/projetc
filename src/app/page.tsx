@@ -1,65 +1,81 @@
-import Image from "next/image";
+'use client'
 
-export default function Home() {
+import { useState } from 'react'
+import { useRouter } from 'next/navigation'
+import { Lock } from 'lucide-react'
+
+export default function LoginPage() {
+  const [password, setPassword] = useState('')
+  const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
+  const router = useRouter()
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setLoading(true)
+    setError('')
+
+    if (password === 'guilherme') {
+      localStorage.setItem('mentoria_logged', 'true')
+      router.push('/membro')
+    } else {
+      setError('Senha incorreta. Tente novamente.')
+      setPassword('')
+    }
+    setLoading(false)
+  }
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="min-h-screen flex items-center justify-center p-5">
+      <div className="bg-pattern" />
+
+      <div className="glass-strong max-w-md w-full p-12 md:p-16 text-center animate-fadeInUp">
+        {/* Logo */}
+        <div className="w-20 h-20 border-2 border-[var(--gold)] rounded-full flex items-center justify-center mx-auto mb-8">
+          <span className="font-display text-3xl text-[var(--gold)]">M</span>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+        {/* Title */}
+        <h1 className="font-display text-3xl mb-2">
+          <span className="gold-text">Mentoria Elite</span>
+        </h1>
+        <p className="text-[var(--gray)] mb-10">Área Exclusiva de Membros</p>
+
+        {/* Form */}
+        <form onSubmit={handleSubmit}>
+          <div className="mb-6 text-left">
+            <label className="input-label">Senha de Acesso</label>
+            <div className="relative">
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Digite sua senha"
+                className="input-field pr-12"
+                autoComplete="off"
+              />
+              <Lock className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[var(--gray)]" />
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            disabled={loading}
+            className="btn-primary w-full"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+            {loading ? 'Verificando...' : 'Acessar'}
+          </button>
+
+          {error && (
+            <p className="text-red-400 mt-4 text-sm">{error}</p>
+          )}
+        </form>
+
+        {/* Footer */}
+        <p className="text-[var(--gray)] text-xs mt-10">
+          Acesso restrito aos membros da mentoria
+        </p>
+      </div>
+    </main>
+  )
 }
