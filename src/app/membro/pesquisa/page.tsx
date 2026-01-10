@@ -18,7 +18,11 @@ import {
   ChevronDown,
   ChevronUp,
   AlertCircle,
-  CheckCircle
+  CheckCircle,
+  Zap,
+  RefreshCw,
+  Check,
+  X
 } from 'lucide-react'
 
 type Pesquisa = {
@@ -33,6 +37,16 @@ type Pesquisa = {
   frequencia: number
   urgencia: number
   notas: string
+}
+
+type Noticia = {
+  titulo: string
+  link: string
+  fonte: string
+  data: string
+  categoria: string
+  urgenciaSugerida: number
+  resumo: string
 }
 
 const categorias = [
@@ -121,9 +135,15 @@ export default function PesquisaPage() {
   const [pesquisas, setPesquisas] = useState<Pesquisa[]>([])
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)
-  const [activeTab, setActiveTab] = useState<'metodologia' | 'fontes' | 'registrar' | 'resultados'>('metodologia')
+  const [activeTab, setActiveTab] = useState<'metodologia' | 'fontes' | 'registrar' | 'resultados' | 'auto'>('metodologia')
   const [expandedSection, setExpandedSection] = useState<string | null>('metodologia')
   const [paisSelecionado, setPaisSelecionado] = useState<'brasil' | 'eua'>('brasil')
+
+  // Estados para busca automática
+  const [noticias, setNoticias] = useState<Noticia[]>([])
+  const [buscandoNoticias, setBuscandoNoticias] = useState(false)
+  const [estadoAuto, setEstadoAuto] = useState('Nacional')
+  const [salvandoNoticia, setSalvandoNoticia] = useState<string | null>(null)
 
   const [formData, setFormData] = useState<Pesquisa>({
     problema: '',
@@ -205,6 +225,65 @@ export default function PesquisaPage() {
     }
   }
 
+  // Buscar notícias automaticamente
+  const buscarNoticias = async () => {
+    setBuscandoNoticias(true)
+    setNoticias([])
+
+    try {
+      const response = await fetch(`/api/noticias?estado=${estadoAuto}`)
+      const data = await response.json()
+
+      if (data.success) {
+        setNoticias(data.noticias)
+      } else {
+        alert('Erro ao buscar notícias. Tente novamente.')
+      }
+    } catch (error) {
+      console.error('Erro:', error)
+      alert('Erro de conexão ao buscar notícias.')
+    }
+
+    setBuscandoNoticias(false)
+  }
+
+  // Salvar notícia selecionada como pesquisa
+  const salvarNoticia = async (noticia: Noticia) => {
+    setSalvandoNoticia(noticia.titulo)
+
+    const novaPesquisa: Pesquisa = {
+      problema: noticia.titulo,
+      categoria: noticia.categoria,
+      pais: 'Brasil',
+      estado: estadoAuto === 'Nacional' ? 'SP' : estadoAuto,
+      fonte: noticia.fonte,
+      link: noticia.link,
+      frequencia: 3, // Valor médio inicial
+      urgencia: noticia.urgenciaSugerida,
+      notas: `[Auto] ${noticia.resumo}`
+    }
+
+    const { error } = await supabase
+      .from('pesquisas')
+      .insert([novaPesquisa])
+
+    if (error) {
+      console.error('Erro ao salvar:', error)
+      alert('Erro ao salvar pesquisa.')
+    } else {
+      // Remove a notícia da lista após salvar
+      setNoticias(prev => prev.filter(n => n.titulo !== noticia.titulo))
+      fetchPesquisas()
+    }
+
+    setSalvandoNoticia(null)
+  }
+
+  // Descartar notícia
+  const descartarNoticia = (titulo: string) => {
+    setNoticias(prev => prev.filter(n => n.titulo !== titulo))
+  }
+
   const getRanking = (pais: string) => {
     const filtered = pesquisas.filter(p => p.pais === pais)
     const grouped: Record<string, { problema: string, categoria: string, count: number, totalScore: number }> = {}
@@ -254,6 +333,7 @@ export default function PesquisaPage() {
         <div className="flex flex-wrap gap-2 mb-8">
           {[
             { id: 'metodologia', label: 'Metodologia', icon: FileText },
+            { id: 'auto', label: 'Auto', icon: Zap },
             { id: 'fontes', label: 'Fontes', icon: Globe },
             { id: 'registrar', label: 'Registrar', icon: Plus },
             { id: 'resultados', label: 'Resultados', icon: BarChart3 }
@@ -392,6 +472,153 @@ export default function PesquisaPage() {
                 Use essas categorias para classificar os problemas encontrados. Isso ajuda a identificar padrões.
               </p>
             </div>
+          </div>
+        )}
+
+        {/* Auto Tab - Busca Automática */}
+        {activeTab === 'auto' && (
+          <div className="space-y-6 animate-fadeInUp">
+            <div className="glass p-6 sm:p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 border border-[var(--gold)] rounded-full flex items-center justify-center">
+                  <Zap className="w-5 h-5 text-[var(--gold)]" />
+                </div>
+                <div>
+                  <h2 className="font-display text-xl">Busca Automática</h2>
+                  <p className="text-[var(--gray)] text-sm">Notícias filtradas por palavras-chave de problemas</p>
+                </div>
+              </div>
+
+              <div className="bg-[var(--gold)]/10 border border-[var(--gold)]/30 rounded-xl p-4 mb-6">
+                <p className="text-sm text-[var(--gray)]">
+                  <strong className="text-[var(--gold)]">Como funciona:</strong> O sistema busca notícias de jornais brasileiros e filtra automaticamente por palavras como "reclamação", "fila", "demora", "problema", etc. Você valida cada notícia e salva as relevantes.
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex-1">
+                  <label className="input-label">Região</label>
+                  <select
+                    value={estadoAuto}
+                    onChange={(e) => setEstadoAuto(e.target.value)}
+                    className="input-field"
+                  >
+                    <option value="Nacional">Nacional (principais)</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="DF">Distrito Federal</option>
+                  </select>
+                </div>
+                <div className="flex items-end">
+                  <button
+                    onClick={buscarNoticias}
+                    disabled={buscandoNoticias}
+                    className="btn-primary flex items-center gap-2"
+                  >
+                    {buscandoNoticias ? (
+                      <>
+                        <RefreshCw className="w-5 h-5 animate-spin" />
+                        Buscando...
+                      </>
+                    ) : (
+                      <>
+                        <Search className="w-5 h-5" />
+                        Buscar Notícias
+                      </>
+                    )}
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Resultados da busca */}
+            {noticias.length > 0 && (
+              <div className="glass p-6">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="font-display text-lg">
+                    {noticias.length} notícias encontradas
+                  </h3>
+                  <span className="text-[var(--gray)] text-sm">
+                    Valide e salve as relevantes
+                  </span>
+                </div>
+
+                <div className="space-y-4">
+                  {noticias.map((noticia, index) => (
+                    <div
+                      key={index}
+                      className="p-4 bg-white/5 rounded-xl border border-[var(--gold)]/10 hover:border-[var(--gold)]/30 transition-all"
+                    >
+                      <div className="flex items-start justify-between gap-4">
+                        <div className="flex-1 min-w-0">
+                          <h4 className="font-medium mb-2 text-sm sm:text-base">
+                            {noticia.titulo}
+                          </h4>
+                          {noticia.resumo && (
+                            <p className="text-[var(--gray)] text-xs mb-3 line-clamp-2">
+                              {noticia.resumo}
+                            </p>
+                          )}
+                          <div className="flex flex-wrap gap-2">
+                            <span className="bg-[var(--gold)]/20 text-[var(--gold)] px-2 py-1 rounded text-xs">
+                              {noticia.categoria}
+                            </span>
+                            <span className="bg-white/10 text-[var(--gray)] px-2 py-1 rounded text-xs">
+                              Urgência: {noticia.urgenciaSugerida}/5
+                            </span>
+                            <span className="bg-white/10 text-[var(--gray)] px-2 py-1 rounded text-xs">
+                              {noticia.fonte}
+                            </span>
+                          </div>
+                        </div>
+                        <div className="flex flex-col gap-2 shrink-0">
+                          <button
+                            onClick={() => salvarNoticia(noticia)}
+                            disabled={salvandoNoticia === noticia.titulo}
+                            className="p-2 bg-green-500/20 hover:bg-green-500/30 text-green-400 rounded-lg transition-colors"
+                            title="Salvar como pesquisa"
+                          >
+                            {salvandoNoticia === noticia.titulo ? (
+                              <RefreshCw className="w-5 h-5 animate-spin" />
+                            ) : (
+                              <Check className="w-5 h-5" />
+                            )}
+                          </button>
+                          <button
+                            onClick={() => descartarNoticia(noticia.titulo)}
+                            className="p-2 bg-red-500/20 hover:bg-red-500/30 text-red-400 rounded-lg transition-colors"
+                            title="Descartar"
+                          >
+                            <X className="w-5 h-5" />
+                          </button>
+                          <a
+                            href={noticia.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-2 bg-white/10 hover:bg-white/20 text-[var(--gray)] rounded-lg transition-colors"
+                            title="Ver notícia original"
+                          >
+                            <ExternalLink className="w-5 h-5" />
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Estado vazio após busca */}
+            {!buscandoNoticias && noticias.length === 0 && (
+              <div className="glass p-10 text-center">
+                <Zap className="w-12 h-12 text-[var(--gray)] mx-auto mb-4" />
+                <p className="text-[var(--gray)]">
+                  Clique em "Buscar Notícias" para iniciar a pesquisa automática.
+                </p>
+              </div>
+            )}
           </div>
         )}
 
