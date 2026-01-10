@@ -15,7 +15,8 @@ import {
   PlayCircle,
   LogOut,
   CheckCircle,
-  Clock
+  Clock,
+  Lightbulb
 } from 'lucide-react'
 
 export default function MembroPage() {
@@ -80,8 +81,9 @@ export default function MembroPage() {
   }
 
   const materiais = [
-    { icon: FileText, title: 'Plano de Mentoria Completo', desc: 'Roadmap de 30 dias a 5 anos', status: 'available' },
+    { icon: Lightbulb, title: 'A Importância da Pesquisa', desc: 'Por que isso define seu sucesso', status: 'available', link: '/membro/conteudo' },
     { icon: BarChart3, title: 'Pesquisa de Mercado', desc: 'Identificação de dores Brasil/EUA', status: 'available', link: '/membro/pesquisa' },
+    { icon: FileText, title: 'Plano de Mentoria Completo', desc: 'Roadmap de 30 dias a 5 anos', status: 'available' },
     { icon: FileText, title: 'Templates de Validação', desc: 'Scripts e planilhas de validação', status: 'soon' },
     { icon: BarChart3, title: 'Planilha de Métricas SaaS', desc: 'Controle MRR, churn, CAC, LTV', status: 'soon' },
     { icon: PlayCircle, title: 'Aulas Gravadas', desc: 'Gravações das sessões', status: 'soon' },
