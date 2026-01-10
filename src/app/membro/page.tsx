@@ -16,7 +16,8 @@ import {
   LogOut,
   CheckCircle,
   Clock,
-  Lightbulb
+  Lightbulb,
+  Target
 } from 'lucide-react'
 
 export default function MembroPage() {
@@ -81,6 +82,7 @@ export default function MembroPage() {
   }
 
   const materiais = [
+    { icon: Target, title: 'Quiz: Descubra Seu Nicho', desc: 'Qual área combina mais com você?', status: 'available', link: '/membro/quiz' },
     { icon: Lightbulb, title: 'A Importância da Pesquisa', desc: 'Por que isso define seu sucesso', status: 'available', link: '/membro/conteudo' },
     { icon: BarChart3, title: 'Pesquisa de Mercado', desc: 'Identificação de dores Brasil/EUA', status: 'available', link: '/membro/pesquisa' },
     { icon: FileText, title: 'Plano de Mentoria Completo', desc: 'Roadmap de 30 dias a 5 anos', status: 'available' },
