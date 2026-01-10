@@ -20,7 +20,8 @@ import {
   Users,
   Sparkles,
   RotateCcw,
-  CheckCircle
+  CheckCircle,
+  Check
 } from 'lucide-react'
 
 type Categoria =
@@ -49,7 +50,7 @@ type Pergunta = {
 const perguntas: Pergunta[] = [
   {
     id: 1,
-    texto: "Quando você vê uma notícia sobre problemas no Brasil, qual te incomoda MAIS?",
+    texto: "Quando você vê uma notícia sobre problemas no Brasil, quais te incomodam MAIS?",
     opcoes: [
       { texto: "Filas enormes em hospitais e falta de médicos", pontos: { 'Saúde': 3 } },
       { texto: "Pessoas endividadas e sem conseguir pagar contas", pontos: { 'Finanças': 3 } },
@@ -59,7 +60,7 @@ const perguntas: Pergunta[] = [
   },
   {
     id: 2,
-    texto: "Se você pudesse criar UM software para resolver um problema, qual seria?",
+    texto: "Se você pudesse criar softwares para resolver problemas, quais seriam?",
     opcoes: [
       { texto: "App para encontrar vagas de emprego mais facilmente", pontos: { 'Emprego': 3 } },
       { texto: "Sistema para tornar o transporte público mais eficiente", pontos: { 'Transporte': 3 } },
@@ -69,7 +70,7 @@ const perguntas: Pergunta[] = [
   },
   {
     id: 3,
-    texto: "Em qual área você ou pessoas próximas já tiveram MAIS frustração?",
+    texto: "Em quais áreas você ou pessoas próximas já tiveram MAIS frustração?",
     opcoes: [
       { texto: "Conseguir atendimento médico de qualidade", pontos: { 'Saúde': 3 } },
       { texto: "Lidar com bancos, juros e dívidas", pontos: { 'Finanças': 3 } },
@@ -89,7 +90,7 @@ const perguntas: Pergunta[] = [
   },
   {
     id: 5,
-    texto: "Qual tipo de conteúdo você mais consome na internet?",
+    texto: "Quais tipos de conteúdo você mais consome na internet?",
     opcoes: [
       { texto: "Tecnologia, gadgets, inovação e startups", pontos: { 'Tecnologia': 3 } },
       { texto: "Sustentabilidade, meio ambiente e ecologia", pontos: { 'Meio Ambiente': 3 } },
@@ -99,7 +100,7 @@ const perguntas: Pergunta[] = [
   },
   {
     id: 6,
-    texto: "Se você fosse convidado para uma palestra, qual tema escolheria?",
+    texto: "Se você fosse convidado para palestras, quais temas escolheria?",
     opcoes: [
       { texto: "Como a tecnologia pode mudar vidas", pontos: { 'Tecnologia': 3 } },
       { texto: "Finanças pessoais e liberdade financeira", pontos: { 'Finanças': 3 } },
@@ -109,7 +110,7 @@ const perguntas: Pergunta[] = [
   },
   {
     id: 7,
-    texto: "Qual problema você acha que, se resolvido, mudaria MAIS a vida das pessoas?",
+    texto: "Quais problemas você acha que, se resolvidos, mudariam MAIS a vida das pessoas?",
     opcoes: [
       { texto: "Acesso à saúde de qualidade para todos", pontos: { 'Saúde': 3 } },
       { texto: "Moradia digna e acessível", pontos: { 'Moradia': 3 } },
@@ -119,7 +120,7 @@ const perguntas: Pergunta[] = [
   },
   {
     id: 8,
-    texto: "Qual dessas situações te deixaria MAIS motivado a criar uma solução?",
+    texto: "Quais situações te deixariam MAIS motivado a criar uma solução?",
     opcoes: [
       { texto: "Ver alguém perdido em filas de cartório", pontos: { 'Burocracia': 3 } },
       { texto: "Ver alguém com dificuldade de se alimentar bem", pontos: { 'Alimentação': 3 } },
@@ -129,7 +130,7 @@ const perguntas: Pergunta[] = [
   },
   {
     id: 9,
-    texto: "Em qual área você tem MAIS conhecimento ou experiência?",
+    texto: "Em quais áreas você tem MAIS conhecimento ou experiência?",
     opcoes: [
       { texto: "Área da saúde ou cuidados com pessoas", pontos: { 'Saúde': 3 } },
       { texto: "Área financeira, contábil ou administrativa", pontos: { 'Finanças': 2, 'Burocracia': 1 } },
@@ -139,7 +140,7 @@ const perguntas: Pergunta[] = [
   },
   {
     id: 10,
-    texto: "Se você tivesse que escolher UM nicho para trabalhar pelos próximos 10 anos, qual seria?",
+    texto: "Se você tivesse que escolher nichos para trabalhar pelos próximos 10 anos, quais seriam?",
     opcoes: [
       { texto: "Saúde e bem-estar das pessoas", pontos: { 'Saúde': 3 } },
       { texto: "Ajudar pessoas com dinheiro e finanças", pontos: { 'Finanças': 3 } },
@@ -149,7 +150,7 @@ const perguntas: Pergunta[] = [
   },
   {
     id: 11,
-    texto: "Qual desses problemas você sente que ENTENDE mais profundamente?",
+    texto: "Quais problemas você sente que ENTENDE mais profundamente?",
     opcoes: [
       { texto: "A dificuldade de se locomover nas grandes cidades", pontos: { 'Transporte': 3 } },
       { texto: "O desafio de conseguir uma moradia digna", pontos: { 'Moradia': 3 } },
@@ -159,7 +160,7 @@ const perguntas: Pergunta[] = [
   },
   {
     id: 12,
-    texto: "Por fim: qual causa te faz LEVANTAR DA CAMA com vontade de mudar o mundo?",
+    texto: "Por fim: quais causas te fazem LEVANTAR DA CAMA com vontade de mudar o mundo?",
     opcoes: [
       { texto: "Melhorar a saúde e qualidade de vida das pessoas", pontos: { 'Saúde': 3 } },
       { texto: "Ajudar pessoas a conquistarem liberdade financeira", pontos: { 'Finanças': 3 } },
@@ -247,7 +248,7 @@ const categoriasInfo: Record<Categoria, { icone: React.ReactNode, cor: string, d
 export default function QuizPage() {
   const router = useRouter()
   const [perguntaAtual, setPerguntaAtual] = useState(0)
-  const [respostas, setRespostas] = useState<number[]>([])
+  const [selecoesPergunta, setSelecoesPergunta] = useState<number[]>([])
   const [pontuacao, setPontuacao] = useState<Record<Categoria, number>>({
     'Saúde': 0,
     'Finanças': 0,
@@ -272,23 +273,41 @@ export default function QuizPage() {
     }
   }, [router])
 
-  const handleResposta = (opcaoIndex: number) => {
+  const toggleSelecao = (opcaoIndex: number) => {
     if (animating) return
 
-    setAnimating(true)
-    const novasRespostas = [...respostas, opcaoIndex]
-    setRespostas(novasRespostas)
+    setSelecoesPergunta(prev => {
+      if (prev.includes(opcaoIndex)) {
+        // Remover se já está selecionado
+        return prev.filter(i => i !== opcaoIndex)
+      } else if (prev.length < 2) {
+        // Adicionar se ainda não tem 2
+        return [...prev, opcaoIndex]
+      } else {
+        // Substituir o primeiro se já tem 2
+        return [prev[1], opcaoIndex]
+      }
+    })
+  }
 
-    // Atualiza pontuação
-    const opcao = perguntas[perguntaAtual].opcoes[opcaoIndex]
+  const proximaPergunta = () => {
+    if (selecoesPergunta.length !== 2 || animating) return
+
+    setAnimating(true)
+
+    // Atualiza pontuação com as duas seleções
     const novaPontuacao = { ...pontuacao }
-    Object.entries(opcao.pontos).forEach(([categoria, pontos]) => {
-      novaPontuacao[categoria as Categoria] += pontos as number
+    selecoesPergunta.forEach(opcaoIndex => {
+      const opcao = perguntas[perguntaAtual].opcoes[opcaoIndex]
+      Object.entries(opcao.pontos).forEach(([categoria, pontos]) => {
+        novaPontuacao[categoria as Categoria] += pontos as number
+      })
     })
     setPontuacao(novaPontuacao)
 
-    // Próxima pergunta ou finaliza
+    // Limpa seleções e avança
     setTimeout(() => {
+      setSelecoesPergunta([])
       if (perguntaAtual < perguntas.length - 1) {
         setPerguntaAtual(prev => prev + 1)
       } else {
@@ -307,7 +326,7 @@ export default function QuizPage() {
 
   const reiniciar = () => {
     setPerguntaAtual(0)
-    setRespostas([])
+    setSelecoesPergunta([])
     setPontuacao({
       'Saúde': 0,
       'Finanças': 0,
@@ -488,14 +507,18 @@ export default function QuizPage() {
         </div>
 
         {/* Pergunta */}
-        <section className={`animate-fadeInUp ${animating ? 'opacity-50' : ''}`}>
-          <div className="glass p-6 sm:p-10 mb-6">
+        <section className={`${animating ? 'opacity-50' : ''}`}>
+          <div className="glass p-6 sm:p-10 mb-6 animate-fadeInUp">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 border-2 border-[var(--gold)] rounded-full flex items-center justify-center">
                 <span className="font-display text-xl text-[var(--gold)]">{perguntaAtual + 1}</span>
               </div>
               <div className="flex-1">
-                <p className="text-xs text-[var(--gray)] uppercase tracking-wider mb-1">Pergunta</p>
+                <p className="text-xs text-[var(--gray)] uppercase tracking-wider mb-1">Escolha 2 opções</p>
+              </div>
+              <div className="flex gap-1">
+                <div className={`w-3 h-3 rounded-full ${selecoesPergunta.length >= 1 ? 'bg-[var(--gold)]' : 'bg-white/20'}`} />
+                <div className={`w-3 h-3 rounded-full ${selecoesPergunta.length >= 2 ? 'bg-[var(--gold)]' : 'bg-white/20'}`} />
               </div>
             </div>
             <h2 className="font-display text-xl sm:text-2xl leading-relaxed">
@@ -505,30 +528,61 @@ export default function QuizPage() {
 
           {/* Opções */}
           <div className="space-y-3">
-            {pergunta.opcoes.map((opcao, index) => (
-              <button
-                key={index}
-                onClick={() => handleResposta(index)}
-                disabled={animating}
-                className="w-full text-left p-5 glass hover:border-[var(--gold)]/50 hover:bg-[var(--gold)]/5 transition-all rounded-xl group"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 border border-[var(--gold)]/30 rounded-full flex items-center justify-center group-hover:border-[var(--gold)] group-hover:bg-[var(--gold)] group-hover:text-black transition-all shrink-0">
-                    <span className="font-semibold">{String.fromCharCode(65 + index)}</span>
+            {pergunta.opcoes.map((opcao, index) => {
+              const selecionado = selecoesPergunta.includes(index)
+              return (
+                <button
+                  key={index}
+                  onClick={() => toggleSelecao(index)}
+                  disabled={animating}
+                  className={`w-full text-left p-5 rounded-xl transition-all group ${
+                    selecionado
+                      ? 'bg-[var(--gold)]/20 border-2 border-[var(--gold)]'
+                      : 'glass hover:border-[var(--gold)]/50 hover:bg-[var(--gold)]/5'
+                  }`}
+                >
+                  <div className="flex items-center gap-4">
+                    <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-all ${
+                      selecionado
+                        ? 'bg-[var(--gold)] text-black'
+                        : 'border border-[var(--gold)]/30 group-hover:border-[var(--gold)]'
+                    }`}>
+                      {selecionado ? (
+                        <Check className="w-5 h-5" />
+                      ) : (
+                        <span className="font-semibold">{String.fromCharCode(65 + index)}</span>
+                      )}
+                    </div>
+                    <span className="text-sm sm:text-base">{opcao.texto}</span>
                   </div>
-                  <span className="text-sm sm:text-base">{opcao.texto}</span>
-                </div>
-              </button>
-            ))}
+                </button>
+              )
+            })}
+          </div>
+
+          {/* Botão Avançar */}
+          <div className="mt-8 flex justify-center">
+            <button
+              onClick={proximaPergunta}
+              disabled={selecoesPergunta.length !== 2 || animating}
+              className={`btn-primary inline-flex items-center gap-2 ${
+                selecoesPergunta.length !== 2 ? 'opacity-50 cursor-not-allowed' : ''
+              }`}
+            >
+              {perguntaAtual < perguntas.length - 1 ? 'Próxima Pergunta' : 'Ver Resultado'}
+              <ArrowRight className="w-5 h-5" />
+            </button>
+          </div>
+
+          {/* Dica */}
+          <div className="mt-6 text-center">
+            <p className="text-[var(--gray)] text-sm">
+              {selecoesPergunta.length === 0 && 'Selecione 2 opções que mais combinam com você'}
+              {selecoesPergunta.length === 1 && 'Selecione mais 1 opção'}
+              {selecoesPergunta.length === 2 && 'Clique em "Próxima Pergunta" para continuar'}
+            </p>
           </div>
         </section>
-
-        {/* Dica */}
-        <div className="mt-8 text-center">
-          <p className="text-[var(--gray)] text-sm">
-            Escolha a opção que mais combina com você. Não existe resposta certa ou errada.
-          </p>
-        </div>
 
         {/* Footer */}
         <footer className="text-center py-10 mt-8 border-t border-[var(--gold)]/20">
