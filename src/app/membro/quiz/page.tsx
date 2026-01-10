@@ -284,14 +284,14 @@ export default function QuizPage() {
         // Adicionar se ainda não tem 2
         return [...prev, opcaoIndex]
       } else {
-        // Substituir o primeiro se já tem 2
-        return [prev[1], opcaoIndex]
+        // Substituir o segundo se já tem 2
+        return [prev[0], opcaoIndex]
       }
     })
   }
 
   const proximaPergunta = () => {
-    if (selecoesPergunta.length !== 2 || animating) return
+    if (selecoesPergunta.length < 1 || animating) return
 
     setAnimating(true)
 
@@ -514,11 +514,11 @@ export default function QuizPage() {
                 <span className="font-display text-xl text-[var(--gold)]">{perguntaAtual + 1}</span>
               </div>
               <div className="flex-1">
-                <p className="text-xs text-[var(--gray)] uppercase tracking-wider mb-1">Escolha 2 opções</p>
+                <p className="text-xs text-[var(--gray)] uppercase tracking-wider mb-1">Escolha 1 ou 2 opções</p>
               </div>
               <div className="flex gap-1">
-                <div className={`w-3 h-3 rounded-full ${selecoesPergunta.length >= 1 ? 'bg-[var(--gold)]' : 'bg-white/20'}`} />
-                <div className={`w-3 h-3 rounded-full ${selecoesPergunta.length >= 2 ? 'bg-[var(--gold)]' : 'bg-white/20'}`} />
+                <div className={`w-3 h-3 rounded-full ${selecoesPergunta.length >= 1 ? 'bg-[var(--gold)]' : 'bg-white/20'} transition-colors`} />
+                <div className={`w-3 h-3 rounded-full ${selecoesPergunta.length >= 2 ? 'bg-[var(--gold)]' : 'bg-white/10'} transition-colors`} />
               </div>
             </div>
             <h2 className="font-display text-xl sm:text-2xl leading-relaxed">
@@ -564,9 +564,9 @@ export default function QuizPage() {
           <div className="mt-8 flex justify-center">
             <button
               onClick={proximaPergunta}
-              disabled={selecoesPergunta.length !== 2 || animating}
+              disabled={selecoesPergunta.length < 1 || animating}
               className={`btn-primary inline-flex items-center gap-2 ${
-                selecoesPergunta.length !== 2 ? 'opacity-50 cursor-not-allowed' : ''
+                selecoesPergunta.length < 1 ? 'opacity-50 cursor-not-allowed' : ''
               }`}
             >
               {perguntaAtual < perguntas.length - 1 ? 'Próxima Pergunta' : 'Ver Resultado'}
@@ -577,9 +577,9 @@ export default function QuizPage() {
           {/* Dica */}
           <div className="mt-6 text-center">
             <p className="text-[var(--gray)] text-sm">
-              {selecoesPergunta.length === 0 && 'Selecione 2 opções que mais combinam com você'}
-              {selecoesPergunta.length === 1 && 'Selecione mais 1 opção'}
-              {selecoesPergunta.length === 2 && 'Clique em "Próxima Pergunta" para continuar'}
+              {selecoesPergunta.length === 0 && 'Selecione pelo menos 1 opção (máximo 2)'}
+              {selecoesPergunta.length === 1 && 'Você pode selecionar mais 1 opção ou avançar'}
+              {selecoesPergunta.length === 2 && 'Máximo atingido - clique para avançar'}
             </p>
           </div>
         </section>
