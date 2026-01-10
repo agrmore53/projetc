@@ -20,8 +20,7 @@ import {
   Users,
   Sparkles,
   RotateCcw,
-  CheckCircle,
-  Check
+  CheckCircle
 } from 'lucide-react'
 
 type Categoria =
@@ -43,129 +42,129 @@ type Pergunta = {
   texto: string
   opcoes: {
     texto: string
-    pontos: Partial<Record<Categoria, number>>
+    categorias: Categoria[]
   }[]
 }
 
 const perguntas: Pergunta[] = [
   {
     id: 1,
-    texto: "Quando você vê uma notícia sobre problemas no Brasil, quais te incomodam MAIS?",
+    texto: "Quando você vê notícias sobre problemas, qual te incomoda mais?",
     opcoes: [
-      { texto: "Filas enormes em hospitais e falta de médicos", pontos: { 'Saúde': 3 } },
-      { texto: "Pessoas endividadas e sem conseguir pagar contas", pontos: { 'Finanças': 3 } },
-      { texto: "Burocracia absurda para abrir empresa ou resolver documentos", pontos: { 'Burocracia': 3 } },
-      { texto: "Escolas sucateadas e jovens sem oportunidade", pontos: { 'Educação': 3 } }
+      { texto: "Filas em hospitais e falta de médicos", categorias: ['Saúde'] },
+      { texto: "Pessoas endividadas sem conseguir pagar contas", categorias: ['Finanças'] },
+      { texto: "Burocracia para abrir empresa ou resolver documentos", categorias: ['Burocracia'] },
+      { texto: "Escolas sucateadas e jovens sem oportunidade", categorias: ['Educação'] }
     ]
   },
   {
     id: 2,
-    texto: "Se você pudesse criar softwares para resolver problemas, quais seriam?",
+    texto: "Se pudesse criar um software para resolver um problema, qual seria?",
     opcoes: [
-      { texto: "App para encontrar vagas de emprego mais facilmente", pontos: { 'Emprego': 3 } },
-      { texto: "Sistema para tornar o transporte público mais eficiente", pontos: { 'Transporte': 3 } },
-      { texto: "Plataforma para ajudar pessoas a encontrar moradia", pontos: { 'Moradia': 3 } },
-      { texto: "Ferramenta para denunciar crimes e aumentar segurança", pontos: { 'Segurança': 3 } }
+      { texto: "App para encontrar vagas de emprego", categorias: ['Emprego'] },
+      { texto: "Sistema para transporte público eficiente", categorias: ['Transporte'] },
+      { texto: "Plataforma para ajudar a encontrar moradia", categorias: ['Moradia'] },
+      { texto: "Ferramenta para aumentar segurança", categorias: ['Segurança'] }
     ]
   },
   {
     id: 3,
-    texto: "Em quais áreas você ou pessoas próximas já tiveram MAIS frustração?",
+    texto: "Em qual área você ou pessoas próximas tiveram mais frustração?",
     opcoes: [
-      { texto: "Conseguir atendimento médico de qualidade", pontos: { 'Saúde': 3 } },
-      { texto: "Lidar com bancos, juros e dívidas", pontos: { 'Finanças': 3 } },
-      { texto: "Resolver problemas com documentos e órgãos públicos", pontos: { 'Burocracia': 3 } },
-      { texto: "Encontrar cursos ou educação de qualidade", pontos: { 'Educação': 3 } }
+      { texto: "Conseguir atendimento médico de qualidade", categorias: ['Saúde'] },
+      { texto: "Lidar com bancos, juros e dívidas", categorias: ['Finanças'] },
+      { texto: "Resolver problemas em órgãos públicos", categorias: ['Burocracia'] },
+      { texto: "Encontrar educação de qualidade", categorias: ['Educação'] }
     ]
   },
   {
     id: 4,
-    texto: "O que seus amigos e família MAIS reclamam no dia a dia?",
+    texto: "O que seus amigos e família mais reclamam no dia a dia?",
     opcoes: [
-      { texto: "Trânsito, ônibus lotado, demora no transporte", pontos: { 'Transporte': 3 } },
-      { texto: "Preço do aluguel e dificuldade de ter casa própria", pontos: { 'Moradia': 3 } },
-      { texto: "Insegurança nas ruas e medo de assaltos", pontos: { 'Segurança': 3 } },
-      { texto: "Dificuldade de conseguir um bom emprego", pontos: { 'Emprego': 3 } }
+      { texto: "Trânsito e demora no transporte", categorias: ['Transporte'] },
+      { texto: "Preço do aluguel e moradia", categorias: ['Moradia'] },
+      { texto: "Insegurança e medo de assaltos", categorias: ['Segurança'] },
+      { texto: "Dificuldade de conseguir emprego", categorias: ['Emprego'] }
     ]
   },
   {
     id: 5,
-    texto: "Quais tipos de conteúdo você mais consome na internet?",
+    texto: "Qual tipo de conteúdo você mais consome na internet?",
     opcoes: [
-      { texto: "Tecnologia, gadgets, inovação e startups", pontos: { 'Tecnologia': 3 } },
-      { texto: "Sustentabilidade, meio ambiente e ecologia", pontos: { 'Meio Ambiente': 3 } },
-      { texto: "Receitas, alimentação saudável e gastronomia", pontos: { 'Alimentação': 3 } },
-      { texto: "Relacionamentos, psicologia e desenvolvimento pessoal", pontos: { 'Relacionamentos': 3 } }
+      { texto: "Tecnologia, gadgets e startups", categorias: ['Tecnologia'] },
+      { texto: "Sustentabilidade e meio ambiente", categorias: ['Meio Ambiente'] },
+      { texto: "Receitas e alimentação saudável", categorias: ['Alimentação'] },
+      { texto: "Relacionamentos e desenvolvimento pessoal", categorias: ['Relacionamentos'] }
     ]
   },
   {
     id: 6,
-    texto: "Se você fosse convidado para palestras, quais temas escolheria?",
+    texto: "Se fosse dar uma palestra, qual tema escolheria?",
     opcoes: [
-      { texto: "Como a tecnologia pode mudar vidas", pontos: { 'Tecnologia': 3 } },
-      { texto: "Finanças pessoais e liberdade financeira", pontos: { 'Finanças': 3 } },
-      { texto: "Saúde mental e bem-estar", pontos: { 'Saúde': 2, 'Relacionamentos': 1 } },
-      { texto: "Educação e o futuro do aprendizado", pontos: { 'Educação': 3 } }
+      { texto: "Como a tecnologia pode mudar vidas", categorias: ['Tecnologia'] },
+      { texto: "Finanças pessoais e liberdade financeira", categorias: ['Finanças'] },
+      { texto: "Saúde mental e bem-estar", categorias: ['Saúde', 'Relacionamentos'] },
+      { texto: "Educação e o futuro do aprendizado", categorias: ['Educação'] }
     ]
   },
   {
     id: 7,
-    texto: "Quais problemas você acha que, se resolvidos, mudariam MAIS a vida das pessoas?",
+    texto: "Qual problema, se resolvido, mudaria mais a vida das pessoas?",
     opcoes: [
-      { texto: "Acesso à saúde de qualidade para todos", pontos: { 'Saúde': 3 } },
-      { texto: "Moradia digna e acessível", pontos: { 'Moradia': 3 } },
-      { texto: "Emprego e renda para todos", pontos: { 'Emprego': 3 } },
-      { texto: "Segurança pública eficiente", pontos: { 'Segurança': 3 } }
+      { texto: "Acesso à saúde de qualidade", categorias: ['Saúde'] },
+      { texto: "Moradia digna e acessível", categorias: ['Moradia'] },
+      { texto: "Emprego e renda para todos", categorias: ['Emprego'] },
+      { texto: "Segurança pública eficiente", categorias: ['Segurança'] }
     ]
   },
   {
     id: 8,
-    texto: "Quais situações te deixariam MAIS motivado a criar uma solução?",
+    texto: "Qual situação te deixaria mais motivado a criar uma solução?",
     opcoes: [
-      { texto: "Ver alguém perdido em filas de cartório", pontos: { 'Burocracia': 3 } },
-      { texto: "Ver alguém com dificuldade de se alimentar bem", pontos: { 'Alimentação': 3 } },
-      { texto: "Ver o meio ambiente sendo destruído", pontos: { 'Meio Ambiente': 3 } },
-      { texto: "Ver relacionamentos sendo destruídos por falta de comunicação", pontos: { 'Relacionamentos': 3 } }
+      { texto: "Ver alguém perdido em filas de cartório", categorias: ['Burocracia'] },
+      { texto: "Ver alguém com dificuldade de se alimentar bem", categorias: ['Alimentação'] },
+      { texto: "Ver o meio ambiente sendo destruído", categorias: ['Meio Ambiente'] },
+      { texto: "Ver relacionamentos sendo destruídos", categorias: ['Relacionamentos'] }
     ]
   },
   {
     id: 9,
-    texto: "Em quais áreas você tem MAIS conhecimento ou experiência?",
+    texto: "Em qual área você tem mais conhecimento ou experiência?",
     opcoes: [
-      { texto: "Área da saúde ou cuidados com pessoas", pontos: { 'Saúde': 3 } },
-      { texto: "Área financeira, contábil ou administrativa", pontos: { 'Finanças': 2, 'Burocracia': 1 } },
-      { texto: "Área de tecnologia, programação ou inovação", pontos: { 'Tecnologia': 3 } },
-      { texto: "Área de educação, ensino ou treinamento", pontos: { 'Educação': 3 } }
+      { texto: "Saúde ou cuidados com pessoas", categorias: ['Saúde'] },
+      { texto: "Financeira, contábil ou administrativa", categorias: ['Finanças', 'Burocracia'] },
+      { texto: "Tecnologia, programação ou inovação", categorias: ['Tecnologia'] },
+      { texto: "Educação, ensino ou treinamento", categorias: ['Educação'] }
     ]
   },
   {
     id: 10,
-    texto: "Se você tivesse que escolher nichos para trabalhar pelos próximos 10 anos, quais seriam?",
+    texto: "Se escolhesse um nicho para os próximos 10 anos, qual seria?",
     opcoes: [
-      { texto: "Saúde e bem-estar das pessoas", pontos: { 'Saúde': 3 } },
-      { texto: "Ajudar pessoas com dinheiro e finanças", pontos: { 'Finanças': 3 } },
-      { texto: "Tecnologia e inovação", pontos: { 'Tecnologia': 3 } },
-      { texto: "Educação e desenvolvimento de pessoas", pontos: { 'Educação': 3 } }
+      { texto: "Saúde e bem-estar", categorias: ['Saúde'] },
+      { texto: "Finanças e investimentos", categorias: ['Finanças'] },
+      { texto: "Tecnologia e inovação", categorias: ['Tecnologia'] },
+      { texto: "Educação e desenvolvimento", categorias: ['Educação'] }
     ]
   },
   {
     id: 11,
-    texto: "Quais problemas você sente que ENTENDE mais profundamente?",
+    texto: "Qual problema você entende mais profundamente?",
     opcoes: [
-      { texto: "A dificuldade de se locomover nas grandes cidades", pontos: { 'Transporte': 3 } },
-      { texto: "O desafio de conseguir uma moradia digna", pontos: { 'Moradia': 3 } },
-      { texto: "A luta diária por um emprego melhor", pontos: { 'Emprego': 3 } },
-      { texto: "A insegurança que assola as cidades", pontos: { 'Segurança': 3 } }
+      { texto: "Dificuldade de locomoção nas cidades", categorias: ['Transporte'] },
+      { texto: "Desafio de conseguir moradia digna", categorias: ['Moradia'] },
+      { texto: "Luta diária por um emprego melhor", categorias: ['Emprego'] },
+      { texto: "Insegurança que assola as cidades", categorias: ['Segurança'] }
     ]
   },
   {
     id: 12,
-    texto: "Por fim: quais causas te fazem LEVANTAR DA CAMA com vontade de mudar o mundo?",
+    texto: "Qual causa te faz levantar da cama com vontade de mudar o mundo?",
     opcoes: [
-      { texto: "Melhorar a saúde e qualidade de vida das pessoas", pontos: { 'Saúde': 3 } },
-      { texto: "Ajudar pessoas a conquistarem liberdade financeira", pontos: { 'Finanças': 3 } },
-      { texto: "Usar tecnologia para resolver problemas reais", pontos: { 'Tecnologia': 3 } },
-      { texto: "Transformar a educação e dar oportunidades", pontos: { 'Educação': 3 } }
+      { texto: "Melhorar a saúde das pessoas", categorias: ['Saúde'] },
+      { texto: "Ajudar pessoas com liberdade financeira", categorias: ['Finanças'] },
+      { texto: "Usar tecnologia para resolver problemas", categorias: ['Tecnologia'] },
+      { texto: "Transformar a educação", categorias: ['Educação'] }
     ]
   }
 ]
@@ -245,10 +244,19 @@ const categoriasInfo: Record<Categoria, { icone: React.ReactNode, cor: string, d
   }
 }
 
+const notasLabels = [
+  { valor: 0, label: 'Nada', emoji: '😐' },
+  { valor: 1, label: 'Pouco', emoji: '🤔' },
+  { valor: 2, label: 'Talvez', emoji: '😊' },
+  { valor: 3, label: 'Gosto', emoji: '👍' },
+  { valor: 4, label: 'Muito', emoji: '😍' },
+  { valor: 5, label: 'Amo!', emoji: '🔥' }
+]
+
 export default function QuizPage() {
   const router = useRouter()
   const [perguntaAtual, setPerguntaAtual] = useState(0)
-  const [selecoesPergunta, setSelecoesPergunta] = useState<number[]>([])
+  const [notasPergunta, setNotasPergunta] = useState<(number | null)[]>([null, null, null, null])
   const [pontuacao, setPontuacao] = useState<Record<Categoria, number>>({
     'Saúde': 0,
     'Finanças': 0,
@@ -273,41 +281,37 @@ export default function QuizPage() {
     }
   }, [router])
 
-  const toggleSelecao = (opcaoIndex: number) => {
+  const setNota = (opcaoIndex: number, nota: number) => {
     if (animating) return
-
-    setSelecoesPergunta(prev => {
-      if (prev.includes(opcaoIndex)) {
-        // Remover se já está selecionado
-        return prev.filter(i => i !== opcaoIndex)
-      } else if (prev.length < 2) {
-        // Adicionar se ainda não tem 2
-        return [...prev, opcaoIndex]
-      } else {
-        // Substituir o segundo se já tem 2
-        return [prev[0], opcaoIndex]
-      }
+    setNotasPergunta(prev => {
+      const novas = [...prev]
+      novas[opcaoIndex] = nota
+      return novas
     })
   }
 
+  const todasNotasPreenchidas = notasPergunta.every(n => n !== null)
+
   const proximaPergunta = () => {
-    if (selecoesPergunta.length < 1 || animating) return
+    if (!todasNotasPreenchidas || animating) return
 
     setAnimating(true)
 
-    // Atualiza pontuação com as duas seleções
+    // Atualiza pontuação com as notas dadas
     const novaPontuacao = { ...pontuacao }
-    selecoesPergunta.forEach(opcaoIndex => {
-      const opcao = perguntas[perguntaAtual].opcoes[opcaoIndex]
-      Object.entries(opcao.pontos).forEach(([categoria, pontos]) => {
-        novaPontuacao[categoria as Categoria] += pontos as number
-      })
+    notasPergunta.forEach((nota, index) => {
+      if (nota !== null && nota > 0) {
+        const categorias = perguntas[perguntaAtual].opcoes[index].categorias
+        categorias.forEach(categoria => {
+          novaPontuacao[categoria] += nota
+        })
+      }
     })
     setPontuacao(novaPontuacao)
 
-    // Limpa seleções e avança
+    // Limpa notas e avança
     setTimeout(() => {
-      setSelecoesPergunta([])
+      setNotasPergunta([null, null, null, null])
       if (perguntaAtual < perguntas.length - 1) {
         setPerguntaAtual(prev => prev + 1)
       } else {
@@ -326,7 +330,7 @@ export default function QuizPage() {
 
   const reiniciar = () => {
     setPerguntaAtual(0)
-    setSelecoesPergunta([])
+    setNotasPergunta([null, null, null, null])
     setPontuacao({
       'Saúde': 0,
       'Finanças': 0,
@@ -345,11 +349,16 @@ export default function QuizPage() {
   }
 
   const progresso = ((perguntaAtual) / perguntas.length) * 100
+  const notasPreenchidas = notasPergunta.filter(n => n !== null).length
 
   if (finalizado) {
     const top3 = getTop3()
     const principal = top3[0]
     const info = categoriasInfo[principal.categoria]
+
+    // Calcula porcentagem do principal
+    const totalPontos = Object.values(pontuacao).reduce((a, b) => a + b, 0)
+    const porcentagemPrincipal = totalPontos > 0 ? Math.round((principal.pontos / totalPontos) * 100) : 0
 
     return (
       <main className="min-h-screen">
@@ -366,7 +375,7 @@ export default function QuizPage() {
             </button>
             <div>
               <h1 className="font-display text-xl sm:text-2xl gold-text">Seu Resultado</h1>
-              <p className="text-[var(--gray)] text-sm">Descobrimos seu nicho ideal</p>
+              <p className="text-[var(--gray)] text-sm">Análise completa do seu perfil</p>
             </div>
           </header>
 
@@ -380,9 +389,14 @@ export default function QuizPage() {
               <h2 className="font-display text-4xl sm:text-5xl gold-text mb-4">
                 {principal.categoria}
               </h2>
-              <div className={`inline-flex items-center gap-2 ${info.cor} mb-6`}>
+              <div className={`inline-flex items-center gap-2 ${info.cor} mb-4`}>
                 {info.icone}
                 <span className="text-lg font-semibold">{principal.pontos} pontos</span>
+              </div>
+              <div className="mb-6">
+                <span className="bg-[var(--gold)]/20 text-[var(--gold)] px-4 py-2 rounded-full text-sm font-semibold">
+                  {porcentagemPrincipal}% de afinidade
+                </span>
               </div>
               <p className="text-[var(--gray)] text-lg max-w-xl mx-auto">
                 {info.descricao}
@@ -407,26 +421,39 @@ export default function QuizPage() {
             <div className="space-y-3">
               {top3.map((item, index) => {
                 const itemInfo = categoriasInfo[item.categoria]
+                const porcentagem = totalPontos > 0 ? Math.round((item.pontos / totalPontos) * 100) : 0
                 return (
                   <div
                     key={item.categoria}
-                    className={`glass p-4 flex items-center gap-4 ${index === 0 ? 'border-2 border-[var(--gold)]' : ''}`}
+                    className={`glass p-4 ${index === 0 ? 'border-2 border-[var(--gold)]' : ''}`}
                   >
-                    <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
-                      index === 0 ? 'bg-[var(--gold)] text-black' : 'bg-white/10'
-                    }`}>
-                      <span className="font-bold">{index + 1}º</span>
+                    <div className="flex items-center gap-4 mb-3">
+                      <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
+                        index === 0 ? 'bg-[var(--gold)] text-black' : 'bg-white/10'
+                      }`}>
+                        <span className="font-bold">{index + 1}º</span>
+                      </div>
+                      <div className={`${itemInfo.cor}`}>
+                        {itemInfo.icone}
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-semibold">{item.categoria}</h4>
+                        <p className="text-[var(--gray)] text-sm">{item.pontos} pontos</p>
+                      </div>
+                      <span className="text-[var(--gold)] font-semibold">{porcentagem}%</span>
+                      {index === 0 && (
+                        <CheckCircle className="w-6 h-6 text-[var(--gold)]" />
+                      )}
                     </div>
-                    <div className={`${itemInfo.cor}`}>
-                      {itemInfo.icone}
+                    {/* Barra de progresso */}
+                    <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                      <div
+                        className={`h-full rounded-full transition-all duration-1000 ${
+                          index === 0 ? 'bg-[var(--gold)]' : 'bg-white/30'
+                        }`}
+                        style={{ width: `${porcentagem}%` }}
+                      />
                     </div>
-                    <div className="flex-1">
-                      <h4 className="font-semibold">{item.categoria}</h4>
-                      <p className="text-[var(--gray)] text-sm">{item.pontos} pontos</p>
-                    </div>
-                    {index === 0 && (
-                      <CheckCircle className="w-6 h-6 text-[var(--gold)]" />
-                    )}
                   </div>
                 )
               })}
@@ -508,17 +535,16 @@ export default function QuizPage() {
 
         {/* Pergunta */}
         <section className={`${animating ? 'opacity-50' : ''}`}>
-          <div className="glass p-6 sm:p-10 mb-6 animate-fadeInUp">
-            <div className="flex items-center gap-3 mb-6">
+          <div className="glass p-6 sm:p-8 mb-6 animate-fadeInUp">
+            <div className="flex items-center gap-3 mb-4">
               <div className="w-12 h-12 border-2 border-[var(--gold)] rounded-full flex items-center justify-center">
                 <span className="font-display text-xl text-[var(--gold)]">{perguntaAtual + 1}</span>
               </div>
               <div className="flex-1">
-                <p className="text-xs text-[var(--gray)] uppercase tracking-wider mb-1">Escolha 1 ou 2 opções</p>
+                <p className="text-xs text-[var(--gray)] uppercase tracking-wider">Dê uma nota de 0 a 5 para cada opção</p>
               </div>
-              <div className="flex gap-1">
-                <div className={`w-3 h-3 rounded-full ${selecoesPergunta.length >= 1 ? 'bg-[var(--gold)]' : 'bg-white/20'} transition-colors`} />
-                <div className={`w-3 h-3 rounded-full ${selecoesPergunta.length >= 2 ? 'bg-[var(--gold)]' : 'bg-white/10'} transition-colors`} />
+              <div className="text-sm text-[var(--gold)]">
+                {notasPreenchidas}/4
               </div>
             </div>
             <h2 className="font-display text-xl sm:text-2xl leading-relaxed">
@@ -526,36 +552,48 @@ export default function QuizPage() {
             </h2>
           </div>
 
-          {/* Opções */}
-          <div className="space-y-3">
+          {/* Opções com notas */}
+          <div className="space-y-4">
             {pergunta.opcoes.map((opcao, index) => {
-              const selecionado = selecoesPergunta.includes(index)
+              const notaAtual = notasPergunta[index]
               return (
-                <button
+                <div
                   key={index}
-                  onClick={() => toggleSelecao(index)}
-                  disabled={animating}
-                  className={`w-full text-left p-5 rounded-xl transition-all group ${
-                    selecionado
-                      ? 'bg-[var(--gold)]/20 border-2 border-[var(--gold)]'
-                      : 'glass hover:border-[var(--gold)]/50 hover:bg-[var(--gold)]/5'
+                  className={`glass p-4 sm:p-5 rounded-xl transition-all ${
+                    notaAtual !== null ? 'border-[var(--gold)]/50' : ''
                   }`}
                 >
-                  <div className="flex items-center gap-4">
-                    <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-all ${
-                      selecionado
-                        ? 'bg-[var(--gold)] text-black'
-                        : 'border border-[var(--gold)]/30 group-hover:border-[var(--gold)]'
+                  <div className="flex items-start gap-3 mb-4">
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 text-sm font-semibold ${
+                      notaAtual !== null ? 'bg-[var(--gold)] text-black' : 'bg-white/10'
                     }`}>
-                      {selecionado ? (
-                        <Check className="w-5 h-5" />
-                      ) : (
-                        <span className="font-semibold">{String.fromCharCode(65 + index)}</span>
-                      )}
+                      {String.fromCharCode(65 + index)}
                     </div>
-                    <span className="text-sm sm:text-base">{opcao.texto}</span>
+                    <p className="text-sm sm:text-base flex-1">{opcao.texto}</p>
+                    {notaAtual !== null && (
+                      <span className="text-2xl">{notasLabels[notaAtual].emoji}</span>
+                    )}
                   </div>
-                </button>
+
+                  {/* Botões de nota */}
+                  <div className="flex gap-2 justify-center">
+                    {notasLabels.map(({ valor, label }) => (
+                      <button
+                        key={valor}
+                        onClick={() => setNota(index, valor)}
+                        disabled={animating}
+                        className={`flex-1 py-2 px-1 rounded-lg text-xs sm:text-sm font-medium transition-all ${
+                          notaAtual === valor
+                            ? 'bg-[var(--gold)] text-black'
+                            : 'bg-white/5 hover:bg-white/10 text-[var(--gray)] hover:text-white'
+                        }`}
+                      >
+                        <div className="font-bold">{valor}</div>
+                        <div className="hidden sm:block text-[10px] opacity-70">{label}</div>
+                      </button>
+                    ))}
+                  </div>
+                </div>
               )
             })}
           </div>
@@ -564,9 +602,9 @@ export default function QuizPage() {
           <div className="mt-8 flex justify-center">
             <button
               onClick={proximaPergunta}
-              disabled={selecoesPergunta.length < 1 || animating}
+              disabled={!todasNotasPreenchidas || animating}
               className={`btn-primary inline-flex items-center gap-2 ${
-                selecoesPergunta.length < 1 ? 'opacity-50 cursor-not-allowed' : ''
+                !todasNotasPreenchidas ? 'opacity-50 cursor-not-allowed' : ''
               }`}
             >
               {perguntaAtual < perguntas.length - 1 ? 'Próxima Pergunta' : 'Ver Resultado'}
@@ -577,12 +615,27 @@ export default function QuizPage() {
           {/* Dica */}
           <div className="mt-6 text-center">
             <p className="text-[var(--gray)] text-sm">
-              {selecoesPergunta.length === 0 && 'Selecione pelo menos 1 opção (máximo 2)'}
-              {selecoesPergunta.length === 1 && 'Você pode selecionar mais 1 opção ou avançar'}
-              {selecoesPergunta.length === 2 && 'Máximo atingido - clique para avançar'}
+              {!todasNotasPreenchidas
+                ? `Avalie todas as ${4 - notasPreenchidas} opções restantes`
+                : 'Todas avaliadas! Clique para continuar'
+              }
             </p>
           </div>
         </section>
+
+        {/* Legenda */}
+        <div className="mt-8 glass p-4 animate-fadeInUp">
+          <p className="text-xs text-[var(--gray)] text-center mb-3">Legenda das notas:</p>
+          <div className="flex flex-wrap justify-center gap-3 text-xs">
+            {notasLabels.map(({ valor, label, emoji }) => (
+              <div key={valor} className="flex items-center gap-1 text-[var(--gray)]">
+                <span>{emoji}</span>
+                <span className="font-semibold">{valor}</span>
+                <span>= {label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
 
         {/* Footer */}
         <footer className="text-center py-10 mt-8 border-t border-[var(--gold)]/20">
