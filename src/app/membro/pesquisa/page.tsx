@@ -142,8 +142,69 @@ export default function PesquisaPage() {
   // Estados para busca automática
   const [noticias, setNoticias] = useState<Noticia[]>([])
   const [buscandoNoticias, setBuscandoNoticias] = useState(false)
-  const [estadoAuto, setEstadoAuto] = useState('Nacional')
+  const [paisAuto, setPaisAuto] = useState<'BR' | 'US'>('BR')
+  const [estadoAuto, setEstadoAuto] = useState('BR')
   const [salvandoNoticia, setSalvandoNoticia] = useState<string | null>(null)
+
+  // Listas de estados
+  const estadosBR = [
+    { sigla: 'BR', nome: 'Brasil (Nacional)' },
+    { sigla: 'AC', nome: 'Acre' },
+    { sigla: 'AL', nome: 'Alagoas' },
+    { sigla: 'AP', nome: 'Amapá' },
+    { sigla: 'AM', nome: 'Amazonas' },
+    { sigla: 'BA', nome: 'Bahia' },
+    { sigla: 'CE', nome: 'Ceará' },
+    { sigla: 'DF', nome: 'Distrito Federal' },
+    { sigla: 'ES', nome: 'Espírito Santo' },
+    { sigla: 'GO', nome: 'Goiás' },
+    { sigla: 'MA', nome: 'Maranhão' },
+    { sigla: 'MT', nome: 'Mato Grosso' },
+    { sigla: 'MS', nome: 'Mato Grosso do Sul' },
+    { sigla: 'MG', nome: 'Minas Gerais' },
+    { sigla: 'PA', nome: 'Pará' },
+    { sigla: 'PB', nome: 'Paraíba' },
+    { sigla: 'PR', nome: 'Paraná' },
+    { sigla: 'PE', nome: 'Pernambuco' },
+    { sigla: 'PI', nome: 'Piauí' },
+    { sigla: 'RJ', nome: 'Rio de Janeiro' },
+    { sigla: 'RN', nome: 'Rio Grande do Norte' },
+    { sigla: 'RS', nome: 'Rio Grande do Sul' },
+    { sigla: 'RO', nome: 'Rondônia' },
+    { sigla: 'RR', nome: 'Roraima' },
+    { sigla: 'SC', nome: 'Santa Catarina' },
+    { sigla: 'SP', nome: 'São Paulo' },
+    { sigla: 'SE', nome: 'Sergipe' },
+    { sigla: 'TO', nome: 'Tocantins' }
+  ]
+
+  const estadosUS = [
+    { sigla: 'US', nome: 'USA (Nacional)' },
+    { sigla: 'CA', nome: 'California' },
+    { sigla: 'TX', nome: 'Texas' },
+    { sigla: 'FL', nome: 'Florida' },
+    { sigla: 'NY', nome: 'New York' },
+    { sigla: 'PA', nome: 'Pennsylvania' },
+    { sigla: 'IL', nome: 'Illinois' },
+    { sigla: 'OH', nome: 'Ohio' },
+    { sigla: 'GA', nome: 'Georgia' },
+    { sigla: 'NC', nome: 'North Carolina' },
+    { sigla: 'MI', nome: 'Michigan' },
+    { sigla: 'NJ', nome: 'New Jersey' },
+    { sigla: 'VA', nome: 'Virginia' },
+    { sigla: 'WA', nome: 'Washington' },
+    { sigla: 'AZ', nome: 'Arizona' },
+    { sigla: 'MA', nome: 'Massachusetts' },
+    { sigla: 'TN', nome: 'Tennessee' },
+    { sigla: 'IN', nome: 'Indiana' },
+    { sigla: 'MO', nome: 'Missouri' },
+    { sigla: 'MD', nome: 'Maryland' },
+    { sigla: 'WI', nome: 'Wisconsin' },
+    { sigla: 'CO', nome: 'Colorado' },
+    { sigla: 'MN', nome: 'Minnesota' },
+    { sigla: 'OR', nome: 'Oregon' },
+    { sigla: 'NV', nome: 'Nevada' }
+  ]
 
   const [formData, setFormData] = useState<Pesquisa>({
     problema: '',
@@ -231,7 +292,7 @@ export default function PesquisaPage() {
     setNoticias([])
 
     try {
-      const response = await fetch(`/api/noticias?estado=${estadoAuto}`)
+      const response = await fetch(`/api/noticias?pais=${paisAuto}&estado=${estadoAuto}`)
       const data = await response.json()
 
       if (data.success) {
@@ -247,6 +308,12 @@ export default function PesquisaPage() {
     setBuscandoNoticias(false)
   }
 
+  // Atualiza estado quando muda o país
+  const handlePaisAutoChange = (novoPais: 'BR' | 'US') => {
+    setPaisAuto(novoPais)
+    setEstadoAuto(novoPais === 'BR' ? 'BR' : 'US')
+  }
+
   // Salvar notícia selecionada como pesquisa
   const salvarNoticia = async (noticia: Noticia) => {
     setSalvandoNoticia(noticia.titulo)
@@ -254,8 +321,8 @@ export default function PesquisaPage() {
     const novaPesquisa: Pesquisa = {
       problema: noticia.titulo,
       categoria: noticia.categoria,
-      pais: 'Brasil',
-      estado: estadoAuto === 'Nacional' ? 'SP' : estadoAuto,
+      pais: paisAuto === 'BR' ? 'Brasil' : 'EUA',
+      estado: estadoAuto,
       fonte: noticia.fonte,
       link: noticia.link,
       frequencia: 3, // Valor médio inicial
@@ -491,31 +558,60 @@ export default function PesquisaPage() {
 
               <div className="bg-[var(--gold)]/10 border border-[var(--gold)]/30 rounded-xl p-4 mb-6">
                 <p className="text-sm text-[var(--gray)]">
-                  <strong className="text-[var(--gold)]">Como funciona:</strong> O sistema busca notícias de jornais brasileiros e filtra automaticamente por palavras como "reclamação", "fila", "demora", "problema", etc. Você valida cada notícia e salva as relevantes.
+                  <strong className="text-[var(--gold)]">Como funciona:</strong> O sistema busca notícias de jornais e filtra automaticamente por palavras-chave de problemas (reclamação, fila, demora, crise, etc). Você valida cada notícia e salva as relevantes.
                 </p>
               </div>
 
+              {/* Seleção de País */}
+              <div className="mb-4">
+                <label className="input-label">País</label>
+                <div className="grid grid-cols-2 gap-3">
+                  <button
+                    onClick={() => handlePaisAutoChange('BR')}
+                    className={`py-3 rounded-xl font-semibold transition-all flex items-center justify-center gap-2 ${
+                      paisAuto === 'BR'
+                        ? 'bg-[var(--gold)] text-black'
+                        : 'glass hover:border-[var(--gold)]/50'
+                    }`}
+                  >
+                    <span>🇧🇷</span> Brasil (27 UFs)
+                  </button>
+                  <button
+                    onClick={() => handlePaisAutoChange('US')}
+                    className={`py-3 rounded-xl font-semibold transition-all flex items-center justify-center gap-2 ${
+                      paisAuto === 'US'
+                        ? 'bg-[var(--gold)] text-black'
+                        : 'glass hover:border-[var(--gold)]/50'
+                    }`}
+                  >
+                    <span>🇺🇸</span> EUA (25 States)
+                  </button>
+                </div>
+              </div>
+
+              {/* Seleção de Estado */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <div className="flex-1">
-                  <label className="input-label">Região</label>
+                  <label className="input-label">
+                    {paisAuto === 'BR' ? 'Estado Brasileiro' : 'US State'}
+                  </label>
                   <select
                     value={estadoAuto}
                     onChange={(e) => setEstadoAuto(e.target.value)}
                     className="input-field"
                   >
-                    <option value="Nacional">Nacional (principais)</option>
-                    <option value="SP">São Paulo</option>
-                    <option value="RJ">Rio de Janeiro</option>
-                    <option value="MG">Minas Gerais</option>
-                    <option value="RS">Rio Grande do Sul</option>
-                    <option value="DF">Distrito Federal</option>
+                    {(paisAuto === 'BR' ? estadosBR : estadosUS).map(estado => (
+                      <option key={estado.sigla} value={estado.sigla}>
+                        {estado.sigla} - {estado.nome}
+                      </option>
+                    ))}
                   </select>
                 </div>
                 <div className="flex items-end">
                   <button
                     onClick={buscarNoticias}
                     disabled={buscandoNoticias}
-                    className="btn-primary flex items-center gap-2"
+                    className="btn-primary flex items-center gap-2 whitespace-nowrap"
                   >
                     {buscandoNoticias ? (
                       <>
@@ -529,6 +625,18 @@ export default function PesquisaPage() {
                       </>
                     )}
                   </button>
+                </div>
+              </div>
+
+              {/* Info sobre cobertura */}
+              <div className="mt-4 grid grid-cols-2 gap-3 text-center text-xs">
+                <div className="bg-white/5 rounded-lg p-3">
+                  <div className="text-[var(--gold)] font-semibold text-lg">27</div>
+                  <div className="text-[var(--gray)]">Estados BR</div>
+                </div>
+                <div className="bg-white/5 rounded-lg p-3">
+                  <div className="text-[var(--gold)] font-semibold text-lg">25</div>
+                  <div className="text-[var(--gray)]">States US</div>
                 </div>
               </div>
             </div>
