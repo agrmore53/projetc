@@ -17,7 +17,8 @@ import {
   CheckCircle,
   Clock,
   Lightbulb,
-  Target
+  Target,
+  Rocket
 } from 'lucide-react'
 
 export default function MembroPage() {
@@ -82,6 +83,7 @@ export default function MembroPage() {
   }
 
   const materiais = [
+    { icon: Rocket, title: 'Projeto Zion', desc: 'Treinamento de vendas + renda extra', status: 'available', link: '/membro/zion', highlight: true },
     { icon: Target, title: 'Quiz: Descubra Seu Nicho', desc: 'Qual área combina mais com você?', status: 'available', link: '/membro/quiz' },
     { icon: Lightbulb, title: 'A Importância da Pesquisa', desc: 'Por que isso define seu sucesso', status: 'available', link: '/membro/conteudo' },
     { icon: BarChart3, title: 'Pesquisa de Mercado', desc: 'Identificação de dores Brasil/EUA', status: 'available', link: '/membro/pesquisa' },
@@ -349,7 +351,11 @@ export default function MembroPage() {
                   </>
                 )
 
-                const className = "flex flex-col sm:flex-row items-start sm:items-center gap-4 p-4 sm:p-5 bg-white/5 rounded-2xl border border-[var(--gold)]/10 hover:border-[var(--gold)]/30 transition-all hover:translate-x-1"
+                const className = `flex flex-col sm:flex-row items-start sm:items-center gap-4 p-4 sm:p-5 rounded-2xl transition-all hover:translate-x-1 ${
+                  (item as typeof item & { highlight?: boolean }).highlight
+                    ? 'bg-[var(--gold)]/10 border-2 border-[var(--gold)] hover:bg-[var(--gold)]/20'
+                    : 'bg-white/5 border border-[var(--gold)]/10 hover:border-[var(--gold)]/30'
+                }`
 
                 return item.link ? (
                   <a key={index} href={item.link} className={className}>
