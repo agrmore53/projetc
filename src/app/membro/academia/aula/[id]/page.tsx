@@ -3278,74 +3278,231 @@ const conteudoAulas: Record<string, {
     conteudo: (
       <div className="space-y-6">
         <div className="glass p-6">
-          <h3 className="text-xl font-semibold gold-text mb-4">Estrutura de Campanha</h3>
-          <p className="text-[var(--gray)] leading-relaxed">
+          <h3 className="text-xl font-semibold gold-text mb-4">Dominando Campanhas no TikTok Ads</h3>
+          <p className="text-[var(--gray)] leading-relaxed mb-4">
             No TikTok Ads você tem 3 níveis: <strong className="text-white">Campanha → Grupo de Anúncios → Anúncios</strong>.
-            Entender isso é essencial para otimizar seus resultados!
+            Dominar essa estrutura é a diferença entre queimar dinheiro e gerar leads qualificados!
           </p>
-        </div>
-
-        <div className="glass p-6">
-          <h3 className="text-xl font-semibold text-blue-400 mb-4">📊 Os 3 Níveis</h3>
-          <div className="space-y-4">
-            {[
-              { nivel: 'Campanha', desc: 'Define o OBJETIVO (conversão, tráfego, visualização)', cor: 'blue' },
-              { nivel: 'Grupo de Anúncios', desc: 'Define o PÚBLICO (idade, local, interesses) e ORÇAMENTO', cor: 'green' },
-              { nivel: 'Anúncios', desc: 'O CRIATIVO em si (vídeo, texto, call-to-action)', cor: 'purple' },
-            ].map(item => (
-              <div key={item.nivel} className={`bg-${item.cor}-500/10 border border-${item.cor}-500/30 rounded-lg p-4`}>
-                <span className={`text-${item.cor}-400 font-bold`}>{item.nivel}</span>
-                <p className="text-[var(--gray)] mt-1">{item.desc}</p>
-              </div>
-            ))}
+          <div className="grid grid-cols-3 gap-3">
+            <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-3 text-center">
+              <p className="text-2xl font-bold text-blue-400">3</p>
+              <p className="text-[var(--gray)] text-xs">Níveis</p>
+            </div>
+            <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-3 text-center">
+              <p className="text-2xl font-bold text-green-400">7</p>
+              <p className="text-[var(--gray)] text-xs">Dias mínimos</p>
+            </div>
+            <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-3 text-center">
+              <p className="text-2xl font-bold text-purple-400">3-5</p>
+              <p className="text-[var(--gray)] text-xs">Criativos por grupo</p>
+            </div>
           </div>
         </div>
 
         <div className="glass p-6">
-          <h3 className="text-xl font-semibold text-green-400 mb-4">🎯 Objetivos Recomendados</h3>
+          <h3 className="text-xl font-semibold text-blue-400 mb-4">📋 Passo a Passo: Criando sua Campanha</h3>
           <div className="space-y-3">
             {[
-              { objetivo: 'Conversão', quando: 'Quando tem site com Pixel instalado', resultado: 'Leads ou vendas diretas' },
-              { objetivo: 'Tráfego', quando: 'Quando quer mandar para WhatsApp', resultado: 'Cliques no link' },
-              { objetivo: 'Visualização de Vídeo', quando: 'Quando quer reconhecimento', resultado: 'Mais pessoas assistindo' },
-            ].map(item => (
-              <div key={item.objetivo} className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
-                <span className="text-green-400 font-semibold">{item.objetivo}</span>
-                <p className="text-[var(--gray)] text-sm mt-1">📌 Quando usar: {item.quando}</p>
-                <p className="text-[var(--gray)] text-sm">🎯 Resultado: {item.resultado}</p>
+              { passo: 1, titulo: 'Escolha o Objetivo', desc: 'Para WhatsApp: "Tráfego" → Para site com Pixel: "Conversões"', dica: 'Tráfego é mais barato e funciona bem para início' },
+              { passo: 2, titulo: 'Nomeie a Campanha', desc: 'Use padrão: [Data]_[Objetivo]_[Público] Ex: Jan25_Trafego_Lojistas', dica: 'Facilita análise depois' },
+              { passo: 3, titulo: 'Defina o Orçamento', desc: 'Recomendado: R$50-100/dia por grupo de anúncios', dica: 'Menos que R$30/dia não gera dados suficientes' },
+              { passo: 4, titulo: 'Configure o Público', desc: 'Idade, localização, interesses (detalhado abaixo)', dica: 'Comece amplo, depois refine' },
+              { passo: 5, titulo: 'Suba os Criativos', desc: 'Mínimo 3 vídeos diferentes por grupo', dica: 'Teste hooks diferentes!' },
+              { passo: 6, titulo: 'Aguarde 7 dias', desc: 'Não mexa em NADA por 7 dias', dica: 'Paciência é a chave!' },
+            ].map((item) => (
+              <div key={item.passo} className="flex gap-4">
+                <div className="w-10 h-10 bg-blue-500/30 rounded-full flex items-center justify-center text-blue-400 font-bold flex-shrink-0">
+                  {item.passo}
+                </div>
+                <div className="flex-1">
+                  <p className="text-white font-semibold">{item.titulo}</p>
+                  <p className="text-[var(--gray)] text-sm">{item.desc}</p>
+                  <p className="text-blue-400 text-xs mt-1">💡 {item.dica}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
 
         <div className="glass p-6">
-          <h3 className="text-xl font-semibold text-purple-400 mb-4">👥 Segmentação de Público</h3>
+          <h3 className="text-xl font-semibold text-green-400 mb-4">🎯 Segmentação EXATA para Comerciantes</h3>
+          <div className="space-y-4">
+            <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
+              <p className="text-green-400 font-semibold mb-2">Localização:</p>
+              <ul className="text-[var(--gray)] text-sm space-y-1">
+                <li>• <strong className="text-white">Sua cidade + 30km de raio</strong> (para começar)</li>
+                <li>• Depois expanda para cidades vizinhas</li>
+                <li>• Evite "Brasil todo" no início</li>
+              </ul>
+            </div>
+            <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
+              <p className="text-purple-400 font-semibold mb-2">Idade e Gênero:</p>
+              <ul className="text-[var(--gray)] text-sm space-y-1">
+                <li>• Idade: <strong className="text-white">28-55 anos</strong></li>
+                <li>• Gênero: Todos (ou teste separado)</li>
+              </ul>
+            </div>
+            <div className="bg-orange-500/10 border border-orange-500/30 rounded-lg p-4">
+              <p className="text-orange-400 font-semibold mb-2">Interesses (selecione 5-8):</p>
+              <div className="flex flex-wrap gap-2 mt-2">
+                {[
+                  'Empreendedorismo', 'Pequenas empresas', 'Negócios e finanças',
+                  'Gestão empresarial', 'Comércio varejista', 'E-commerce',
+                  'Contabilidade', 'Marketing para negócios'
+                ].map(interesse => (
+                  <span key={interesse} className="bg-orange-500/20 text-orange-300 px-2 py-1 rounded text-sm">{interesse}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-purple-400 mb-4">📝 4 Scripts de Anúncios para TikTok Ads</h3>
+          <div className="space-y-3">
+            {[
+              {
+                tipo: 'Problema + Agitação',
+                hook: '"Você é dono de loja e ainda usa caderninho?"',
+                script: '[0-3s] "Você é dono de loja e ainda usa caderninho?"\n[3-8s] Mostra papel bagunçado, calculadora\n[8-12s] "Enquanto você perde tempo, seu concorrente..."\n[12-18s] Mostra sistema organizado funcionando\n[18-22s] "Controla tudo pelo celular, em tempo real"\n[22-25s] "Quer ver como? Clica no link!"',
+                cta: 'Clique no link'
+              },
+              {
+                tipo: 'Storytelling Rápido',
+                hook: '"Deixa eu te contar o que aconteceu com o João..."',
+                script: '[0-3s] "Deixa eu te contar o que aconteceu com o João..."\n[3-8s] "Ele tinha uma loja há 5 anos"\n[8-12s] "Mas descobriu que estava no PREJUÍZO"\n[12-18s] "Sabe o que mudou tudo? Um sistema"\n[18-22s] Mostra tela do sistema com lucro\n[22-25s] "Quer ser o próximo João? Link na bio!"',
+                cta: 'Link na bio'
+              },
+              {
+                tipo: 'Comparação Direta',
+                hook: '"Sua loja vs Loja do seu concorrente"',
+                script: '[0-3s] "Sua loja vs Loja do seu concorrente"\n[3-10s] VOCÊ: papéis, calculadora, estresse\n[10-17s] CONCORRENTE: sistema, tablet, controle\n[17-22s] "A diferença? Menos de R$10 por dia"\n[22-25s] "Clica no link e descobre como!"',
+                cta: 'Descubra como'
+              },
+              {
+                tipo: 'Tutorial Rápido',
+                hook: '"Como saber seu lucro em 10 segundos"',
+                script: '[0-3s] "Como saber seu lucro em 10 segundos"\n[3-8s] Abre o sistema no celular\n[8-12s] Clica em "Relatórios"\n[12-16s] "PRONTO! Lucro do mês: R$X.XXX"\n[16-20s] "Simples assim. Sem planilha, sem conta."\n[20-25s] "Quer ter isso? Link aqui embaixo!"',
+                cta: 'Saiba mais'
+              },
+            ].map((item, idx) => (
+              <div key={idx} className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-purple-400 font-semibold">#{idx + 1} {item.tipo}</span>
+                  <span className="text-xs bg-green-500/30 text-green-300 px-2 py-1 rounded">CTA: {item.cta}</span>
+                </div>
+                <p className="text-blue-400 text-sm mb-2">Hook: {item.hook}</p>
+                <p className="text-white text-xs whitespace-pre-line bg-black/20 p-3 rounded">{item.script}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-cyan-400 mb-4">📊 Tabela de Métricas - TikTok Ads</h3>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-white/10">
+                  <th className="text-left text-[var(--gray)] py-2">Métrica</th>
+                  <th className="text-center text-red-400 py-2">Ruim</th>
+                  <th className="text-center text-yellow-400 py-2">Ok</th>
+                  <th className="text-center text-green-400 py-2">Bom</th>
+                </tr>
+              </thead>
+              <tbody className="text-[var(--gray)]">
+                <tr className="border-b border-white/5">
+                  <td className="py-2"><strong className="text-white">CPM</strong></td>
+                  <td className="text-center">&gt;R$30</td>
+                  <td className="text-center">R$15-30</td>
+                  <td className="text-center">&lt;R$15</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2"><strong className="text-white">CTR</strong></td>
+                  <td className="text-center">&lt;0.5%</td>
+                  <td className="text-center">0.5-1.5%</td>
+                  <td className="text-center">&gt;1.5%</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2"><strong className="text-white">CPC</strong></td>
+                  <td className="text-center">&gt;R$3</td>
+                  <td className="text-center">R$1-3</td>
+                  <td className="text-center">&lt;R$1</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2"><strong className="text-white">CPL</strong></td>
+                  <td className="text-center">&gt;R$30</td>
+                  <td className="text-center">R$15-30</td>
+                  <td className="text-center">&lt;R$15</td>
+                </tr>
+                <tr>
+                  <td className="py-2"><strong className="text-white">Taxa conclusão vídeo</strong></td>
+                  <td className="text-center">&lt;10%</td>
+                  <td className="text-center">10-25%</td>
+                  <td className="text-center">&gt;25%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-orange-400 mb-4">💰 Estratégia de Orçamento</h3>
+          <div className="grid grid-cols-3 gap-3 mb-4">
+            <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4 text-center">
+              <p className="text-yellow-400 text-sm font-semibold">TESTE</p>
+              <p className="text-2xl font-bold text-white">R$50</p>
+              <p className="text-[var(--gray)] text-xs">por dia / 7 dias</p>
+              <p className="text-yellow-400 text-xs mt-2">Total: R$350</p>
+            </div>
+            <div className="bg-green-500/10 border-2 border-green-500/50 rounded-lg p-4 text-center">
+              <p className="text-green-400 text-sm font-semibold">ESCALA</p>
+              <p className="text-2xl font-bold text-white">R$100</p>
+              <p className="text-[var(--gray)] text-xs">por dia</p>
+              <p className="text-green-400 text-xs mt-2">Total: R$3.000/mês</p>
+            </div>
+            <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4 text-center">
+              <p className="text-purple-400 text-sm font-semibold">AGRESSIVO</p>
+              <p className="text-2xl font-bold text-white">R$200+</p>
+              <p className="text-[var(--gray)] text-xs">por dia</p>
+              <p className="text-purple-400 text-xs mt-2">Total: R$6.000+/mês</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-red-400 mb-4">⚠️ 6 Erros que Queimam Dinheiro</h3>
           <div className="space-y-2">
             {[
-              { tipo: 'Localização', config: 'Cidade ou raio de km ao redor' },
-              { tipo: 'Idade', config: '25-55 anos (donos de negócio)' },
-              { tipo: 'Interesses', config: 'Empreendedorismo, Negócios, Gestão' },
-              { tipo: 'Comportamento', config: 'Pessoas que interagem com conteúdo de negócios' },
-            ].map(item => (
-              <div key={item.tipo} className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-3">
-                <span className="text-purple-400 font-semibold">{item.tipo}:</span>
-                <span className="text-[var(--gray)] ml-2">{item.config}</span>
+              { erro: 'Mexer na campanha antes de 7 dias', fix: 'Aguarde 7 dias para o algoritmo aprender' },
+              { erro: 'Orçamento muito baixo (<R$30/dia)', fix: 'Mínimo R$50/dia por grupo de anúncios' },
+              { erro: 'Público muito nichado no início', fix: 'Comece amplo, deixe o TikTok encontrar o público' },
+              { erro: 'Apenas 1 criativo por grupo', fix: 'Sempre 3-5 criativos para teste A/B automático' },
+              { erro: 'Vídeo sem hook nos primeiros 2 segundos', fix: 'Primeiros 2s decidem se a pessoa assiste' },
+              { erro: 'Não instalar o Pixel antes de rodar', fix: 'Pixel é obrigatório para remarketing e otimização' },
+            ].map((item, idx) => (
+              <div key={idx} className="bg-red-500/10 border border-red-500/30 rounded-lg p-3">
+                <p className="text-red-400 text-sm">❌ {item.erro}</p>
+                <p className="text-green-400 text-xs mt-1">✅ {item.fix}</p>
               </div>
             ))}
           </div>
         </div>
 
         <div className="glass p-6">
-          <h3 className="text-xl font-semibold text-orange-400 mb-4">💡 Estrutura Recomendada</h3>
-          <div className="bg-orange-500/10 border border-orange-500/30 rounded-lg p-4">
-            <p className="text-white font-semibold mb-3">Para Começar:</p>
-            <ul className="space-y-2 text-[var(--gray)]">
-              <li>• 1 Campanha de Tráfego</li>
-              <li>• 2-3 Grupos de Anúncios (públicos diferentes)</li>
-              <li>• 3-5 Anúncios por grupo (criativos diferentes)</li>
-              <li>• R$50/dia por grupo de anúncios</li>
-              <li>• Rodar por 7 dias antes de otimizar</li>
-            </ul>
+          <h3 className="text-xl font-semibold text-green-400 mb-4">🔄 Otimização Após 7 Dias</h3>
+          <div className="space-y-3">
+            {[
+              { acao: 'CPL acima de R$30?', faca: 'Pause os piores criativos e teste novos hooks' },
+              { acao: 'CTR abaixo de 0.5%?', faca: 'O criativo não está prendendo atenção. Mude o hook!' },
+              { acao: 'CPL abaixo de R$15?', faca: 'ESCALA! Aumente orçamento em 20% a cada 3 dias' },
+              { acao: 'Custo subindo com o tempo?', faca: 'Fadiga de criativo. Renove os vídeos!' },
+            ].map((item, idx) => (
+              <div key={idx} className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
+                <p className="text-green-400 font-semibold text-sm">Se: {item.acao}</p>
+                <p className="text-white text-sm mt-1">→ {item.faca}</p>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -3353,11 +3510,16 @@ const conteudoAulas: Record<string, {
           <div className="flex gap-3">
             <Lightbulb className="w-6 h-6 text-yellow-500 flex-shrink-0" />
             <div>
-              <h4 className="text-yellow-500 font-semibold mb-2">REGRA DOS 7 DIAS</h4>
-              <p className="text-[var(--gray)]">
-                Não mexa na campanha nos primeiros 7 dias! O algoritmo precisa de tempo para
-                <strong className="text-white"> aprender e otimizar</strong>. Mudanças frequentes reiniciam o aprendizado.
+              <h4 className="text-yellow-500 font-semibold mb-2">REGRA DE OURO: TESTE CONTÍNUO</h4>
+              <p className="text-[var(--gray)] mb-3">
+                O TikTok Ads exige <strong className="text-white">renovação constante de criativos</strong>:
               </p>
+              <ul className="text-[var(--gray)] space-y-1 text-sm">
+                <li>• A cada 10-15 dias, grave novos vídeos</li>
+                <li>• Teste diferentes hooks nos primeiros 3 segundos</li>
+                <li>• Mantenha sempre 3-5 criativos ativos por grupo</li>
+                <li>• O que funcionou ontem pode não funcionar amanhã!</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -3370,80 +3532,252 @@ const conteudoAulas: Record<string, {
     conteudo: (
       <div className="space-y-6">
         <div className="glass p-6">
-          <h3 className="text-xl font-semibold gold-text mb-4">Por que Kwai?</h3>
-          <p className="text-[var(--gray)] leading-relaxed">
+          <h3 className="text-xl font-semibold gold-text mb-4">Kwai Ads: O Segredo para o Interior!</h3>
+          <p className="text-[var(--gray)] leading-relaxed mb-4">
             O Kwai tem um público mais <strong className="text-white">popular e regional</strong>.
-            CPM mais barato que TikTok e menos concorrência de anunciantes!
+            CPM até 50% mais barato que TikTok, menos concorrência, e público mais velho - perfeito para vender sistemas!
           </p>
-        </div>
-
-        <div className="glass p-6">
-          <h3 className="text-xl font-semibold text-green-400 mb-4">✅ Vantagens do Kwai</h3>
-          <div className="space-y-2">
-            {[
-              'CPM até 50% mais barato que TikTok',
-              'Público mais velho (30-50 anos)',
-              'Forte em cidades do interior',
-              'Menos saturado de anúncios',
-              'Público mais receptivo a ofertas',
-            ].map(item => (
-              <div key={item} className="bg-green-500/10 border border-green-500/30 rounded-lg p-3">
-                <span className="text-[var(--gray)]">✅ {item}</span>
-              </div>
-            ))}
+          <div className="grid grid-cols-3 gap-3">
+            <div className="bg-orange-500/10 border border-orange-500/30 rounded-lg p-3 text-center">
+              <p className="text-2xl font-bold text-orange-400">50M+</p>
+              <p className="text-[var(--gray)] text-xs">Usuários Brasil</p>
+            </div>
+            <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-3 text-center">
+              <p className="text-2xl font-bold text-green-400">30-55</p>
+              <p className="text-[var(--gray)] text-xs">Idade média</p>
+            </div>
+            <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-3 text-center">
+              <p className="text-2xl font-bold text-blue-400">-50%</p>
+              <p className="text-[var(--gray)] text-xs">CPM vs TikTok</p>
+            </div>
           </div>
         </div>
 
         <div className="glass p-6">
-          <h3 className="text-xl font-semibold text-blue-400 mb-4">🎯 Configuração Básica</h3>
-          <ol className="space-y-3 text-[var(--gray)]">
-            <li className="flex gap-3">
-              <span className="bg-blue-500/30 text-blue-400 w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold">1</span>
-              <span>Acesse <strong className="text-white">ads.kwai.com</strong></span>
-            </li>
-            <li className="flex gap-3">
-              <span className="bg-blue-500/30 text-blue-400 w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold">2</span>
-              <span>Crie uma conta Business</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="bg-blue-500/30 text-blue-400 w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold">3</span>
-              <span>Adicione método de pagamento</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="bg-blue-500/30 text-blue-400 w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold">4</span>
-              <span>Crie sua primeira campanha</span>
-            </li>
-          </ol>
+          <h3 className="text-xl font-semibold text-blue-400 mb-4">📊 Kwai vs TikTok - Comparação</h3>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-white/10">
+                  <th className="text-left text-[var(--gray)] py-2">Aspecto</th>
+                  <th className="text-center text-cyan-400 py-2">TikTok</th>
+                  <th className="text-center text-orange-400 py-2">Kwai</th>
+                </tr>
+              </thead>
+              <tbody className="text-[var(--gray)]">
+                <tr className="border-b border-white/5">
+                  <td className="py-2">CPM Médio</td>
+                  <td className="text-center">R$15-25</td>
+                  <td className="text-center text-green-400">R$8-15</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2">Público</td>
+                  <td className="text-center">18-35 anos</td>
+                  <td className="text-center text-green-400">30-55 anos</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2">Região forte</td>
+                  <td className="text-center">Capitais</td>
+                  <td className="text-center text-green-400">Interior</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2">Concorrência</td>
+                  <td className="text-center">Alta</td>
+                  <td className="text-center text-green-400">Baixa</td>
+                </tr>
+                <tr>
+                  <td className="py-2">Classe social</td>
+                  <td className="text-center">A/B/C</td>
+                  <td className="text-center">B/C/D</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-green-400 text-sm mt-3">💡 Para comerciantes de interior, Kwai costuma performar MELHOR!</p>
         </div>
 
         <div className="glass p-6">
-          <h3 className="text-xl font-semibold text-purple-400 mb-4">📱 Melhores Práticas</h3>
+          <h3 className="text-xl font-semibold text-green-400 mb-4">📋 Passo a Passo: Criando Conta e Campanha</h3>
           <div className="space-y-3">
             {[
-              { pratica: 'Vídeos verticais 9:16', desc: 'Formato nativo da plataforma' },
-              { pratica: 'Linguagem simples', desc: 'O público é mais popular, evite termos técnicos' },
-              { pratica: 'Músicas populares', desc: 'Use hits do momento para aumentar engajamento' },
-              { pratica: 'CTA claro', desc: '"Clique no link e fale comigo no WhatsApp"' },
-            ].map(item => (
-              <div key={item.pratica} className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
-                <span className="text-purple-400 font-semibold">{item.pratica}</span>
-                <p className="text-[var(--gray)] text-sm mt-1">{item.desc}</p>
+              { passo: 1, titulo: 'Acesse ads.kwai.com', desc: 'Crie conta com e-mail comercial', dica: 'Use e-mail diferente do pessoal' },
+              { passo: 2, titulo: 'Complete o cadastro Business', desc: 'Preencha CNPJ (ou CPF), nome e telefone', dica: 'CNPJ libera mais recursos' },
+              { passo: 3, titulo: 'Adicione forma de pagamento', desc: 'Cartão de crédito ou boleto', dica: 'Cartão libera anúncios mais rápido' },
+              { passo: 4, titulo: 'Crie campanha de Tráfego', desc: 'Objetivo: Cliques para WhatsApp', dica: 'Melhor objetivo para gerar leads' },
+              { passo: 5, titulo: 'Configure público', desc: 'Idade 30-55, sua região, interesses de negócio', dica: 'Comece com raio de 50km' },
+              { passo: 6, titulo: 'Suba 3-5 vídeos', desc: 'Linguagem simples e direta', dica: 'Kwai gosta de vídeos mais "caseiros"' },
+            ].map((item) => (
+              <div key={item.passo} className="flex gap-4">
+                <div className="w-10 h-10 bg-green-500/30 rounded-full flex items-center justify-center text-green-400 font-bold flex-shrink-0">
+                  {item.passo}
+                </div>
+                <div className="flex-1">
+                  <p className="text-white font-semibold">{item.titulo}</p>
+                  <p className="text-[var(--gray)] text-sm">{item.desc}</p>
+                  <p className="text-green-400 text-xs mt-1">💡 {item.dica}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
 
         <div className="glass p-6">
-          <h3 className="text-xl font-semibold text-orange-400 mb-4">💰 Orçamento Sugerido</h3>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="bg-orange-500/10 border border-orange-500/30 rounded-lg p-4 text-center">
-              <p className="text-3xl font-bold text-orange-400">R$30</p>
-              <p className="text-[var(--gray)] text-sm">por dia (mínimo)</p>
+          <h3 className="text-xl font-semibold text-purple-400 mb-4">📝 4 Scripts de Anúncios para Kwai</h3>
+          <p className="text-[var(--gray)] text-sm mb-4">Linguagem mais simples e direta - o público do Kwai prefere assim!</p>
+          <div className="space-y-3">
+            {[
+              {
+                tipo: 'Dor Direta',
+                hook: '"Ei, dono de loja! Cansou de perder dinheiro?"',
+                script: '[0-3s] "Ei, dono de loja! Cansou de perder dinheiro?"\n[3-8s] "Estoque errado, caixa não fecha, não sabe o lucro..."\n[8-12s] "Tenho a solução pra você!"\n[12-18s] Mostra o sistema funcionando no celular\n[18-22s] "Controla TUDO numa tela só!"\n[22-25s] "Clica ali embaixo e fala comigo!"',
+                linguagem: 'Popular/Direta'
+              },
+              {
+                tipo: 'Resultado Rápido',
+                hook: '"Olha o que meu cliente conseguiu em 30 dias!"',
+                script: '[0-3s] "Olha o que meu cliente conseguiu em 30 dias!"\n[3-8s] "O João tinha uma lojinha de roupa..."\n[8-12s] "Vivia perdendo dinheiro sem saber"\n[12-18s] "Depois do sistema: descobriu que tinha R$3.000 de lucro!"\n[18-22s] "Quer saber como? É simples!"\n[22-25s] "Clica no link e me chama!"',
+                linguagem: 'Storytelling simples'
+              },
+              {
+                tipo: 'Pergunta Engajadora',
+                hook: '"Você controla sua loja ou ela controla você?"',
+                script: '[0-3s] "Você controla sua loja ou ela controla você?"\n[3-8s] "Se você vive apagando incêndio..."\n[8-12s] "Se não sabe quanto vendeu ontem..."\n[12-16s] "Tá na hora de mudar isso!"\n[16-22s] Mostra sistema no tablet\n[22-25s] "Vem comigo que eu te mostro!"',
+                linguagem: 'Questionadora'
+              },
+              {
+                tipo: 'Oferta Irresistível',
+                hook: '"PROMOÇÃO: Sistema completo por menos de R$10 por dia!"',
+                script: '[0-3s] "PROMOÇÃO: Sistema completo por menos de R$10 por dia!"\n[3-8s] "Controle de estoque"\n[8-10s] "Nota fiscal automática"\n[10-12s] "Relatório de lucro"\n[12-16s] "TUDO isso por menos que um lanche!"\n[16-22s] "E ainda tem teste GRÁTIS!"\n[22-25s] "Corre! Link aqui embaixo!"',
+                linguagem: 'Promocional'
+              },
+            ].map((item, idx) => (
+              <div key={idx} className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-purple-400 font-semibold">#{idx + 1} {item.tipo}</span>
+                  <span className="text-xs bg-orange-500/30 text-orange-300 px-2 py-1 rounded">{item.linguagem}</span>
+                </div>
+                <p className="text-blue-400 text-sm mb-2">Hook: {item.hook}</p>
+                <p className="text-white text-xs whitespace-pre-line bg-black/20 p-3 rounded">{item.script}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-orange-400 mb-4">🎯 Segmentação Ideal para Kwai</h3>
+          <div className="space-y-4">
+            <div className="bg-orange-500/10 border border-orange-500/30 rounded-lg p-4">
+              <p className="text-orange-400 font-semibold mb-2">Localização:</p>
+              <ul className="text-[var(--gray)] text-sm space-y-1">
+                <li>• <strong className="text-white">Cidades do interior (população 50k-300k)</strong></li>
+                <li>• Raio de 50-80km da sua base</li>
+                <li>• Evite capitais (muita concorrência)</li>
+              </ul>
             </div>
-            <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4 text-center">
-              <p className="text-3xl font-bold text-green-400">R$900</p>
-              <p className="text-[var(--gray)] text-sm">por mês</p>
+            <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
+              <p className="text-green-400 font-semibold mb-2">Idade e Perfil:</p>
+              <ul className="text-[var(--gray)] text-sm space-y-1">
+                <li>• Idade: <strong className="text-white">30-55 anos</strong></li>
+                <li>• Ambos os gêneros</li>
+                <li>• Público mais classe B/C/D</li>
+              </ul>
             </div>
+            <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
+              <p className="text-purple-400 font-semibold mb-2">Interesses:</p>
+              <div className="flex flex-wrap gap-2 mt-2">
+                {[
+                  'Negócios', 'Empreendedorismo', 'Vendas', 'Finanças',
+                  'Trabalhar em casa', 'Ganhar dinheiro', 'Comerciantes'
+                ].map(interesse => (
+                  <span key={interesse} className="bg-purple-500/20 text-purple-300 px-2 py-1 rounded text-sm">{interesse}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-cyan-400 mb-4">📊 Tabela de Métricas - Kwai Ads</h3>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-white/10">
+                  <th className="text-left text-[var(--gray)] py-2">Métrica</th>
+                  <th className="text-center text-red-400 py-2">Ruim</th>
+                  <th className="text-center text-yellow-400 py-2">Ok</th>
+                  <th className="text-center text-green-400 py-2">Bom</th>
+                </tr>
+              </thead>
+              <tbody className="text-[var(--gray)]">
+                <tr className="border-b border-white/5">
+                  <td className="py-2"><strong className="text-white">CPM</strong></td>
+                  <td className="text-center">&gt;R$20</td>
+                  <td className="text-center">R$10-20</td>
+                  <td className="text-center">&lt;R$10</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2"><strong className="text-white">CTR</strong></td>
+                  <td className="text-center">&lt;0.8%</td>
+                  <td className="text-center">0.8-2%</td>
+                  <td className="text-center">&gt;2%</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2"><strong className="text-white">CPC</strong></td>
+                  <td className="text-center">&gt;R$2</td>
+                  <td className="text-center">R$0.80-2</td>
+                  <td className="text-center">&lt;R$0.80</td>
+                </tr>
+                <tr>
+                  <td className="py-2"><strong className="text-white">CPL</strong></td>
+                  <td className="text-center">&gt;R$20</td>
+                  <td className="text-center">R$8-20</td>
+                  <td className="text-center">&lt;R$8</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-green-400 text-sm mt-3">💰 No Kwai é comum conseguir CPL abaixo de R$10!</p>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-green-400 mb-4">💰 Estratégia de Orçamento</h3>
+          <div className="grid grid-cols-3 gap-3 mb-4">
+            <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4 text-center">
+              <p className="text-yellow-400 text-sm font-semibold">TESTE</p>
+              <p className="text-2xl font-bold text-white">R$30</p>
+              <p className="text-[var(--gray)] text-xs">por dia / 7 dias</p>
+              <p className="text-yellow-400 text-xs mt-2">Total: R$210</p>
+            </div>
+            <div className="bg-green-500/10 border-2 border-green-500/50 rounded-lg p-4 text-center">
+              <p className="text-green-400 text-sm font-semibold">ESCALA</p>
+              <p className="text-2xl font-bold text-white">R$50</p>
+              <p className="text-[var(--gray)] text-xs">por dia</p>
+              <p className="text-green-400 text-xs mt-2">Total: R$1.500/mês</p>
+            </div>
+            <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4 text-center">
+              <p className="text-purple-400 text-sm font-semibold">AGRESSIVO</p>
+              <p className="text-2xl font-bold text-white">R$100+</p>
+              <p className="text-[var(--gray)] text-xs">por dia</p>
+              <p className="text-purple-400 text-xs mt-2">Total: R$3.000+/mês</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-red-400 mb-4">⚠️ Erros Comuns no Kwai</h3>
+          <div className="space-y-2">
+            {[
+              { erro: 'Usar vídeo muito "profissional"', fix: 'Kwai prefere conteúdo mais caseiro e autêntico' },
+              { erro: 'Linguagem muito técnica', fix: 'Use palavras simples: "sistema pra loja", não "ERP"' },
+              { erro: 'Anunciar em capitais', fix: 'Foque no interior onde o Kwai é mais forte' },
+              { erro: 'Copiar exatamente o que funciona no TikTok', fix: 'Adapte para linguagem mais popular' },
+              { erro: 'Não testar cidades diferentes', fix: 'Cada cidade tem custo diferente - teste várias!' },
+            ].map((item, idx) => (
+              <div key={idx} className="bg-red-500/10 border border-red-500/30 rounded-lg p-3">
+                <p className="text-red-400 text-sm">❌ {item.erro}</p>
+                <p className="text-green-400 text-xs mt-1">✅ {item.fix}</p>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -3451,11 +3785,17 @@ const conteudoAulas: Record<string, {
           <div className="flex gap-3">
             <Lightbulb className="w-6 h-6 text-yellow-500 flex-shrink-0" />
             <div>
-              <h4 className="text-yellow-500 font-semibold mb-2">DICA ESTRATÉGICA</h4>
-              <p className="text-[var(--gray)]">
-                Use Kwai para <strong className="text-white">cidades menores e interior</strong>.
-                O público é mais receptivo e o custo por lead pode ser até 3x menor que outras plataformas!
+              <h4 className="text-yellow-500 font-semibold mb-2">ESTRATÉGIA MATADORA: COMBO TikTok + Kwai</h4>
+              <p className="text-[var(--gray)] mb-3">
+                Use as duas plataformas de forma complementar:
               </p>
+              <ul className="text-[var(--gray)] space-y-1 text-sm">
+                <li>• <strong className="text-white">TikTok:</strong> Capitais e cidades grandes (+ de 300k habitantes)</li>
+                <li>• <strong className="text-white">Kwai:</strong> Interior e cidades menores (50k-300k habitantes)</li>
+                <li>• Mesmo criativo com pequenos ajustes de linguagem</li>
+                <li>• Compare CPL das duas e escale a mais barata!</li>
+              </ul>
+              <p className="text-green-400 text-sm mt-2">💰 Muitos conseguem CPL 3x menor no Kwai para público do interior!</p>
             </div>
           </div>
         </div>
@@ -3468,29 +3808,63 @@ const conteudoAulas: Record<string, {
     conteudo: (
       <div className="space-y-6">
         <div className="glass p-6">
-          <h3 className="text-xl font-semibold gold-text mb-4">O Poder da Intenção</h3>
-          <p className="text-[var(--gray)] leading-relaxed">
+          <h3 className="text-xl font-semibold gold-text mb-4">Google Ads: O Rei da Intenção de Compra!</h3>
+          <p className="text-[var(--gray)] leading-relaxed mb-4">
             No Google, as pessoas <strong className="text-white">já estão buscando</strong> uma solução!
-            Diferente das redes sociais, aqui você aparece para quem já quer comprar.
+            Diferente das redes sociais, aqui você aparece para quem já decidiu comprar - só falta escolher de quem.
           </p>
+          <div className="grid grid-cols-3 gap-3">
+            <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-3 text-center">
+              <p className="text-2xl font-bold text-blue-400">8.5B</p>
+              <p className="text-[var(--gray)] text-xs">Buscas/dia</p>
+            </div>
+            <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-3 text-center">
+              <p className="text-2xl font-bold text-green-400">65%</p>
+              <p className="text-[var(--gray)] text-xs">Clicam em ads</p>
+            </div>
+            <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-3 text-center">
+              <p className="text-2xl font-bold text-purple-400">4x</p>
+              <p className="text-[var(--gray)] text-xs">Mais intenção</p>
+            </div>
+          </div>
         </div>
 
         <div className="glass p-6">
-          <h3 className="text-xl font-semibold text-blue-400 mb-4">🔍 Palavras-chave Recomendadas</h3>
-          <div className="space-y-3">
-            <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
-              <span className="text-blue-400 font-semibold">Alta Intenção (Fundo de Funil)</span>
-              <div className="flex flex-wrap gap-2 mt-2">
-                {['sistema para loja', 'programa para comércio', 'software pdv', 'sistema de gestão comercial', 'controle de estoque para loja'].map(kw => (
-                  <span key={kw} className="bg-blue-500/20 text-[var(--gray)] px-2 py-1 rounded text-sm">{kw}</span>
+          <h3 className="text-xl font-semibold text-blue-400 mb-4">🔍 Palavras-chave Organizadas por Intenção</h3>
+          <div className="space-y-4">
+            <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-4">
+              <div className="flex justify-between items-center mb-2">
+                <span className="text-red-400 font-semibold">🔥 Alta Intenção (Fundo de Funil)</span>
+                <span className="text-xs bg-red-500/30 text-red-300 px-2 py-1 rounded">Prioridade 1</span>
+              </div>
+              <p className="text-[var(--gray)] text-xs mb-2">Pessoa pronta para comprar. CPC mais alto, mas converte mais!</p>
+              <div className="flex flex-wrap gap-2">
+                {['sistema para loja', 'software pdv preço', 'programa gestão comercial', 'sistema nota fiscal nfc-e', 'controle estoque para loja', 'sistema para mercadinho', 'pdv para varejo', 'sistema erp pequena empresa'].map(kw => (
+                  <span key={kw} className="bg-red-500/20 text-red-300 px-2 py-1 rounded text-xs">{kw}</span>
+                ))}
+              </div>
+            </div>
+            <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4">
+              <div className="flex justify-between items-center mb-2">
+                <span className="text-yellow-400 font-semibold">⚡ Média Intenção (Meio de Funil)</span>
+                <span className="text-xs bg-yellow-500/30 text-yellow-300 px-2 py-1 rounded">Prioridade 2</span>
+              </div>
+              <p className="text-[var(--gray)] text-xs mb-2">Pesquisando soluções. CPC médio.</p>
+              <div className="flex flex-wrap gap-2">
+                {['como controlar estoque loja', 'como emitir nota fiscal', 'organizar finanças comércio', 'melhor sistema para loja', 'sistema gestão qual escolher'].map(kw => (
+                  <span key={kw} className="bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded text-xs">{kw}</span>
                 ))}
               </div>
             </div>
             <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
-              <span className="text-green-400 font-semibold">Média Intenção (Meio de Funil)</span>
-              <div className="flex flex-wrap gap-2 mt-2">
-                {['como controlar estoque', 'emitir nota fiscal', 'organizar finanças da loja', 'sistema para mercadinho'].map(kw => (
-                  <span key={kw} className="bg-green-500/20 text-[var(--gray)] px-2 py-1 rounded text-sm">{kw}</span>
+              <div className="flex justify-between items-center mb-2">
+                <span className="text-green-400 font-semibold">📍 Por Nicho (Super Específicas)</span>
+                <span className="text-xs bg-green-500/30 text-green-300 px-2 py-1 rounded">Menos concorrência</span>
+              </div>
+              <p className="text-[var(--gray)] text-xs mb-2">Público muito qualificado. CPC baixo!</p>
+              <div className="flex flex-wrap gap-2">
+                {['sistema para pet shop', 'programa para loja de roupas', 'sistema mercadinho', 'pdv para açougue', 'controle estoque farmácia', 'sistema para papelaria', 'programa para material construção'].map(kw => (
+                  <span key={kw} className="bg-green-500/20 text-green-300 px-2 py-1 rounded text-xs">{kw}</span>
                 ))}
               </div>
             </div>
@@ -3498,56 +3872,164 @@ const conteudoAulas: Record<string, {
         </div>
 
         <div className="glass p-6">
-          <h3 className="text-xl font-semibold text-green-400 mb-4">📝 Estrutura do Anúncio</h3>
-          <div className="bg-white/5 rounded-lg p-4 space-y-3">
-            <div>
-              <span className="text-blue-400 text-sm">Título 1 (30 caracteres)</span>
-              <p className="text-white font-semibold">Sistema para Loja Completo</p>
-            </div>
-            <div>
-              <span className="text-blue-400 text-sm">Título 2 (30 caracteres)</span>
-              <p className="text-white font-semibold">PDV + Estoque + Nota Fiscal</p>
-            </div>
-            <div>
-              <span className="text-blue-400 text-sm">Título 3 (30 caracteres)</span>
-              <p className="text-white font-semibold">Teste Grátis - Sem Contrato</p>
-            </div>
-            <div>
-              <span className="text-green-400 text-sm">Descrição (90 caracteres)</span>
-              <p className="text-[var(--gray)]">Sistema completo para seu comércio. Controle estoque, emita notas e aumente seu lucro. Demonstração grátis!</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="glass p-6">
-          <h3 className="text-xl font-semibold text-purple-400 mb-4">⚙️ Configurações Importantes</h3>
-          <div className="space-y-2">
+          <h3 className="text-xl font-semibold text-purple-400 mb-4">📝 3 Modelos de Anúncios Prontos</h3>
+          <div className="space-y-4">
             {[
-              { config: 'Localização', valor: 'Cidades onde você atende' },
-              { config: 'Idioma', valor: 'Português' },
-              { config: 'Dispositivos', valor: 'Todos (mobile converte bem!)' },
-              { config: 'Programação', valor: 'Horário comercial (8h-20h)' },
-              { config: 'Correspondência', valor: 'Frase ou Exata (evite Ampla no início)' },
-            ].map(item => (
-              <div key={item.config} className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-3">
-                <span className="text-purple-400 font-semibold">{item.config}:</span>
-                <span className="text-[var(--gray)] ml-2">{item.valor}</span>
+              {
+                nome: 'Anúncio Direto',
+                titulos: ['Sistema para Loja Completo', 'PDV + Estoque + Nota Fiscal', 'Teste Grátis 7 Dias'],
+                descricao: 'Sistema completo para seu comércio. Controle estoque, emita NFC-e e saiba seu lucro real. Demonstração grátis!'
+              },
+              {
+                nome: 'Anúncio com Benefício',
+                titulos: ['Sua Loja Organizada em 1 Dia', 'Sistema Fácil de Usar', 'Suporte 24h + Treinamento'],
+                descricao: 'Pare de perder dinheiro com estoque errado. Sistema completo que você aprende em 30 minutos. Teste grátis!'
+              },
+              {
+                nome: 'Anúncio com Prova Social',
+                titulos: ['+500 Lojistas Usam', 'Sistema Nota 4.9 no Google', 'Desde 2015 no Mercado'],
+                descricao: 'Junte-se a centenas de comerciantes que já organizaram seus negócios. Sistema completo com suporte brasileiro.'
+              },
+            ].map((anuncio, idx) => (
+              <div key={idx} className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
+                <p className="text-purple-400 font-semibold mb-3">#{idx + 1} {anuncio.nome}</p>
+                <div className="bg-white rounded-lg p-4 text-black">
+                  <p className="text-blue-600 text-sm font-semibold">Ad • seusite.com.br</p>
+                  <p className="text-blue-800 text-lg font-semibold">{anuncio.titulos[0]} | {anuncio.titulos[1]}</p>
+                  <p className="text-blue-800">{anuncio.titulos[2]}</p>
+                  <p className="text-gray-700 text-sm mt-1">{anuncio.descricao}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
 
         <div className="glass p-6">
-          <h3 className="text-xl font-semibold text-orange-400 mb-4">💰 Orçamento e CPC</h3>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="bg-orange-500/10 border border-orange-500/30 rounded-lg p-4 text-center">
-              <p className="text-2xl font-bold text-orange-400">R$50-100</p>
-              <p className="text-[var(--gray)] text-sm">por dia</p>
+          <h3 className="text-xl font-semibold text-cyan-400 mb-4">🚫 Lista de Palavras Negativas (COPIE!)</h3>
+          <p className="text-[var(--gray)] text-sm mb-3">Adicione TODAS essas palavras negativas para não desperdiçar dinheiro:</p>
+          <div className="bg-black/30 rounded-lg p-4">
+            <div className="flex flex-wrap gap-2">
+              {[
+                'grátis', 'gratuito', 'free', 'download', 'baixar', 'pirata', 'crackeado',
+                'curso', 'aula', 'tutorial', 'como fazer', 'vagas', 'emprego', 'trabalhar',
+                'salário', 'excel', 'planilha', 'word', 'PDF', 'modelo', 'template',
+                'o que é', 'significado', 'conceito', 'TCC', 'monografia'
+              ].map(neg => (
+                <span key={neg} className="bg-red-500/30 text-red-300 px-2 py-1 rounded text-xs">{neg}</span>
+              ))}
             </div>
-            <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4 text-center">
-              <p className="text-2xl font-bold text-blue-400">R$2-5</p>
-              <p className="text-[var(--gray)] text-sm">CPC médio</p>
+          </div>
+          <p className="text-yellow-400 text-xs mt-3">⚠️ Revise semanalmente o relatório de termos de pesquisa e adicione novas negativas!</p>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-green-400 mb-4">📊 Tabela de Métricas - Google Ads Pesquisa</h3>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-white/10">
+                  <th className="text-left text-[var(--gray)] py-2">Métrica</th>
+                  <th className="text-center text-red-400 py-2">Ruim</th>
+                  <th className="text-center text-yellow-400 py-2">Ok</th>
+                  <th className="text-center text-green-400 py-2">Bom</th>
+                </tr>
+              </thead>
+              <tbody className="text-[var(--gray)]">
+                <tr className="border-b border-white/5">
+                  <td className="py-2"><strong className="text-white">CTR</strong></td>
+                  <td className="text-center">&lt;2%</td>
+                  <td className="text-center">2-5%</td>
+                  <td className="text-center">&gt;5%</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2"><strong className="text-white">CPC</strong></td>
+                  <td className="text-center">&gt;R$8</td>
+                  <td className="text-center">R$3-8</td>
+                  <td className="text-center">&lt;R$3</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2"><strong className="text-white">CPL</strong></td>
+                  <td className="text-center">&gt;R$80</td>
+                  <td className="text-center">R$30-80</td>
+                  <td className="text-center">&lt;R$30</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2"><strong className="text-white">Quality Score</strong></td>
+                  <td className="text-center">&lt;5</td>
+                  <td className="text-center">5-7</td>
+                  <td className="text-center">&gt;7</td>
+                </tr>
+                <tr>
+                  <td className="py-2"><strong className="text-white">Taxa de Conversão</strong></td>
+                  <td className="text-center">&lt;3%</td>
+                  <td className="text-center">3-8%</td>
+                  <td className="text-center">&gt;8%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-orange-400 mb-4">💰 Estratégia de Orçamento</h3>
+          <div className="grid grid-cols-3 gap-3 mb-4">
+            <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4 text-center">
+              <p className="text-yellow-400 text-sm font-semibold">TESTE</p>
+              <p className="text-2xl font-bold text-white">R$50</p>
+              <p className="text-[var(--gray)] text-xs">por dia / 14 dias</p>
+              <p className="text-yellow-400 text-xs mt-2">Total: R$700</p>
             </div>
+            <div className="bg-green-500/10 border-2 border-green-500/50 rounded-lg p-4 text-center">
+              <p className="text-green-400 text-sm font-semibold">ESCALA</p>
+              <p className="text-2xl font-bold text-white">R$100</p>
+              <p className="text-[var(--gray)] text-xs">por dia</p>
+              <p className="text-green-400 text-xs mt-2">Total: R$3.000/mês</p>
+            </div>
+            <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4 text-center">
+              <p className="text-purple-400 text-sm font-semibold">AGRESSIVO</p>
+              <p className="text-2xl font-bold text-white">R$200+</p>
+              <p className="text-[var(--gray)] text-xs">por dia</p>
+              <p className="text-purple-400 text-xs mt-2">Total: R$6.000+/mês</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-red-400 mb-4">⚠️ Erros que Queimam Dinheiro no Google</h3>
+          <div className="space-y-2">
+            {[
+              { erro: 'Usar correspondência ampla sem negativas', fix: 'Comece com "Frase" ou [Exata] + muitas negativas' },
+              { erro: 'Não configurar conversões', fix: 'Instale tag de conversão para rastrear leads' },
+              { erro: 'Anunciar 24h por dia', fix: 'Foque no horário comercial (8h-20h)' },
+              { erro: 'Landing page genérica', fix: 'Crie página específica para cada grupo de palavras' },
+              { erro: 'Ignorar Quality Score', fix: 'QS baixo = CPC alto. Melhore relevância!' },
+              { erro: 'Não usar extensões', fix: 'Extensões aumentam CTR em até 15%!' },
+            ].map((item, idx) => (
+              <div key={idx} className="bg-red-500/10 border border-red-500/30 rounded-lg p-3">
+                <p className="text-red-400 text-sm">❌ {item.erro}</p>
+                <p className="text-green-400 text-xs mt-1">✅ {item.fix}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-blue-400 mb-4">🔧 Extensões Obrigatórias</h3>
+          <div className="space-y-3">
+            {[
+              { extensao: 'Extensão de Chamada', desc: 'Número de telefone clicável', impacto: '+10% CTR' },
+              { extensao: 'Extensão de Sitelinks', desc: '4-6 links extras (Preços, Funcionalidades, Contato...)', impacto: '+15% CTR' },
+              { extensao: 'Extensão de Frase de Destaque', desc: '"Suporte 24h" "Teste Grátis" "Sem Contrato"', impacto: '+8% CTR' },
+              { extensao: 'Extensão de Local', desc: 'Mostra seu endereço (se tiver escritório)', impacto: '+12% CTR' },
+            ].map((item, idx) => (
+              <div key={idx} className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4 flex justify-between items-center">
+                <div>
+                  <span className="text-blue-400 font-semibold">{item.extensao}</span>
+                  <p className="text-[var(--gray)] text-sm">{item.desc}</p>
+                </div>
+                <span className="text-green-400 text-sm font-semibold">{item.impacto}</span>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -3555,12 +4037,17 @@ const conteudoAulas: Record<string, {
           <div className="flex gap-3">
             <Lightbulb className="w-6 h-6 text-yellow-500 flex-shrink-0" />
             <div>
-              <h4 className="text-yellow-500 font-semibold mb-2">PALAVRAS NEGATIVAS</h4>
-              <p className="text-[var(--gray)]">
-                Adicione palavras negativas para não desperdiçar dinheiro:
-                <strong className="text-white"> grátis, gratuito, download, curso, vagas, emprego</strong>.
-                Isso evita cliques de quem não vai comprar!
+              <h4 className="text-yellow-500 font-semibold mb-2">ESTRATÉGIA: RLSA (Remarketing em Pesquisa)</h4>
+              <p className="text-[var(--gray)] mb-3">
+                Combine o poder do remarketing com pesquisa:
               </p>
+              <ol className="text-[var(--gray)] space-y-1 text-sm">
+                <li>1. Crie lista de remarketing com visitantes do site</li>
+                <li>2. Crie campanha de pesquisa segmentando APENAS essa lista</li>
+                <li>3. Aumente o lance em 50% para essas pessoas</li>
+                <li>4. <strong className="text-white">Resultado:</strong> Quando alguém que já visitou seu site buscar "sistema para loja", você aparece em primeiro!</li>
+              </ol>
+              <p className="text-green-400 text-sm mt-2">💰 Taxa de conversão até 3x maior que campanha normal!</p>
             </div>
           </div>
         </div>
@@ -3573,101 +4060,449 @@ const conteudoAulas: Record<string, {
     conteudo: (
       <div className="space-y-6">
         <div className="glass p-6">
-          <h3 className="text-xl font-semibold gold-text mb-4">O Que é Rede de Display?</h3>
-          <p className="text-[var(--gray)] leading-relaxed">
-            São os <strong className="text-white">banners</strong> que aparecem em sites, apps e YouTube.
-            Ótimo para remarketing e reconhecimento de marca!
+          <h3 className="text-xl font-semibold gold-text mb-4">Google Display: Alcance Massivo + Remarketing Poderoso!</h3>
+          <p className="text-[var(--gray)] leading-relaxed mb-4">
+            A Rede de Display do Google alcança <strong className="text-white">90% dos usuários de internet</strong>.
+            Mas o segredo não é aparecer para todos - é <strong className="text-white">reaparecer para quem já te conhece</strong>!
           </p>
-        </div>
-
-        <div className="glass p-6">
-          <h3 className="text-xl font-semibold text-blue-400 mb-4">📊 Pesquisa vs Display</h3>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
-              <h4 className="text-blue-400 font-semibold mb-2">Pesquisa</h4>
-              <ul className="text-[var(--gray)] text-sm space-y-1">
-                <li>• Texto apenas</li>
-                <li>• Alta intenção</li>
-                <li>• CPC mais alto</li>
-                <li>• Conversão direta</li>
-              </ul>
+          <div className="grid grid-cols-4 gap-3">
+            <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-3 text-center">
+              <p className="text-2xl font-bold text-blue-400">2M+</p>
+              <p className="text-[var(--gray)] text-xs">Sites parceiros</p>
             </div>
-            <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
-              <h4 className="text-purple-400 font-semibold mb-2">Display</h4>
-              <ul className="text-[var(--gray)] text-sm space-y-1">
-                <li>• Imagens/banners</li>
-                <li>• Baixa intenção</li>
-                <li>• CPM mais barato</li>
-                <li>• Reconhecimento</li>
-              </ul>
+            <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-3 text-center">
+              <p className="text-2xl font-bold text-green-400">90%</p>
+              <p className="text-[var(--gray)] text-xs">Alcance internet</p>
+            </div>
+            <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-3 text-center">
+              <p className="text-2xl font-bold text-purple-400">R$0.50</p>
+              <p className="text-[var(--gray)] text-xs">CPM médio</p>
+            </div>
+            <div className="bg-orange-500/10 border border-orange-500/30 rounded-lg p-3 text-center">
+              <p className="text-2xl font-bold text-orange-400">10x</p>
+              <p className="text-[var(--gray)] text-xs">Mais barato que FB</p>
             </div>
           </div>
         </div>
 
         <div className="glass p-6">
-          <h3 className="text-xl font-semibold text-green-400 mb-4">🎯 Melhor Uso: Remarketing</h3>
+          <h3 className="text-xl font-semibold text-blue-400 mb-4">📊 Quando Usar Pesquisa vs Display</h3>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-white/10">
+                  <th className="text-left py-2 text-white">Aspecto</th>
+                  <th className="text-center py-2 text-blue-400">Pesquisa</th>
+                  <th className="text-center py-2 text-purple-400">Display</th>
+                </tr>
+              </thead>
+              <tbody className="text-[var(--gray)]">
+                <tr className="border-b border-white/5">
+                  <td className="py-2">Formato</td>
+                  <td className="text-center">Texto</td>
+                  <td className="text-center">Imagem/Vídeo</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2">Intenção</td>
+                  <td className="text-center text-green-400">Alta (buscando)</td>
+                  <td className="text-center text-yellow-400">Baixa (navegando)</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2">CPC médio</td>
+                  <td className="text-center">R$2-5</td>
+                  <td className="text-center">R$0.30-1</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2">CTR médio</td>
+                  <td className="text-center">3-5%</td>
+                  <td className="text-center">0.3-0.5%</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2">Melhor para</td>
+                  <td className="text-center">Conversão direta</td>
+                  <td className="text-center">Remarketing/Marca</td>
+                </tr>
+                <tr>
+                  <td className="py-2">Seu uso</td>
+                  <td className="text-center text-blue-400">Captar novos</td>
+                  <td className="text-center text-purple-400">Recuperar perdidos</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-green-400 text-sm mt-3">💡 Estratégia vencedora: Pesquisa para captar + Display para remarketing!</p>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-green-400 mb-4">🎯 Configurando Remarketing (Passo a Passo)</h3>
           <p className="text-[var(--gray)] mb-4">
-            Remarketing mostra anúncios para quem <strong className="text-white">já visitou seu site</strong>.
-            É a forma mais eficiente de usar Display!
+            Remarketing converte <strong className="text-white">3-5x mais</strong> que campanha fria. Veja como configurar:
           </p>
-          <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
-            <p className="text-white font-semibold mb-2">Como funciona:</p>
-            <ol className="text-[var(--gray)] space-y-2">
-              <li>1. Pessoa visita seu site</li>
-              <li>2. Pixel do Google marca essa pessoa</li>
-              <li>3. Ela vê seus banners em outros sites</li>
-              <li>4. Lembra de você e volta para comprar!</li>
-            </ol>
+          <div className="space-y-3">
+            {[
+              { passo: 1, titulo: 'Instale a Tag do Google', desc: 'Google Ads → Ferramentas → Gerenciador de Público-alvo → Suas fontes de dados → Tag do Google Ads', dica: 'Cole no <head> de todas as páginas ou use Google Tag Manager' },
+              { passo: 2, titulo: 'Aguarde 7-14 dias', desc: 'O Google precisa coletar pelo menos 100 visitantes para ativar remarketing', dica: 'Quanto mais tráfego, mais rápido ativa' },
+              { passo: 3, titulo: 'Crie listas de público', desc: 'Ferramentas → Gerenciador de Público-alvo → Segmentos → Novo Segmento', dica: 'Crie lista separada para cada página importante' },
+              { passo: 4, titulo: 'Configure a campanha Display', desc: 'Nova campanha → Vendas → Display → Segmentação → Seus segmentos de dados', dica: 'Use APENAS remarketing, não misture com outros públicos' },
+              { passo: 5, titulo: 'Defina janela de conversão', desc: 'Recomendo 7-30 dias para serviços, 3-7 dias para urgência', dica: 'Quanto menor a janela, mais quente o lead' },
+              { passo: 6, titulo: 'Limite frequência', desc: 'Configurações → Limite de frequência → 3-5 impressões por dia', dica: 'Mais que isso irrita e queima a marca' },
+            ].map((item) => (
+              <div key={item.passo} className="flex gap-4 bg-green-500/5 border border-green-500/20 rounded-lg p-3">
+                <div className="w-8 h-8 bg-green-500/30 rounded-full flex items-center justify-center text-green-400 font-bold flex-shrink-0 text-sm">
+                  {item.passo}
+                </div>
+                <div className="flex-1">
+                  <p className="text-white font-semibold text-sm">{item.titulo}</p>
+                  <p className="text-[var(--gray)] text-xs">{item.desc}</p>
+                  <p className="text-green-400 text-xs mt-1">💡 {item.dica}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
         <div className="glass p-6">
-          <h3 className="text-xl font-semibold text-purple-400 mb-4">📐 Tamanhos de Banner</h3>
+          <h3 className="text-xl font-semibold text-purple-400 mb-4">👥 Tipos de Público para Display</h3>
+          <div className="space-y-3">
+            <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
+              <div className="flex justify-between items-center mb-2">
+                <h4 className="text-green-400 font-semibold">1. Remarketing (Seus visitantes)</h4>
+                <span className="bg-green-500/30 text-green-300 px-2 py-1 rounded text-xs">MELHOR ROI</span>
+              </div>
+              <p className="text-[var(--gray)] text-sm mb-2">Pessoas que já visitaram seu site/landing page</p>
+              <p className="text-white text-xs">Exemplos de listas para criar:</p>
+              <ul className="text-[var(--gray)] text-xs mt-1 space-y-1">
+                <li>• Visitou página de preços (quente demais!)</li>
+                <li>• Visitou 3+ páginas (interessado)</li>
+                <li>• Iniciou formulário mas não enviou</li>
+                <li>• Visitou nos últimos 7 dias</li>
+              </ul>
+            </div>
+            <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
+              <div className="flex justify-between items-center mb-2">
+                <h4 className="text-blue-400 font-semibold">2. Públicos Semelhantes</h4>
+                <span className="bg-blue-500/30 text-blue-300 px-2 py-1 rounded text-xs">BOM</span>
+              </div>
+              <p className="text-[var(--gray)] text-sm">Google encontra pessoas parecidas com seus visitantes</p>
+              <p className="text-blue-300 text-xs mt-1">Use após ter 1000+ visitantes na lista de remarketing</p>
+            </div>
+            <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4">
+              <div className="flex justify-between items-center mb-2">
+                <h4 className="text-yellow-400 font-semibold">3. Segmentos de Afinidade</h4>
+                <span className="bg-yellow-500/30 text-yellow-300 px-2 py-1 rounded text-xs">FRIO</span>
+              </div>
+              <p className="text-[var(--gray)] text-sm">Interesses gerais (tecnologia, negócios, etc.)</p>
+              <p className="text-yellow-300 text-xs mt-1">Bom para branding, ruim para conversão</p>
+            </div>
+            <div className="bg-orange-500/10 border border-orange-500/30 rounded-lg p-4">
+              <div className="flex justify-between items-center mb-2">
+                <h4 className="text-orange-400 font-semibold">4. Segmentos de Intenção Personalizada</h4>
+                <span className="bg-orange-500/30 text-orange-300 px-2 py-1 rounded text-xs">AVANÇADO</span>
+              </div>
+              <p className="text-[var(--gray)] text-sm">Crie público baseado em palavras-chave que buscaram</p>
+              <p className="text-orange-300 text-xs mt-1">Ex: Quem buscou "sistema para loja" no Google</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-orange-400 mb-4">📝 Textos para Anúncios Responsivos (Copie!)</h3>
+          <p className="text-[var(--gray)] mb-4">Para anúncios responsivos, você precisa de títulos curtos e descrições:</p>
+          <div className="space-y-4">
+            <div className="bg-orange-500/10 border border-orange-500/30 rounded-lg p-4">
+              <h4 className="text-orange-400 font-semibold mb-3">Títulos Curtos (máx. 30 caracteres)</h4>
+              <div className="grid grid-cols-2 gap-2">
+                {[
+                  'Volte! Oferta especial',
+                  'Você esqueceu algo...',
+                  'Ainda pensando?',
+                  'Última chance!',
+                  'Desconto exclusivo',
+                  'Só para você',
+                  'Não perca essa!',
+                  'Teste grátis hoje',
+                ].map((titulo, i) => (
+                  <div key={i} className="bg-black/30 rounded px-2 py-1 text-[var(--gray)] text-sm font-mono">
+                    {titulo}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
+              <h4 className="text-blue-400 font-semibold mb-3">Títulos Longos (máx. 90 caracteres)</h4>
+              <div className="space-y-2">
+                {[
+                  'Você visitou nosso site - seu desconto especial ainda está esperando!',
+                  'Sistema que os melhores comerciantes usam. Comece seu teste grátis.',
+                  'Lembrou de nós? Voltou na hora certa - condição exclusiva hoje!',
+                  'Automatize sua loja e pare de perder vendas. Saiba como.',
+                ].map((titulo, i) => (
+                  <div key={i} className="bg-black/30 rounded px-3 py-2 text-[var(--gray)] text-sm">
+                    {titulo}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
+              <h4 className="text-green-400 font-semibold mb-3">Descrições (máx. 90 caracteres)</h4>
+              <div className="space-y-2">
+                {[
+                  'Mais de 500 comerciantes já automatizaram suas vendas. E você?',
+                  'Teste grátis por 7 dias. Sem cartão. Cancele quando quiser.',
+                  'Pare de perder clientes. Sistema completo para sua loja.',
+                  'Condição especial para quem visitou nosso site. Aproveite!',
+                ].map((desc, i) => (
+                  <div key={i} className="bg-black/30 rounded px-3 py-2 text-[var(--gray)] text-sm">
+                    {desc}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-purple-400 mb-4">📐 Imagens para Anúncios Responsivos</h3>
+          <div className="space-y-4">
+            <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
+              <h4 className="text-purple-400 font-semibold mb-3">Tamanhos Obrigatórios</h4>
+              <div className="grid grid-cols-2 gap-3">
+                <div className="bg-black/30 rounded-lg p-3 text-center">
+                  <span className="text-white font-mono text-lg">1200x628</span>
+                  <p className="text-[var(--gray)] text-xs mt-1">Paisagem (1.91:1)</p>
+                  <p className="text-purple-300 text-xs">Principal - mais usado</p>
+                </div>
+                <div className="bg-black/30 rounded-lg p-3 text-center">
+                  <span className="text-white font-mono text-lg">1200x1200</span>
+                  <p className="text-[var(--gray)] text-xs mt-1">Quadrado (1:1)</p>
+                  <p className="text-purple-300 text-xs">Mobile e feeds</p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
+              <h4 className="text-green-400 font-semibold mb-2">Regras para Imagens</h4>
+              <ul className="text-[var(--gray)] text-sm space-y-1">
+                <li>✅ Texto mínimo (max 20% da imagem)</li>
+                <li>✅ Cores vibrantes e contrastantes</li>
+                <li>✅ Logo pequeno no canto</li>
+                <li>✅ Produto ou resultado em destaque</li>
+                <li>❌ Não use bordas ou molduras</li>
+                <li>❌ Evite fundos brancos (some no site)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-cyan-400 mb-4">📊 Métricas para Display - O Que Monitorar</h3>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-white/10">
+                  <th className="text-left py-2 text-white">Métrica</th>
+                  <th className="text-center py-2 text-red-400">Ruim</th>
+                  <th className="text-center py-2 text-yellow-400">Ok</th>
+                  <th className="text-center py-2 text-green-400">Bom</th>
+                </tr>
+              </thead>
+              <tbody className="text-[var(--gray)]">
+                <tr className="border-b border-white/5">
+                  <td className="py-2">CTR (Remarketing)</td>
+                  <td className="text-center text-red-400">&lt;0.3%</td>
+                  <td className="text-center text-yellow-400">0.3-0.8%</td>
+                  <td className="text-center text-green-400">&gt;0.8%</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2">CPM</td>
+                  <td className="text-center text-red-400">&gt;R$5</td>
+                  <td className="text-center text-yellow-400">R$2-5</td>
+                  <td className="text-center text-green-400">&lt;R$2</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2">CPC</td>
+                  <td className="text-center text-red-400">&gt;R$2</td>
+                  <td className="text-center text-yellow-400">R$0.80-2</td>
+                  <td className="text-center text-green-400">&lt;R$0.80</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2">Taxa de Conversão</td>
+                  <td className="text-center text-red-400">&lt;1%</td>
+                  <td className="text-center text-yellow-400">1-3%</td>
+                  <td className="text-center text-green-400">&gt;3%</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2">View-through Conv.</td>
+                  <td className="text-center text-red-400">&lt;5%</td>
+                  <td className="text-center text-yellow-400">5-15%</td>
+                  <td className="text-center text-green-400">&gt;15%</td>
+                </tr>
+                <tr>
+                  <td className="py-2">Frequência (7 dias)</td>
+                  <td className="text-center text-red-400">&gt;15</td>
+                  <td className="text-center text-yellow-400">8-15</td>
+                  <td className="text-center text-green-400">3-8</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-cyan-400 text-sm mt-3">💡 View-through = pessoas que viram o banner e converteram depois (sem clicar)</p>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-green-400 mb-4">💰 Estratégia de Orçamento Display</h3>
+          <div className="space-y-3">
+            <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4">
+              <div className="flex justify-between items-center">
+                <div>
+                  <h4 className="text-yellow-400 font-semibold">Iniciante (Remarketing)</h4>
+                  <p className="text-[var(--gray)] text-sm">Público pequeno, começando</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-2xl font-bold text-yellow-400">R$15-30</p>
+                  <p className="text-[var(--gray)] text-xs">por dia</p>
+                </div>
+              </div>
+              <p className="text-yellow-300 text-xs mt-2">Suficiente para 3-5 mil impressões/dia</p>
+            </div>
+            <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
+              <div className="flex justify-between items-center">
+                <div>
+                  <h4 className="text-blue-400 font-semibold">Intermediário</h4>
+                  <p className="text-[var(--gray)] text-sm">Lista de remarketing maior</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-2xl font-bold text-blue-400">R$30-60</p>
+                  <p className="text-[var(--gray)] text-xs">por dia</p>
+                </div>
+              </div>
+              <p className="text-blue-300 text-xs mt-2">Adicione públicos semelhantes</p>
+            </div>
+            <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
+              <div className="flex justify-between items-center">
+                <div>
+                  <h4 className="text-green-400 font-semibold">Agressivo</h4>
+                  <p className="text-[var(--gray)] text-sm">Display + YouTube + Discovery</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-2xl font-bold text-green-400">R$100+</p>
+                  <p className="text-[var(--gray)] text-xs">por dia</p>
+                </div>
+              </div>
+              <p className="text-green-300 text-xs mt-2">Combine canais para dominar a atenção</p>
+            </div>
+          </div>
+          <div className="mt-4 p-3 bg-purple-500/10 border border-purple-500/30 rounded-lg">
+            <p className="text-purple-300 text-sm">
+              <strong>Regra de ouro:</strong> Display deve ser 20-30% do seu orçamento total de Google Ads.
+              O grosso vai para Pesquisa (conversão direta).
+            </p>
+          </div>
+        </div>
+
+        <div className="glass p-6 border-red-500/30 bg-red-500/5">
+          <h3 className="text-xl font-semibold text-red-400 mb-4">🚫 6 Erros que Queimam Dinheiro no Display</h3>
+          <div className="grid gap-3">
+            {[
+              { erro: 'Não limitar frequência', fix: 'Configure máx. 3-5 impressões/dia por pessoa' },
+              { erro: 'Remarketing para TODOS os visitantes', fix: 'Crie listas específicas (visitou preços, tempo no site, etc.)' },
+              { erro: 'Usar Display para tráfego frio', fix: 'Display frio = baixa conversão. Use para remarketing!' },
+              { erro: 'Ignorar posicionamentos ruins', fix: 'Exclua apps de jogos e sites de baixa qualidade' },
+              { erro: 'Imagens sem mensagem clara', fix: 'Oferta + benefício devem ser óbvios em 2 segundos' },
+              { erro: 'Janela de remarketing longa demais', fix: 'Para serviços B2B: 30 dias máx. Depois esfria.' },
+            ].map((item, index) => (
+              <div key={index} className="flex gap-3 items-start bg-red-500/10 rounded-lg p-3">
+                <div className="w-6 h-6 bg-red-500/30 rounded-full flex items-center justify-center text-red-400 font-bold flex-shrink-0 text-sm">
+                  {index + 1}
+                </div>
+                <div>
+                  <p className="text-red-300 font-semibold text-sm">{item.erro}</p>
+                  <p className="text-[var(--gray)] text-xs mt-1">✅ {item.fix}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-cyan-400 mb-4">🎯 Excluindo Posicionamentos Ruins</h3>
+          <p className="text-[var(--gray)] mb-4">
+            Por padrão, Google mostra em TODOS os lugares. Exclua esses para não desperdiçar:
+          </p>
           <div className="grid grid-cols-2 gap-3">
-            {[
-              { tamanho: '300x250', nome: 'Retângulo Médio' },
-              { tamanho: '336x280', nome: 'Retângulo Grande' },
-              { tamanho: '728x90', nome: 'Leaderboard' },
-              { tamanho: '300x600', nome: 'Meia Página' },
-              { tamanho: '320x50', nome: 'Mobile Banner' },
-              { tamanho: '320x100', nome: 'Mobile Large' },
-            ].map(item => (
-              <div key={item.tamanho} className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-3 text-center">
-                <span className="text-purple-400 font-mono">{item.tamanho}</span>
-                <p className="text-[var(--gray)] text-xs mt-1">{item.nome}</p>
-              </div>
-            ))}
+            <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-3">
+              <h4 className="text-red-400 font-semibold text-sm mb-2">Apps para Excluir</h4>
+              <ul className="text-[var(--gray)] text-xs space-y-1">
+                <li>• adsenseformobileapps.com</li>
+                <li>• Jogos infantis</li>
+                <li>• Apps de lanterna/calculadora</li>
+              </ul>
+            </div>
+            <div className="bg-orange-500/10 border border-orange-500/30 rounded-lg p-3">
+              <h4 className="text-orange-400 font-semibold text-sm mb-2">Categorias para Excluir</h4>
+              <ul className="text-[var(--gray)] text-xs space-y-1">
+                <li>• Conteúdo sensacionalista</li>
+                <li>• Tragédias e conflitos</li>
+                <li>• Conteúdo sexualmente sugestivo</li>
+              </ul>
+            </div>
           </div>
+          <p className="text-cyan-300 text-sm mt-3">
+            Caminho: Campanha → Conteúdo → Exclusões → Editar exclusões
+          </p>
         </div>
 
-        <div className="glass p-6">
-          <h3 className="text-xl font-semibold text-orange-400 mb-4">💡 Dicas para Banners</h3>
-          <div className="space-y-2">
-            {[
-              'Logo visível e legível',
-              'Oferta clara e direta',
-              'CTA destacado (botão)',
-              'Cores contrastantes',
-              'Pouco texto (menos é mais)',
-              'Imagem de alta qualidade',
-            ].map(item => (
-              <div key={item} className="bg-orange-500/10 border border-orange-500/30 rounded-lg p-3">
-                <span className="text-[var(--gray)]">✅ {item}</span>
+        <div className="bg-gradient-to-r from-green-500/20 to-blue-500/20 rounded-xl p-6 border border-green-500/30">
+          <h3 className="text-xl font-semibold text-white mb-4">🚀 Estratégia Avançada: Remarketing em Cascata</h3>
+          <p className="text-[var(--gray)] mb-4">
+            Segmente diferentes mensagens baseado no comportamento:
+          </p>
+          <div className="space-y-3">
+            <div className="bg-black/20 rounded-lg p-3">
+              <div className="flex justify-between items-center">
+                <span className="text-green-400 font-semibold">Lista 1: Visitou página de preços</span>
+                <span className="text-white text-sm">Mensagem: "Ainda pensando? Desconto especial!"</span>
               </div>
-            ))}
+            </div>
+            <div className="bg-black/20 rounded-lg p-3">
+              <div className="flex justify-between items-center">
+                <span className="text-blue-400 font-semibold">Lista 2: Visitou 3+ páginas</span>
+                <span className="text-white text-sm">Mensagem: "Veja cases de sucesso"</span>
+              </div>
+            </div>
+            <div className="bg-black/20 rounded-lg p-3">
+              <div className="flex justify-between items-center">
+                <span className="text-purple-400 font-semibold">Lista 3: Visitou 1 página só</span>
+                <span className="text-white text-sm">Mensagem: "Conheça nossos benefícios"</span>
+              </div>
+            </div>
+            <div className="bg-black/20 rounded-lg p-3">
+              <div className="flex justify-between items-center">
+                <span className="text-orange-400 font-semibold">Lista 4: Iniciou form sem enviar</span>
+                <span className="text-white text-sm">Mensagem: "Complete seu cadastro - bônus!"</span>
+              </div>
+            </div>
           </div>
+          <p className="text-green-400 text-sm mt-4">💰 Taxa de conversão até 5x maior com mensagem personalizada!</p>
         </div>
 
         <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-xl p-6">
           <div className="flex gap-3">
             <Lightbulb className="w-6 h-6 text-yellow-500 flex-shrink-0" />
             <div>
-              <h4 className="text-yellow-500 font-semibold mb-2">ANÚNCIOS RESPONSIVOS</h4>
+              <h4 className="text-yellow-500 font-semibold mb-2">COMBO VENCEDOR: PESQUISA + DISPLAY</h4>
               <p className="text-[var(--gray)]">
-                Use <strong className="text-white">Anúncios Responsivos de Display</strong>.
-                Você sobe imagens e textos, e o Google monta automaticamente os melhores formatos.
-                Mais fácil e mais eficiente!
+                <strong className="text-white">Pesquisa</strong> captura quem está buscando ativamente.
+                <strong className="text-white"> Display/Remarketing</strong> recupera quem não converteu.
+                Juntos, cobrem toda a jornada do cliente!
               </p>
+              <div className="mt-3 grid grid-cols-2 gap-2 text-sm">
+                <div className="bg-blue-500/20 rounded p-2 text-center">
+                  <p className="text-blue-300">Pesquisa: 70% budget</p>
+                </div>
+                <div className="bg-purple-500/20 rounded p-2 text-center">
+                  <p className="text-purple-300">Display: 30% budget</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
