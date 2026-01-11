@@ -19,7 +19,8 @@ import {
   Lightbulb,
   Target,
   Rocket,
-  Video
+  Video,
+  BookOpen
 } from 'lucide-react'
 
 export default function MembroPage() {
@@ -85,6 +86,7 @@ export default function MembroPage() {
 
   const materiais = [
     { icon: Rocket, title: 'Projeto Zion', desc: 'Treinamento de vendas + renda extra', status: 'available', link: '/membro/zion', highlight: true },
+    { icon: BookOpen, title: 'Academia do Vendedor', desc: 'Treinamento completo: produto, vendas e tráfego', status: 'available', link: '/membro/academia', highlight: true },
     { icon: Video, title: 'Conteúdo Exclusivo', desc: 'Vídeo especial para membros', status: 'available', link: '/membro/vsl' },
     { icon: Target, title: 'Quiz: Descubra Seu Nicho', desc: 'Qual área combina mais com você?', status: 'available', link: '/membro/quiz' },
     { icon: Lightbulb, title: 'A Importância da Pesquisa', desc: 'Por que isso define seu sucesso', status: 'available', link: '/membro/conteudo' },
