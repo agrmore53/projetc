@@ -5776,6 +5776,1479 @@ const conteudoAulas: Record<string, {
       </div>
     )
   },
+
+  // ==================== MÓDULO 6: EQUITY & VALUATION ====================
+  'mod6-1': {
+    titulo: 'O que é Equity e Por Que Importa',
+    modulo: 'Equity & Valuation',
+    conteudo: (
+      <div className="space-y-6">
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold gold-text mb-4">Equity: A Base da Riqueza Real</h3>
+          <p className="text-[var(--gray)] leading-relaxed mb-4">
+            <strong className="text-white">Equity</strong> significa <strong className="text-[var(--gold)]">participação societária</strong> -
+            a porcentagem que você possui de uma empresa. É diferente de salário ou receita: é <strong className="text-white">propriedade</strong>.
+          </p>
+          <div className="bg-[var(--gold)]/10 border border-[var(--gold)]/30 rounded-lg p-4">
+            <p className="text-[var(--gold)] text-center text-lg">
+              "Salário te paga as contas. Equity te faz rico."
+            </p>
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-blue-400 mb-4">💰 Salário vs Equity</h3>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-white/10">
+                  <th className="text-left py-2 text-white">Aspecto</th>
+                  <th className="text-center py-2 text-blue-400">Salário</th>
+                  <th className="text-center py-2 text-[var(--gold)]">Equity</th>
+                </tr>
+              </thead>
+              <tbody className="text-[var(--gray)]">
+                <tr className="border-b border-white/5">
+                  <td className="py-2">Natureza</td>
+                  <td className="text-center">Troca tempo por dinheiro</td>
+                  <td className="text-center">Propriedade de ativo</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2">Limite</td>
+                  <td className="text-center">Limitado às horas</td>
+                  <td className="text-center">Pode crescer infinitamente</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2">Quando para</td>
+                  <td className="text-center">Para quando você para</td>
+                  <td className="text-center">Continua valorizando</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2">Venda</td>
+                  <td className="text-center">Não pode vender</td>
+                  <td className="text-center">Pode vender por milhões</td>
+                </tr>
+                <tr>
+                  <td className="py-2">Exemplo</td>
+                  <td className="text-center">R$10k/mês = R$120k/ano</td>
+                  <td className="text-center text-[var(--gold)]">10% de empresa = R$1M+ no exit</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-green-400 mb-4">🏆 Casos Reais de Equity</h3>
+          <div className="space-y-4">
+            <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
+              <h4 className="text-green-400 font-semibold mb-2">RD Station (Brasil)</h4>
+              <p className="text-[var(--gray)] text-sm">Fundadores tinham 100% → Venderam para TOTVS por <strong className="text-white">R$ 1,86 bilhão</strong></p>
+            </div>
+            <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
+              <h4 className="text-blue-400 font-semibold mb-2">Gympass (Brasil)</h4>
+              <p className="text-[var(--gray)] text-sm">Equity dos fundadores vale <strong className="text-white">R$ 10+ bilhões</strong> após última rodada</p>
+            </div>
+            <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
+              <h4 className="text-purple-400 font-semibold mb-2">Hotmart (Brasil)</h4>
+              <p className="text-[var(--gray)] text-sm">Fundadores com equity que vale <strong className="text-white">R$ 5+ bilhões</strong></p>
+            </div>
+            <div className="bg-orange-500/10 border border-orange-500/30 rounded-lg p-4">
+              <h4 className="text-orange-400 font-semibold mb-2">Conta Azul (SC - Brasil)</h4>
+              <p className="text-[var(--gray)] text-sm">SaaS contábil vendido por estimados <strong className="text-white">R$ 1+ bilhão</strong></p>
+            </div>
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-purple-400 mb-4">📊 Por Que SaaS é o Melhor Modelo para Equity</h3>
+          <div className="grid sm:grid-cols-2 gap-4">
+            <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
+              <h4 className="text-purple-400 font-semibold mb-2">Receita Recorrente</h4>
+              <p className="text-[var(--gray)] text-sm">MRR previsível = empresa mais valiosa</p>
+            </div>
+            <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
+              <h4 className="text-purple-400 font-semibold mb-2">Margem Alta</h4>
+              <p className="text-[var(--gray)] text-sm">70-90% de margem bruta típica</p>
+            </div>
+            <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
+              <h4 className="text-purple-400 font-semibold mb-2">Escalável</h4>
+              <p className="text-[var(--gray)] text-sm">Custo por cliente diminui com escala</p>
+            </div>
+            <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
+              <h4 className="text-purple-400 font-semibold mb-2">Múltiplos Altos</h4>
+              <p className="text-[var(--gray)] text-sm">SaaS vende por 5-15x receita anual</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-orange-400 mb-4">⚠️ Erros Comuns com Equity</h3>
+          <div className="space-y-3">
+            {[
+              { erro: 'Dar equity demais no início', fix: 'Comece com 100%, dilua aos poucos com propósito' },
+              { erro: 'Dividir 50/50 com sócio', fix: 'Alguém precisa ter maioria para decidir' },
+              { erro: 'Dar equity para funcionários sem vesting', fix: 'Sempre use vesting de 4 anos' },
+              { erro: 'Não documentar o cap table', fix: 'Mantenha planilha atualizada desde o dia 1' },
+              { erro: 'Aceitar qualquer investidor', fix: 'Smart money > dumb money. Escolha bem.' },
+            ].map((item, index) => (
+              <div key={index} className="flex gap-3 items-start bg-orange-500/10 rounded-lg p-3">
+                <span className="text-orange-400 font-bold">{index + 1}.</span>
+                <div>
+                  <p className="text-orange-300 font-semibold text-sm">{item.erro}</p>
+                  <p className="text-[var(--gray)] text-xs mt-1">✅ {item.fix}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="bg-gradient-to-r from-[var(--gold)]/20 to-orange-500/20 rounded-xl p-6 border border-[var(--gold)]/30">
+          <h3 className="text-xl font-semibold text-white mb-4">🎯 Seu Objetivo com Equity</h3>
+          <p className="text-[var(--gray)] mb-4">
+            O objetivo não é ter salário alto. É construir um <strong className="text-white">ativo que vale milhões</strong> e pode ser vendido.
+          </p>
+          <div className="bg-black/30 rounded-lg p-4">
+            <p className="text-[var(--gold)] text-center text-lg font-semibold">
+              Meta: Construir empresa que vale 10x sua receita anual
+            </p>
+            <p className="text-[var(--gray)] text-center text-sm mt-2">
+              R$500k MRR = R$6M ARR = Empresa de R$60M+
+            </p>
+          </div>
+        </div>
+      </div>
+    )
+  },
+  'mod6-2': {
+    titulo: 'Estrutura Jurídica: MEI vs LTDA vs S/A',
+    modulo: 'Equity & Valuation',
+    conteudo: (
+      <div className="space-y-6">
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold gold-text mb-4">Escolhendo a Estrutura Certa</h3>
+          <p className="text-[var(--gray)] leading-relaxed mb-4">
+            A estrutura jurídica define <strong className="text-white">impostos, responsabilidades e possibilidades de crescimento</strong>.
+            Escolher errado no início pode custar caro depois.
+          </p>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-green-400 mb-4">📊 Comparativo Completo</h3>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-white/10">
+                  <th className="text-left py-2 text-white">Aspecto</th>
+                  <th className="text-center py-2 text-green-400">MEI</th>
+                  <th className="text-center py-2 text-blue-400">LTDA</th>
+                  <th className="text-center py-2 text-purple-400">S/A</th>
+                </tr>
+              </thead>
+              <tbody className="text-[var(--gray)]">
+                <tr className="border-b border-white/5">
+                  <td className="py-2">Faturamento máx.</td>
+                  <td className="text-center text-green-400">R$81k/ano</td>
+                  <td className="text-center text-blue-400">Ilimitado</td>
+                  <td className="text-center text-purple-400">Ilimitado</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2">Sócios</td>
+                  <td className="text-center">Apenas 1</td>
+                  <td className="text-center">1 a 999</td>
+                  <td className="text-center">2+ (mín. 7 p/ aberta)</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2">Impostos</td>
+                  <td className="text-center">~R$70/mês fixo</td>
+                  <td className="text-center">Simples ou Lucro</td>
+                  <td className="text-center">Lucro Real/Presumido</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2">Funcionários</td>
+                  <td className="text-center">Máx. 1</td>
+                  <td className="text-center">Ilimitado</td>
+                  <td className="text-center">Ilimitado</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2">Investimento</td>
+                  <td className="text-center text-red-400">Não aceita</td>
+                  <td className="text-center text-yellow-400">Possível</td>
+                  <td className="text-center text-green-400">Ideal</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2">Venda/Exit</td>
+                  <td className="text-center text-red-400">Difícil</td>
+                  <td className="text-center text-yellow-400">Possível</td>
+                  <td className="text-center text-green-400">Mais fácil</td>
+                </tr>
+                <tr>
+                  <td className="py-2">Custo mensal</td>
+                  <td className="text-center">~R$70</td>
+                  <td className="text-center">R$500-2.000</td>
+                  <td className="text-center">R$3.000+</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-green-400 mb-4">✅ MEI - Quando Usar</h3>
+          <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4 mb-4">
+            <p className="text-green-400 font-semibold mb-2">Use MEI se:</p>
+            <ul className="text-[var(--gray)] space-y-1 text-sm">
+              <li>• Você está começando e fatura menos de R$6.750/mês</li>
+              <li>• Não tem sócio e não planeja ter tão cedo</li>
+              <li>• Não vai precisar de investimento externo</li>
+              <li>• Quer simplicidade e custo mínimo</li>
+            </ul>
+          </div>
+          <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-4">
+            <p className="text-red-400 font-semibold mb-2">Limitações do MEI:</p>
+            <ul className="text-[var(--gray)] space-y-1 text-sm">
+              <li>• Limite de R$81k/ano (R$6.750/mês)</li>
+              <li>• Não pode ter sócio</li>
+              <li>• Não pode receber investimento</li>
+              <li>• Difícil vender a empresa</li>
+              <li>• Algumas atividades não são permitidas</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-blue-400 mb-4">🏢 LTDA - O Padrão para Startups</h3>
+          <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4 mb-4">
+            <p className="text-blue-400 font-semibold mb-2">Use LTDA se:</p>
+            <ul className="text-[var(--gray)] space-y-1 text-sm">
+              <li>• Fatura ou pretende faturar mais de R$81k/ano</li>
+              <li>• Tem ou terá sócios</li>
+              <li>• Pode receber investimento anjo/seed</li>
+              <li>• Quer crescer e eventualmente vender</li>
+            </ul>
+          </div>
+          <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
+            <p className="text-blue-400 font-semibold mb-2">Tipos de LTDA:</p>
+            <div className="grid sm:grid-cols-2 gap-3 mt-2">
+              <div className="bg-black/30 rounded-lg p-3">
+                <p className="text-white font-semibold text-sm">SLU (Unipessoal)</p>
+                <p className="text-[var(--gray)] text-xs">Só você, sem sócio. Antiga EIRELI.</p>
+              </div>
+              <div className="bg-black/30 rounded-lg p-3">
+                <p className="text-white font-semibold text-sm">LTDA Comum</p>
+                <p className="text-[var(--gray)] text-xs">2+ sócios. O mais usado.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-purple-400 mb-4">🏛️ S/A - Para Grandes Ambições</h3>
+          <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4 mb-4">
+            <p className="text-purple-400 font-semibold mb-2">Use S/A se:</p>
+            <ul className="text-[var(--gray)] space-y-1 text-sm">
+              <li>• Vai captar rodadas de investimento (Seed, Series A+)</li>
+              <li>• Planeja ter muitos investidores/sócios</li>
+              <li>• Quer emitir ações e stock options facilmente</li>
+              <li>• Tem planos de IPO ou M&A grande</li>
+            </ul>
+          </div>
+          <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4">
+            <p className="text-yellow-400 font-semibold mb-2">⚠️ Atenção:</p>
+            <p className="text-[var(--gray)] text-sm">
+              S/A tem custo alto (contabilidade, publicações, assembleias).
+              <strong className="text-white"> Só vale a pena se realmente for captar investimento institucional.</strong>
+            </p>
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-orange-400 mb-4">🗺️ Caminho Recomendado</h3>
+          <div className="space-y-4">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center text-green-400 font-bold">1</div>
+              <div className="flex-1 bg-green-500/10 border border-green-500/30 rounded-lg p-3">
+                <p className="text-green-400 font-semibold">Começo: MEI</p>
+                <p className="text-[var(--gray)] text-sm">Faturamento 0-R$80k/ano. Valide a ideia com custo mínimo.</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400 font-bold">2</div>
+              <div className="flex-1 bg-blue-500/10 border border-blue-500/30 rounded-lg p-3">
+                <p className="text-blue-400 font-semibold">Crescimento: LTDA</p>
+                <p className="text-[var(--gray)] text-sm">Faturamento R$80k-R$5M/ano. Adicione sócios, estruture.</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center text-purple-400 font-bold">3</div>
+              <div className="flex-1 bg-purple-500/10 border border-purple-500/30 rounded-lg p-3">
+                <p className="text-purple-400 font-semibold">Escala: S/A (se necessário)</p>
+                <p className="text-[var(--gray)] text-sm">Faturamento R$5M+/ano, captando investimento institucional.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-[var(--gold)]/10 border border-[var(--gold)]/30 rounded-xl p-6">
+          <h4 className="text-[var(--gold)] font-semibold mb-2">💡 DICA DE OURO</h4>
+          <p className="text-[var(--gray)]">
+            Comece simples (MEI ou SLU). Transformar MEI em LTDA depois é fácil e barato.
+            Começar já com S/A e descobrir que não precisava é <strong className="text-white">dinheiro jogado fora</strong>.
+          </p>
+        </div>
+      </div>
+    )
+  },
+  'mod6-3': {
+    titulo: 'Cap Table - Divisão Societária',
+    modulo: 'Equity & Valuation',
+    conteudo: (
+      <div className="space-y-6">
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold gold-text mb-4">Cap Table: O Mapa do seu Equity</h3>
+          <p className="text-[var(--gray)] leading-relaxed mb-4">
+            <strong className="text-white">Cap Table</strong> (Capitalization Table) é a planilha que mostra
+            <strong className="text-[var(--gold)]"> quem possui quanto da empresa</strong>.
+            É o documento mais importante para investidores e sócios.
+          </p>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-blue-400 mb-4">📊 Exemplo de Cap Table</h3>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-white/10">
+                  <th className="text-left py-2 text-white">Sócio/Investidor</th>
+                  <th className="text-center py-2 text-white">Cotas/Ações</th>
+                  <th className="text-center py-2 text-white">%</th>
+                  <th className="text-center py-2 text-white">Tipo</th>
+                </tr>
+              </thead>
+              <tbody className="text-[var(--gray)]">
+                <tr className="border-b border-white/5">
+                  <td className="py-2 text-[var(--gold)]">Fundador 1 (CEO)</td>
+                  <td className="text-center">600.000</td>
+                  <td className="text-center text-[var(--gold)]">60%</td>
+                  <td className="text-center">Ordinária</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2 text-blue-400">Fundador 2 (CTO)</td>
+                  <td className="text-center">250.000</td>
+                  <td className="text-center text-blue-400">25%</td>
+                  <td className="text-center">Ordinária</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2 text-green-400">Pool de Funcionários</td>
+                  <td className="text-center">100.000</td>
+                  <td className="text-center text-green-400">10%</td>
+                  <td className="text-center">Reservado</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2 text-purple-400">Investidor Anjo</td>
+                  <td className="text-center">50.000</td>
+                  <td className="text-center text-purple-400">5%</td>
+                  <td className="text-center">Preferencial</td>
+                </tr>
+                <tr className="font-semibold">
+                  <td className="py-2 text-white">TOTAL</td>
+                  <td className="text-center">1.000.000</td>
+                  <td className="text-center text-white">100%</td>
+                  <td className="text-center">-</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-green-400 mb-4">✅ Divisão Recomendada para 2 Fundadores</h3>
+          <div className="space-y-4">
+            <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
+              <h4 className="text-green-400 font-semibold mb-3">Cenário Ideal:</h4>
+              <div className="space-y-2">
+                <div className="flex justify-between items-center">
+                  <span className="text-[var(--gray)]">Fundador Principal (CEO/Visão)</span>
+                  <span className="text-green-400 font-bold">55-60%</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-[var(--gray)]">Co-fundador (CTO/Execução)</span>
+                  <span className="text-blue-400 font-bold">25-35%</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-[var(--gray)]">Pool de Funcionários</span>
+                  <span className="text-purple-400 font-bold">10-15%</span>
+                </div>
+              </div>
+            </div>
+            <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-4">
+              <h4 className="text-red-400 font-semibold mb-2">⚠️ NUNCA faça 50/50!</h4>
+              <p className="text-[var(--gray)] text-sm">
+                Divisão igual causa deadlock em decisões. Alguém precisa ter a palavra final.
+                Prefira 51/49 ou 60/40.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-purple-400 mb-4">📈 Como a Cap Table Muda com Investimento</h3>
+          <p className="text-[var(--gray)] mb-4">Exemplo: Empresa captando R$500k por 10% (valuation R$5M)</p>
+          <div className="grid sm:grid-cols-2 gap-4">
+            <div className="bg-white/5 border border-white/10 rounded-lg p-4">
+              <h4 className="text-white font-semibold mb-3 text-center">ANTES</h4>
+              <div className="space-y-2 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-[var(--gray)]">Fundador 1</span>
+                  <span className="text-white">70%</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-[var(--gray)]">Fundador 2</span>
+                  <span className="text-white">30%</span>
+                </div>
+              </div>
+            </div>
+            <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
+              <h4 className="text-green-400 font-semibold mb-3 text-center">DEPOIS</h4>
+              <div className="space-y-2 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-[var(--gray)]">Fundador 1</span>
+                  <span className="text-white">63% <span className="text-red-400 text-xs">(-7%)</span></span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-[var(--gray)]">Fundador 2</span>
+                  <span className="text-white">27% <span className="text-red-400 text-xs">(-3%)</span></span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-[var(--gray)]">Investidor</span>
+                  <span className="text-green-400">10% <span className="text-green-400 text-xs">(novo)</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p className="text-yellow-400 text-sm mt-3 text-center">
+            Isso se chama <strong>diluição</strong> - você tem menos %, mas de uma empresa maior.
+          </p>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-orange-400 mb-4">🎯 Regras de Ouro da Cap Table</h3>
+          <div className="space-y-3">
+            {[
+              { regra: 'Documente desde o dia 1', desc: 'Mesmo sendo só você, tenha a cap table em planilha' },
+              { regra: 'Reserve pool para funcionários', desc: '10-15% para atrair talentos com stock options' },
+              { regra: 'Fundador principal com maioria', desc: 'Pelo menos 51% para ter controle das decisões' },
+              { regra: 'Cuidado com muitos investidores', desc: 'Cada um quer opinar. Mantenha simples.' },
+              { regra: 'Entenda diluição antes de aceitar', desc: 'Simule como fica sua % após cada rodada' },
+            ].map((item, index) => (
+              <div key={index} className="flex gap-3 items-start bg-orange-500/10 rounded-lg p-3">
+                <span className="text-orange-400 font-bold">{index + 1}.</span>
+                <div>
+                  <p className="text-orange-300 font-semibold text-sm">{item.regra}</p>
+                  <p className="text-[var(--gray)] text-xs mt-1">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="bg-[var(--gold)]/10 border border-[var(--gold)]/30 rounded-xl p-6">
+          <h4 className="text-[var(--gold)] font-semibold mb-2">💡 FERRAMENTA RECOMENDADA</h4>
+          <p className="text-[var(--gray)]">
+            Use <strong className="text-white">Carta</strong> ou <strong className="text-white">Pulley</strong> para gerenciar cap table profissionalmente.
+            Para começar, uma planilha no Google Sheets já resolve.
+          </p>
+        </div>
+      </div>
+    )
+  },
+  'mod6-4': {
+    titulo: 'Vesting e Cliff para Sócios',
+    modulo: 'Equity & Valuation',
+    conteudo: (
+      <div className="space-y-6">
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold gold-text mb-4">Protegendo seu Equity: Vesting e Cliff</h3>
+          <p className="text-[var(--gray)] leading-relaxed mb-4">
+            <strong className="text-white">Vesting</strong> é a aquisição gradual de equity ao longo do tempo.
+            <strong className="text-white"> Cliff</strong> é o período mínimo antes de ganhar qualquer coisa.
+            Juntos, protegem a empresa de sócios que saem cedo.
+          </p>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-blue-400 mb-4">🎯 Como Funciona</h3>
+          <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4 mb-4">
+            <h4 className="text-blue-400 font-semibold mb-3">Estrutura Padrão: 4 anos com cliff de 1 ano</h4>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 bg-red-500/20 rounded-full flex items-center justify-center text-red-400 text-sm font-bold">0</div>
+                <div className="flex-1 h-2 bg-white/10 rounded-full"></div>
+                <span className="text-[var(--gray)] text-sm">0% (ainda no cliff)</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 bg-yellow-500/20 rounded-full flex items-center justify-center text-yellow-400 text-sm font-bold">1</div>
+                <div className="flex-1 h-2 bg-yellow-500/30 rounded-full"><div className="w-1/4 h-full bg-yellow-500 rounded-full"></div></div>
+                <span className="text-yellow-400 text-sm">25% (cliff batido!)</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400 text-sm font-bold">2</div>
+                <div className="flex-1 h-2 bg-blue-500/30 rounded-full"><div className="w-1/2 h-full bg-blue-500 rounded-full"></div></div>
+                <span className="text-blue-400 text-sm">50%</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 bg-purple-500/20 rounded-full flex items-center justify-center text-purple-400 text-sm font-bold">3</div>
+                <div className="flex-1 h-2 bg-purple-500/30 rounded-full"><div className="w-3/4 h-full bg-purple-500 rounded-full"></div></div>
+                <span className="text-purple-400 text-sm">75%</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center text-green-400 text-sm font-bold">4</div>
+                <div className="flex-1 h-2 bg-green-500 rounded-full"></div>
+                <span className="text-green-400 text-sm">100% (fully vested!)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-green-400 mb-4">📊 Exemplo Prático</h3>
+          <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
+            <p className="text-white mb-3">
+              <strong>Cenário:</strong> CTO entra com direito a 20% da empresa, vesting 4 anos, cliff 1 ano.
+            </p>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-white/10">
+                    <th className="text-left py-2 text-white">Tempo</th>
+                    <th className="text-center py-2 text-white">O que acontece</th>
+                    <th className="text-center py-2 text-white">% Adquirido</th>
+                  </tr>
+                </thead>
+                <tbody className="text-[var(--gray)]">
+                  <tr className="border-b border-white/5">
+                    <td className="py-2">Mês 6 - sai</td>
+                    <td className="text-center text-red-400">Não bateu cliff</td>
+                    <td className="text-center text-red-400">0%</td>
+                  </tr>
+                  <tr className="border-b border-white/5">
+                    <td className="py-2">Ano 1 - completa</td>
+                    <td className="text-center text-yellow-400">Cliff batido!</td>
+                    <td className="text-center text-yellow-400">5% (25% de 20%)</td>
+                  </tr>
+                  <tr className="border-b border-white/5">
+                    <td className="py-2">Ano 2 - completa</td>
+                    <td className="text-center text-blue-400">Vesting mensal</td>
+                    <td className="text-center text-blue-400">10% (50% de 20%)</td>
+                  </tr>
+                  <tr className="border-b border-white/5">
+                    <td className="py-2">Ano 3 - completa</td>
+                    <td className="text-center text-purple-400">Vesting mensal</td>
+                    <td className="text-center text-purple-400">15% (75% de 20%)</td>
+                  </tr>
+                  <tr>
+                    <td className="py-2">Ano 4 - completa</td>
+                    <td className="text-center text-green-400">Fully vested!</td>
+                    <td className="text-center text-green-400">20% (100% de 20%)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-red-400 mb-4">⚠️ Por Que Isso é ESSENCIAL</h3>
+          <div className="space-y-3">
+            <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-4">
+              <h4 className="text-red-400 font-semibold mb-2">Sem Vesting - O que acontece:</h4>
+              <p className="text-[var(--gray)] text-sm">
+                Você dá 30% para um sócio. Ele sai em 3 meses.
+                <strong className="text-white"> Ele leva os 30% tendo trabalhado quase nada.</strong>
+                Você fica com menos equity e um "sócio fantasma" para sempre.
+              </p>
+            </div>
+            <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
+              <h4 className="text-green-400 font-semibold mb-2">Com Vesting - O que acontece:</h4>
+              <p className="text-[var(--gray)] text-sm">
+                Você dá 30% para um sócio COM VESTING. Ele sai em 3 meses.
+                <strong className="text-white"> Ele não leva nada (não bateu o cliff).</strong>
+                Os 30% voltam para a empresa.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-purple-400 mb-4">📋 Estruturas Comuns</h3>
+          <div className="grid sm:grid-cols-2 gap-4">
+            <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
+              <h4 className="text-purple-400 font-semibold mb-2">Padrão (EUA/BR)</h4>
+              <p className="text-white text-sm">4 anos, cliff 1 ano</p>
+              <p className="text-[var(--gray)] text-xs mt-1">Após cliff: vesting mensal</p>
+            </div>
+            <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
+              <h4 className="text-blue-400 font-semibold mb-2">Acelerado</h4>
+              <p className="text-white text-sm">3 anos, cliff 6 meses</p>
+              <p className="text-[var(--gray)] text-xs mt-1">Para early employees</p>
+            </div>
+            <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
+              <h4 className="text-green-400 font-semibold mb-2">Fundadores</h4>
+              <p className="text-white text-sm">4 anos, cliff 0 ou 6 meses</p>
+              <p className="text-[var(--gray)] text-xs mt-1">Fundadores já provaram valor</p>
+            </div>
+            <div className="bg-orange-500/10 border border-orange-500/30 rounded-lg p-4">
+              <h4 className="text-orange-400 font-semibold mb-2">Advisor</h4>
+              <p className="text-white text-sm">2 anos, cliff 3 meses</p>
+              <p className="text-[var(--gray)] text-xs mt-1">Para mentores/conselheiros</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-orange-400 mb-4">🚀 Aceleração de Vesting</h3>
+          <p className="text-[var(--gray)] mb-4">Cláusulas que aceleram o vesting em situações especiais:</p>
+          <div className="space-y-3">
+            <div className="bg-orange-500/10 border border-orange-500/30 rounded-lg p-3">
+              <h4 className="text-orange-400 font-semibold text-sm">Single Trigger</h4>
+              <p className="text-[var(--gray)] text-xs">
+                Vesting acelera 100% se a empresa for vendida. Protege o fundador em M&A.
+              </p>
+            </div>
+            <div className="bg-orange-500/10 border border-orange-500/30 rounded-lg p-3">
+              <h4 className="text-orange-400 font-semibold text-sm">Double Trigger</h4>
+              <p className="text-[var(--gray)] text-xs">
+                Vesting acelera se: (1) empresa vendida E (2) pessoa for demitida. Mais comum.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-[var(--gold)]/10 border border-[var(--gold)]/30 rounded-xl p-6">
+          <h4 className="text-[var(--gold)] font-semibold mb-2">💡 REGRA DE OURO</h4>
+          <p className="text-[var(--gray)]">
+            <strong className="text-white">TODO mundo deveria ter vesting</strong>, incluindo fundadores.
+            Se todos têm skin in the game de longo prazo, a empresa ganha.
+            Investidores adoram ver isso.
+          </p>
+        </div>
+      </div>
+    )
+  },
+  'mod6-5': {
+    titulo: 'Como Calcular Valuation de SaaS',
+    modulo: 'Equity & Valuation',
+    conteudo: (
+      <div className="space-y-6">
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold gold-text mb-4">Valuation: Quanto Vale sua Empresa?</h3>
+          <p className="text-[var(--gray)] leading-relaxed mb-4">
+            <strong className="text-white">Valuation</strong> é o valor estimado da sua empresa.
+            Para SaaS, existem métodos específicos baseados em <strong className="text-[var(--gold)]">receita recorrente</strong>.
+          </p>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-blue-400 mb-4">📊 Método Principal: Múltiplo de ARR</h3>
+          <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4 mb-4">
+            <p className="text-white text-center text-xl mb-2">
+              <strong>Valuation = ARR × Múltiplo</strong>
+            </p>
+            <p className="text-[var(--gray)] text-center text-sm">
+              ARR = Annual Recurring Revenue (Receita Anual Recorrente)
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-3">
+            <div className="bg-black/30 rounded-lg p-4 text-center">
+              <p className="text-[var(--gray)] text-sm">MRR</p>
+              <p className="text-white font-bold text-lg">R$ 50k</p>
+            </div>
+            <div className="bg-black/30 rounded-lg p-4 text-center">
+              <p className="text-[var(--gray)] text-sm">ARR (MRR × 12)</p>
+              <p className="text-blue-400 font-bold text-lg">R$ 600k</p>
+            </div>
+            <div className="bg-black/30 rounded-lg p-4 text-center">
+              <p className="text-[var(--gray)] text-sm">Valuation (5x)</p>
+              <p className="text-[var(--gold)] font-bold text-lg">R$ 3M</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-green-400 mb-4">📈 Múltiplos por Estágio</h3>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-white/10">
+                  <th className="text-left py-2 text-white">Estágio</th>
+                  <th className="text-center py-2 text-white">ARR</th>
+                  <th className="text-center py-2 text-white">Múltiplo Típico</th>
+                  <th className="text-center py-2 text-white">Valuation</th>
+                </tr>
+              </thead>
+              <tbody className="text-[var(--gray)]">
+                <tr className="border-b border-white/5">
+                  <td className="py-2 text-yellow-400">Pre-seed</td>
+                  <td className="text-center">R$ 0-100k</td>
+                  <td className="text-center">10-20x</td>
+                  <td className="text-center">R$ 1-2M</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2 text-orange-400">Seed</td>
+                  <td className="text-center">R$ 100k-500k</td>
+                  <td className="text-center">8-15x</td>
+                  <td className="text-center">R$ 2-5M</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2 text-blue-400">Series A</td>
+                  <td className="text-center">R$ 500k-2M</td>
+                  <td className="text-center">6-12x</td>
+                  <td className="text-center">R$ 5-20M</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2 text-purple-400">Series B</td>
+                  <td className="text-center">R$ 2M-10M</td>
+                  <td className="text-center">5-10x</td>
+                  <td className="text-center">R$ 20-80M</td>
+                </tr>
+                <tr>
+                  <td className="py-2 text-green-400">Growth</td>
+                  <td className="text-center">R$ 10M+</td>
+                  <td className="text-center">4-8x</td>
+                  <td className="text-center">R$ 50M+</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-yellow-400 text-xs mt-3">
+            * Múltiplos variam por mercado, crescimento, margem e retenção.
+          </p>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-purple-400 mb-4">🎯 Fatores que Aumentam seu Múltiplo</h3>
+          <div className="grid sm:grid-cols-2 gap-3">
+            {[
+              { fator: 'Crescimento alto', desc: '+100% ano/ano', impacto: '+2-3x' },
+              { fator: 'Churn baixo', desc: 'Net Revenue Retention > 100%', impacto: '+2-4x' },
+              { fator: 'Margem alta', desc: 'Gross margin > 80%', impacto: '+1-2x' },
+              { fator: 'Mercado grande', desc: 'TAM > R$1B', impacto: '+1-2x' },
+              { fator: 'Receita previsível', desc: 'Contratos anuais', impacto: '+1x' },
+              { fator: 'Baixo CAC', desc: 'LTV/CAC > 3', impacto: '+1-2x' },
+            ].map((item, index) => (
+              <div key={index} className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-3">
+                <div className="flex justify-between items-center mb-1">
+                  <span className="text-purple-400 font-semibold text-sm">{item.fator}</span>
+                  <span className="text-green-400 text-xs font-bold">{item.impacto}</span>
+                </div>
+                <p className="text-[var(--gray)] text-xs">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-orange-400 mb-4">🧮 Calculadora de Valuation</h3>
+          <div className="bg-orange-500/10 border border-orange-500/30 rounded-lg p-4">
+            <p className="text-white mb-4">Exemplo: Sua startup SaaS</p>
+            <div className="space-y-3">
+              <div className="flex justify-between items-center py-2 border-b border-white/10">
+                <span className="text-[var(--gray)]">MRR atual</span>
+                <span className="text-white font-bold">R$ 30.000</span>
+              </div>
+              <div className="flex justify-between items-center py-2 border-b border-white/10">
+                <span className="text-[var(--gray)]">ARR (MRR × 12)</span>
+                <span className="text-blue-400 font-bold">R$ 360.000</span>
+              </div>
+              <div className="flex justify-between items-center py-2 border-b border-white/10">
+                <span className="text-[var(--gray)]">Crescimento mensal</span>
+                <span className="text-green-400 font-bold">15% MoM</span>
+              </div>
+              <div className="flex justify-between items-center py-2 border-b border-white/10">
+                <span className="text-[var(--gray)]">Churn</span>
+                <span className="text-green-400 font-bold">2% (baixo)</span>
+              </div>
+              <div className="flex justify-between items-center py-2 border-b border-white/10">
+                <span className="text-[var(--gray)]">Múltiplo aplicável</span>
+                <span className="text-purple-400 font-bold">10x (crescimento alto)</span>
+              </div>
+              <div className="flex justify-between items-center py-3 bg-[var(--gold)]/20 rounded-lg px-3">
+                <span className="text-[var(--gold)] font-bold">VALUATION ESTIMADO</span>
+                <span className="text-[var(--gold)] font-bold text-xl">R$ 3.600.000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-red-400 mb-4">⚠️ Métodos Alternativos</h3>
+          <div className="space-y-3">
+            <div className="bg-white/5 border border-white/10 rounded-lg p-4">
+              <h4 className="text-white font-semibold mb-2">DCF (Fluxo de Caixa Descontado)</h4>
+              <p className="text-[var(--gray)] text-sm">
+                Projeta fluxo de caixa futuro e traz a valor presente.
+                <span className="text-yellow-400"> Mais usado para empresas maduras.</span>
+              </p>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-lg p-4">
+              <h4 className="text-white font-semibold mb-2">Comparáveis (Comps)</h4>
+              <p className="text-[var(--gray)] text-sm">
+                Compara com empresas similares que foram vendidas.
+                <span className="text-yellow-400"> Útil para M&A.</span>
+              </p>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-lg p-4">
+              <h4 className="text-white font-semibold mb-2">Scorecard (Anjos)</h4>
+              <p className="text-[var(--gray)] text-sm">
+                Avalia time, mercado, produto em % vs média.
+                <span className="text-yellow-400"> Usado por investidores anjo pré-receita.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-[var(--gold)]/10 border border-[var(--gold)]/30 rounded-xl p-6">
+          <h4 className="text-[var(--gold)] font-semibold mb-2">💡 VERDADE SOBRE VALUATION</h4>
+          <p className="text-[var(--gray)]">
+            No final do dia, valuation é <strong className="text-white">o que alguém está disposto a pagar</strong>.
+            Métodos são guias, mas a negociação define o número final.
+            <strong className="text-[var(--gold)]"> Foco em crescer a receita - o valuation segue.</strong>
+          </p>
+        </div>
+      </div>
+    )
+  },
+  'mod6-6': {
+    titulo: 'Múltiplos de Mercado',
+    modulo: 'Equity & Valuation',
+    conteudo: (
+      <div className="space-y-6">
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold gold-text mb-4">Entendendo Múltiplos de Mercado</h3>
+          <p className="text-[var(--gray)] leading-relaxed mb-4">
+            Múltiplos são <strong className="text-white">atalhos</strong> para estimar valuation baseado em métricas da empresa.
+            Para SaaS, os mais importantes são baseados em <strong className="text-[var(--gold)]">receita recorrente</strong>.
+          </p>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-blue-400 mb-4">📊 Principais Múltiplos SaaS</h3>
+          <div className="space-y-4">
+            <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
+              <div className="flex justify-between items-center mb-2">
+                <h4 className="text-blue-400 font-semibold">EV/ARR</h4>
+                <span className="text-white font-bold">5-15x</span>
+              </div>
+              <p className="text-[var(--gray)] text-sm">
+                Enterprise Value dividido por ARR. O mais usado para SaaS.
+              </p>
+              <p className="text-blue-300 text-xs mt-1">Fórmula: Valuation ÷ Receita Anual Recorrente</p>
+            </div>
+            <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
+              <div className="flex justify-between items-center mb-2">
+                <h4 className="text-green-400 font-semibold">EV/MRR</h4>
+                <span className="text-white font-bold">60-180x</span>
+              </div>
+              <p className="text-[var(--gray)] text-sm">
+                Enterprise Value dividido por MRR. É o ARR múltiplo × 12.
+              </p>
+              <p className="text-green-300 text-xs mt-1">Fórmula: Valuation ÷ Receita Mensal Recorrente</p>
+            </div>
+            <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
+              <div className="flex justify-between items-center mb-2">
+                <h4 className="text-purple-400 font-semibold">EV/Revenue</h4>
+                <span className="text-white font-bold">3-10x</span>
+              </div>
+              <p className="text-[var(--gray)] text-sm">
+                Enterprise Value dividido por receita total (inclui não-recorrente).
+              </p>
+              <p className="text-purple-300 text-xs mt-1">Fórmula: Valuation ÷ Receita Total Anual</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-green-400 mb-4">🌎 Múltiplos por Região (2024-2025)</h3>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-white/10">
+                  <th className="text-left py-2 text-white">Região</th>
+                  <th className="text-center py-2 text-white">Múltiplo ARR</th>
+                  <th className="text-center py-2 text-white">Observação</th>
+                </tr>
+              </thead>
+              <tbody className="text-[var(--gray)]">
+                <tr className="border-b border-white/5">
+                  <td className="py-2">🇺🇸 EUA (Top Tier)</td>
+                  <td className="text-center text-green-400">10-20x</td>
+                  <td className="text-center text-xs">Empresas de alto crescimento</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2">🇺🇸 EUA (Médio)</td>
+                  <td className="text-center text-blue-400">5-10x</td>
+                  <td className="text-center text-xs">Mercado normal</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2">🇧🇷 Brasil (Top)</td>
+                  <td className="text-center text-yellow-400">5-10x</td>
+                  <td className="text-center text-xs">Startups destaque</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2">🇧🇷 Brasil (Médio)</td>
+                  <td className="text-center text-orange-400">3-6x</td>
+                  <td className="text-center text-xs">Mercado normal</td>
+                </tr>
+                <tr>
+                  <td className="py-2">🇧🇷 Brasil (PME)</td>
+                  <td className="text-center text-red-400">2-4x</td>
+                  <td className="text-center text-xs">Empresas menores/tradicionais</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-purple-400 mb-4">📈 Rule of 40</h3>
+          <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4 mb-4">
+            <p className="text-white text-center text-lg mb-2">
+              <strong>Crescimento % + Margem % ≥ 40</strong>
+            </p>
+            <p className="text-[var(--gray)] text-center text-sm">
+              Regra usada por investidores para avaliar saúde de SaaS
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-4">
+            <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-3">
+              <h4 className="text-green-400 font-semibold text-sm mb-2">✅ Bom (Score 50)</h4>
+              <p className="text-[var(--gray)] text-xs">
+                30% crescimento + 20% margem = 50
+              </p>
+              <p className="text-green-300 text-xs mt-1">Múltiplo: 8-12x</p>
+            </div>
+            <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-3">
+              <h4 className="text-yellow-400 font-semibold text-sm mb-2">⚠️ Ok (Score 40)</h4>
+              <p className="text-[var(--gray)] text-xs">
+                20% crescimento + 20% margem = 40
+              </p>
+              <p className="text-yellow-300 text-xs mt-1">Múltiplo: 5-8x</p>
+            </div>
+            <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-3">
+              <h4 className="text-red-400 font-semibold text-sm mb-2">❌ Ruim (Score 25)</h4>
+              <p className="text-[var(--gray)] text-xs">
+                10% crescimento + 15% margem = 25
+              </p>
+              <p className="text-red-300 text-xs mt-1">Múltiplo: 2-4x</p>
+            </div>
+            <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-3">
+              <h4 className="text-blue-400 font-semibold text-sm mb-2">🚀 Excelente (Score 70)</h4>
+              <p className="text-[var(--gray)] text-xs">
+                50% crescimento + 20% margem = 70
+              </p>
+              <p className="text-blue-300 text-xs mt-1">Múltiplo: 15-25x</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-orange-400 mb-4">🏢 Exemplos Reais Brasil</h3>
+          <div className="space-y-3">
+            <div className="bg-white/5 border border-white/10 rounded-lg p-4">
+              <div className="flex justify-between items-center mb-2">
+                <span className="text-white font-semibold">RD Station</span>
+                <span className="text-green-400 font-bold">~10x ARR</span>
+              </div>
+              <p className="text-[var(--gray)] text-sm">Vendida para TOTVS por R$1.86B (~R$180M ARR estimado)</p>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-lg p-4">
+              <div className="flex justify-between items-center mb-2">
+                <span className="text-white font-semibold">Conta Azul</span>
+                <span className="text-blue-400 font-bold">~8x ARR</span>
+              </div>
+              <p className="text-[var(--gray)] text-sm">Valuation estimado em rodadas de ~$100M</p>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-lg p-4">
+              <div className="flex justify-between items-center mb-2">
+                <span className="text-white font-semibold">Pipefy</span>
+                <span className="text-purple-400 font-bold">~15x ARR</span>
+              </div>
+              <p className="text-[var(--gray)] text-sm">Alto crescimento internacional justifica múltiplo maior</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-[var(--gold)]/10 border border-[var(--gold)]/30 rounded-xl p-6">
+          <h4 className="text-[var(--gold)] font-semibold mb-2">💡 COMO USAR ISSO</h4>
+          <p className="text-[var(--gray)]">
+            Múltiplos são <strong className="text-white">referência, não regra</strong>.
+            Use para ter noção do valor, mas lembre: cada negociação é única.
+            <strong className="text-[var(--gold)]"> Foco em métricas boas = múltiplo alto naturalmente.</strong>
+          </p>
+        </div>
+      </div>
+    )
+  },
+  'mod6-7': {
+    titulo: 'Preparando para Investidores',
+    modulo: 'Equity & Valuation',
+    conteudo: (
+      <div className="space-y-6">
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold gold-text mb-4">Captando Investimento: O Básico</h3>
+          <p className="text-[var(--gray)] leading-relaxed mb-4">
+            Investimento é <strong className="text-white">combustível para crescer mais rápido</strong>, não dinheiro grátis.
+            Você troca equity por capital. Só faça se realmente precisar acelerar.
+          </p>
+          <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4">
+            <p className="text-yellow-400 text-center">
+              "Investimento não é prêmio. É responsabilidade de entregar retorno."
+            </p>
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-blue-400 mb-4">📊 Tipos de Investidores</h3>
+          <div className="space-y-3">
+            <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
+              <div className="flex justify-between items-center mb-2">
+                <h4 className="text-blue-400 font-semibold">Investidor Anjo</h4>
+                <span className="text-white text-sm">R$ 50k - 500k</span>
+              </div>
+              <p className="text-[var(--gray)] text-sm">
+                Pessoa física que investe próprio dinheiro. Geralmente ex-empreendedores.
+              </p>
+              <p className="text-blue-300 text-xs mt-1">Estágio: Pre-seed, Seed</p>
+            </div>
+            <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
+              <div className="flex justify-between items-center mb-2">
+                <h4 className="text-green-400 font-semibold">Aceleradora</h4>
+                <span className="text-white text-sm">R$ 50k - 200k + mentoria</span>
+              </div>
+              <p className="text-[var(--gray)] text-sm">
+                Programa de 3-6 meses com investimento, mentoria e conexões.
+              </p>
+              <p className="text-green-300 text-xs mt-1">Ex: Y Combinator, ACE, Wayra</p>
+            </div>
+            <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
+              <div className="flex justify-between items-center mb-2">
+                <h4 className="text-purple-400 font-semibold">Venture Capital (VC)</h4>
+                <span className="text-white text-sm">R$ 1M - 100M+</span>
+              </div>
+              <p className="text-[var(--gray)] text-sm">
+                Fundos profissionais que investem dinheiro de terceiros.
+              </p>
+              <p className="text-purple-300 text-xs mt-1">Estágio: Seed, Series A, B, C...</p>
+            </div>
+            <div className="bg-orange-500/10 border border-orange-500/30 rounded-lg p-4">
+              <div className="flex justify-between items-center mb-2">
+                <h4 className="text-orange-400 font-semibold">Corporate Venture</h4>
+                <span className="text-white text-sm">R$ 1M - 50M</span>
+              </div>
+              <p className="text-[var(--gray)] text-sm">
+                Braço de investimento de grandes empresas (ex: Bradesco, Itaú, TOTVS).
+              </p>
+              <p className="text-orange-300 text-xs mt-1">Pode incluir parceria comercial</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-green-400 mb-4">📋 O que Investidores Avaliam</h3>
+          <div className="grid sm:grid-cols-2 gap-3">
+            {[
+              { item: 'Time', peso: '40%', desc: 'Experiência, complementaridade, dedicação' },
+              { item: 'Mercado', peso: '25%', desc: 'Tamanho (TAM), crescimento, timing' },
+              { item: 'Produto', peso: '20%', desc: 'Diferencial, tecnologia, moat' },
+              { item: 'Tração', peso: '15%', desc: 'Receita, crescimento, retenção' },
+            ].map((item, index) => (
+              <div key={index} className="bg-green-500/10 border border-green-500/30 rounded-lg p-3">
+                <div className="flex justify-between items-center mb-1">
+                  <span className="text-green-400 font-semibold">{item.item}</span>
+                  <span className="text-white font-bold text-sm">{item.peso}</span>
+                </div>
+                <p className="text-[var(--gray)] text-xs">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-purple-400 mb-4">📑 Documentos Necessários</h3>
+          <div className="space-y-2">
+            {[
+              { doc: 'Pitch Deck', desc: '10-15 slides apresentando a empresa', status: 'Obrigatório' },
+              { doc: 'Financial Model', desc: 'Projeção financeira 3-5 anos', status: 'Obrigatório' },
+              { doc: 'Cap Table', desc: 'Divisão societária atual', status: 'Obrigatório' },
+              { doc: 'Data Room', desc: 'Pasta com todos documentos', status: 'Due Diligence' },
+              { doc: 'One Pager', desc: 'Resumo de 1 página', status: 'Recomendado' },
+              { doc: 'Métricas Dashboard', desc: 'MRR, Churn, CAC, LTV em tempo real', status: 'Diferencial' },
+            ].map((item, index) => (
+              <div key={index} className="flex items-center justify-between bg-white/5 rounded-lg p-3">
+                <div>
+                  <span className="text-white font-semibold text-sm">{item.doc}</span>
+                  <p className="text-[var(--gray)] text-xs">{item.desc}</p>
+                </div>
+                <span className={`text-xs px-2 py-1 rounded ${
+                  item.status === 'Obrigatório' ? 'bg-red-500/20 text-red-400' :
+                  item.status === 'Due Diligence' ? 'bg-yellow-500/20 text-yellow-400' :
+                  'bg-green-500/20 text-green-400'
+                }`}>
+                  {item.status}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-orange-400 mb-4">🎯 Pitch Deck - Estrutura</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+            {[
+              { num: 1, titulo: 'Capa', desc: 'Nome + tagline' },
+              { num: 2, titulo: 'Problema', desc: 'Dor que resolve' },
+              { num: 3, titulo: 'Solução', desc: 'Como resolve' },
+              { num: 4, titulo: 'Mercado', desc: 'TAM/SAM/SOM' },
+              { num: 5, titulo: 'Produto', desc: 'Demo/screenshots' },
+              { num: 6, titulo: 'Modelo', desc: 'Como ganha $' },
+              { num: 7, titulo: 'Tração', desc: 'Métricas/clientes' },
+              { num: 8, titulo: 'Competição', desc: 'Diferencial' },
+              { num: 9, titulo: 'Time', desc: 'Fundadores' },
+              { num: 10, titulo: 'Financeiro', desc: 'Projeções' },
+              { num: 11, titulo: 'Ask', desc: 'Quanto quer' },
+              { num: 12, titulo: 'Contato', desc: 'Como falar' },
+            ].map((slide) => (
+              <div key={slide.num} className="bg-orange-500/10 border border-orange-500/30 rounded-lg p-2 text-center">
+                <span className="text-orange-400 font-bold text-xs">{slide.num}</span>
+                <p className="text-white text-sm font-semibold">{slide.titulo}</p>
+                <p className="text-[var(--gray)] text-xs">{slide.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="bg-[var(--gold)]/10 border border-[var(--gold)]/30 rounded-xl p-6">
+          <h4 className="text-[var(--gold)] font-semibold mb-2">💡 DICA FINAL</h4>
+          <p className="text-[var(--gray)]">
+            <strong className="text-white">Tração &gt; Pitch bonito.</strong> Investidor quer ver números reais.
+            Foque em crescer a empresa primeiro - investimento vem como consequência.
+          </p>
+        </div>
+      </div>
+    )
+  },
+  'mod6-8': {
+    titulo: 'Term Sheet e Negociação',
+    modulo: 'Equity & Valuation',
+    conteudo: (
+      <div className="space-y-6">
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold gold-text mb-4">Term Sheet: O Contrato de Intenções</h3>
+          <p className="text-[var(--gray)] leading-relaxed mb-4">
+            <strong className="text-white">Term Sheet</strong> é o documento que define os termos principais do investimento.
+            Não é contrato final, mas é <strong className="text-[var(--gold)]">moralmente vinculante</strong>.
+          </p>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-blue-400 mb-4">📋 Termos Principais</h3>
+          <div className="space-y-3">
+            <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
+              <h4 className="text-blue-400 font-semibold mb-2">Pre-Money Valuation</h4>
+              <p className="text-[var(--gray)] text-sm">
+                Valor da empresa ANTES do investimento entrar.
+              </p>
+              <p className="text-white text-xs mt-1">
+                Ex: Pre-money R$4M + Investimento R$1M = Post-money R$5M (investidor fica com 20%)
+              </p>
+            </div>
+            <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
+              <h4 className="text-green-400 font-semibold mb-2">Liquidation Preference</h4>
+              <p className="text-[var(--gray)] text-sm">
+                Prioridade do investidor em receber de volta em caso de venda/liquidação.
+              </p>
+              <p className="text-white text-xs mt-1">
+                1x = recebe o investido primeiro. 2x = recebe 2x o investido primeiro.
+              </p>
+            </div>
+            <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
+              <h4 className="text-purple-400 font-semibold mb-2">Anti-dilution</h4>
+              <p className="text-[var(--gray)] text-sm">
+                Proteção se próxima rodada for com valuation menor (down round).
+              </p>
+              <p className="text-white text-xs mt-1">
+                Full Ratchet (agressivo) vs Weighted Average (mais comum)
+              </p>
+            </div>
+            <div className="bg-orange-500/10 border border-orange-500/30 rounded-lg p-4">
+              <h4 className="text-orange-400 font-semibold mb-2">Board Seats</h4>
+              <p className="text-[var(--gray)] text-sm">
+                Assentos no conselho de administração.
+              </p>
+              <p className="text-white text-xs mt-1">
+                Típico Seed: 2 fundadores + 1 investidor. Series A: 2 + 2 + 1 independente.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-red-400 mb-4">⚠️ Red Flags - Cuidado!</h3>
+          <div className="space-y-2">
+            {[
+              { flag: 'Liquidation preference > 1x', risco: 'Fundadores podem não receber nada no exit' },
+              { flag: 'Full ratchet anti-dilution', risco: 'Diluição extrema em down round' },
+              { flag: 'Participating preferred', risco: 'Investidor recebe 2x (preferência + pro-rata)' },
+              { flag: 'Controle do board desde Seed', risco: 'Você perde poder de decisão muito cedo' },
+              { flag: 'Vesting reverso para fundadores', risco: 'Você pode perder suas ações' },
+            ].map((item, index) => (
+              <div key={index} className="flex gap-3 items-start bg-red-500/10 rounded-lg p-3">
+                <span className="text-red-400">⚠️</span>
+                <div>
+                  <p className="text-red-300 font-semibold text-sm">{item.flag}</p>
+                  <p className="text-[var(--gray)] text-xs">{item.risco}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-green-400 mb-4">✅ Termos Founder-Friendly</h3>
+          <div className="space-y-2">
+            {[
+              '1x non-participating liquidation preference',
+              'Weighted average anti-dilution',
+              'Fundadores mantêm maioria do board até Series A',
+              'Vesting de 4 anos só para novas ações',
+              'ESOP (pool de funcionários) pré-definido',
+              'Drag-along com limite de valuation',
+            ].map((item, index) => (
+              <div key={index} className="flex items-center gap-3 bg-green-500/10 rounded-lg p-3">
+                <span className="text-green-400">✅</span>
+                <span className="text-[var(--gray)] text-sm">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-purple-400 mb-4">🤝 Dicas de Negociação</h3>
+          <div className="grid sm:grid-cols-2 gap-3">
+            {[
+              { dica: 'Tenha alternativas', desc: 'BATNA forte = melhor negociação' },
+              { dica: 'Foque no valuation', desc: 'Mas não ignore outros termos' },
+              { dica: 'Contrate advogado', desc: 'Especialista em venture capital' },
+              { dica: 'Converse com fundadores', desc: 'Pergunte sobre o investidor' },
+              { dica: 'Não tenha pressa', desc: 'Urgência enfraquece posição' },
+              { dica: 'Documente tudo', desc: 'E-mails e mensagens são prova' },
+            ].map((item, index) => (
+              <div key={index} className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-3">
+                <p className="text-purple-400 font-semibold text-sm">{item.dica}</p>
+                <p className="text-[var(--gray)] text-xs">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="bg-[var(--gold)]/10 border border-[var(--gold)]/30 rounded-xl p-6">
+          <h4 className="text-[var(--gold)] font-semibold mb-2">💡 REGRA DE OURO</h4>
+          <p className="text-[var(--gray)]">
+            <strong className="text-white">Valuation importa, mas termos importam mais.</strong>
+            R$5M com termos ruins pode ser pior que R$3M com termos bons.
+            Sempre consulte advogado especializado antes de assinar.
+          </p>
+        </div>
+      </div>
+    )
+  },
+  'mod6-9': {
+    titulo: 'Exit - Vendendo sua Empresa',
+    modulo: 'Equity & Valuation',
+    conteudo: (
+      <div className="space-y-6">
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold gold-text mb-4">Exit: O Grande Objetivo</h3>
+          <p className="text-[var(--gray)] leading-relaxed mb-4">
+            <strong className="text-white">Exit</strong> é quando você vende sua participação na empresa e realiza o valor do seu equity.
+            É o momento em que <strong className="text-[var(--gold)]">papel vira dinheiro</strong>.
+          </p>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-blue-400 mb-4">📊 Tipos de Exit</h3>
+          <div className="space-y-3">
+            <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
+              <div className="flex justify-between items-center mb-2">
+                <h4 className="text-blue-400 font-semibold">M&A (Aquisição)</h4>
+                <span className="text-green-400 text-sm">Mais comum</span>
+              </div>
+              <p className="text-[var(--gray)] text-sm">
+                Empresa maior compra 100% ou maioria da sua empresa.
+              </p>
+              <p className="text-blue-300 text-xs mt-1">Ex: TOTVS comprou RD Station por R$1.86B</p>
+            </div>
+            <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
+              <div className="flex justify-between items-center mb-2">
+                <h4 className="text-green-400 font-semibold">Acqui-hire</h4>
+                <span className="text-yellow-400 text-sm">Menor valor</span>
+              </div>
+              <p className="text-[var(--gray)] text-sm">
+                Compram a empresa principalmente pelo time/tecnologia.
+              </p>
+              <p className="text-green-300 text-xs mt-1">Comum quando produto não decolou mas time é bom</p>
+            </div>
+            <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
+              <div className="flex justify-between items-center mb-2">
+                <h4 className="text-purple-400 font-semibold">IPO</h4>
+                <span className="text-purple-400 text-sm">Raro</span>
+              </div>
+              <p className="text-[var(--gray)] text-sm">
+                Abrir capital na bolsa de valores.
+              </p>
+              <p className="text-purple-300 text-xs mt-1">Requer escala muito grande (R$100M+ ARR)</p>
+            </div>
+            <div className="bg-orange-500/10 border border-orange-500/30 rounded-lg p-4">
+              <div className="flex justify-between items-center mb-2">
+                <h4 className="text-orange-400 font-semibold">Secondary Sale</h4>
+                <span className="text-blue-400 text-sm">Liquidez parcial</span>
+              </div>
+              <p className="text-[var(--gray)] text-sm">
+                Vender parte das suas ações para outro investidor.
+              </p>
+              <p className="text-orange-300 text-xs mt-1">Comum em rodadas grandes (Series B+)</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-green-400 mb-4">🎯 Preparando para o Exit</h3>
+          <div className="space-y-2">
+            {[
+              { item: 'Métricas sólidas', desc: 'MRR crescente, churn baixo, unit economics positivo' },
+              { item: 'Documentação em dia', desc: 'Contratos, cap table, financeiro auditado' },
+              { item: 'Time não dependente de você', desc: 'Empresa funciona sem fundador presente 100%' },
+              { item: 'Clientes diversificados', desc: 'Nenhum cliente > 10-15% da receita' },
+              { item: 'Tecnologia documentada', desc: 'Código limpo, arquitetura escalável' },
+              { item: 'Relacionamento com potenciais compradores', desc: 'Conversas iniciadas 1-2 anos antes' },
+            ].map((item, index) => (
+              <div key={index} className="flex items-center gap-3 bg-green-500/10 rounded-lg p-3">
+                <span className="text-green-400 font-bold">{index + 1}.</span>
+                <div>
+                  <p className="text-white text-sm font-semibold">{item.item}</p>
+                  <p className="text-[var(--gray)] text-xs">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-purple-400 mb-4">💰 Múltiplos de Exit por Comprador</h3>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-white/10">
+                  <th className="text-left py-2 text-white">Comprador</th>
+                  <th className="text-center py-2 text-white">Múltiplo típico</th>
+                  <th className="text-center py-2 text-white">Motivação</th>
+                </tr>
+              </thead>
+              <tbody className="text-[var(--gray)]">
+                <tr className="border-b border-white/5">
+                  <td className="py-2">Estratégico (concorrente)</td>
+                  <td className="text-center text-green-400">8-15x ARR</td>
+                  <td className="text-center text-xs">Eliminar competição + sinergias</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2">Private Equity</td>
+                  <td className="text-center text-blue-400">5-8x ARR</td>
+                  <td className="text-center text-xs">Retorno financeiro</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="py-2">Empresa grande (não-tech)</td>
+                  <td className="text-center text-yellow-400">4-7x ARR</td>
+                  <td className="text-center text-xs">Transformação digital</td>
+                </tr>
+                <tr>
+                  <td className="py-2">Acqui-hire</td>
+                  <td className="text-center text-red-400">1-3x ARR</td>
+                  <td className="text-center text-xs">Talento + tecnologia</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div className="glass p-6">
+          <h3 className="text-xl font-semibold text-orange-400 mb-4">📋 Processo de M&A</h3>
+          <div className="space-y-3">
+            {[
+              { fase: 'Preparação', tempo: '3-6 meses', desc: 'Organizar documentos, métricas, data room' },
+              { fase: 'Busca de compradores', tempo: '1-3 meses', desc: 'Banker ou contato direto' },
+              { fase: 'LOI (Carta de intenção)', tempo: '2-4 semanas', desc: 'Termos principais acordados' },
+              { fase: 'Due Diligence', tempo: '1-3 meses', desc: 'Comprador verifica tudo' },
+              { fase: 'Negociação final', tempo: '2-4 semanas', desc: 'Ajustes, reps & warranties' },
+              { fase: 'Closing', tempo: '1-2 semanas', desc: 'Assinatura e transferência' },
+            ].map((item, index) => (
+              <div key={index} className="flex gap-4 items-center bg-orange-500/10 rounded-lg p-3">
+                <div className="w-8 h-8 bg-orange-500/30 rounded-full flex items-center justify-center text-orange-400 font-bold text-sm">
+                  {index + 1}
+                </div>
+                <div className="flex-1">
+                  <div className="flex justify-between">
+                    <span className="text-white font-semibold text-sm">{item.fase}</span>
+                    <span className="text-orange-400 text-xs">{item.tempo}</span>
+                  </div>
+                  <p className="text-[var(--gray)] text-xs">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="glass p-6 border-2 border-[var(--gold)]">
+          <h3 className="text-xl font-semibold text-[var(--gold)] mb-4">🏆 Casos de Exit Brasil</h3>
+          <div className="space-y-3">
+            <div className="bg-black/30 rounded-lg p-4">
+              <div className="flex justify-between items-center">
+                <span className="text-white font-bold">RD Station → TOTVS</span>
+                <span className="text-[var(--gold)] font-bold">R$ 1.86B</span>
+              </div>
+              <p className="text-[var(--gray)] text-sm">Marketing automation SaaS</p>
+            </div>
+            <div className="bg-black/30 rounded-lg p-4">
+              <div className="flex justify-between items-center">
+                <span className="text-white font-bold">Superlógica → Vinci</span>
+                <span className="text-[var(--gold)] font-bold">R$ 1B+</span>
+              </div>
+              <p className="text-[var(--gray)] text-sm">ERP para condomínios</p>
+            </div>
+            <div className="bg-black/30 rounded-lg p-4">
+              <div className="flex justify-between items-center">
+                <span className="text-white font-bold">Involves → Bain Capital</span>
+                <span className="text-[var(--gold)] font-bold">R$ 500M+</span>
+              </div>
+              <p className="text-[var(--gray)] text-sm">Trade marketing SaaS</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-gradient-to-r from-[var(--gold)]/20 to-orange-500/20 rounded-xl p-6 border border-[var(--gold)]/30">
+          <h4 className="text-[var(--gold)] font-semibold mb-2">🎯 SEU CAMINHO PARA O EXIT</h4>
+          <p className="text-[var(--gray)] mb-4">
+            Com R$500k MRR (R$6M ARR) e múltiplo de 8x, sua empresa vale <strong className="text-white">R$48 milhões</strong>.
+          </p>
+          <p className="text-[var(--gold)]">
+            Se você tem 60% de equity = <strong className="text-white text-xl">R$28.8 milhões no seu bolso</strong>.
+          </p>
+          <p className="text-[var(--gray)] text-sm mt-2">
+            Esse é o poder de construir equity em vez de apenas salário.
+          </p>
+        </div>
+      </div>
+    )
+  },
 }
 
 // Navegação entre aulas
@@ -5785,6 +7258,7 @@ const todasAulas = [
   'mod3-1', 'mod3-2', 'mod3-3', 'mod3-4', 'mod3-5',
   'mod4-1', 'mod4-2', 'mod4-3', 'mod4-4', 'mod4-5', 'mod4-6', 'mod4-7',
   'mod5-1', 'mod5-2', 'mod5-3', 'mod5-4', 'mod5-5',
+  'mod6-1', 'mod6-2', 'mod6-3', 'mod6-4', 'mod6-5', 'mod6-6', 'mod6-7', 'mod6-8', 'mod6-9',
 ]
 
 export default function AulaPage() {

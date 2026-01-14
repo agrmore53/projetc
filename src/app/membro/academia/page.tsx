@@ -14,7 +14,8 @@ import {
   CheckCircle2,
   Circle,
   Play,
-  Crown
+  Crown,
+  DollarSign
 } from 'lucide-react'
 
 // Tipos
@@ -110,6 +111,24 @@ const modulos: Modulo[] = [
       { id: 'mod5-4', titulo: 'Facebook - Grupos e Página', duracao: '15 min' },
       { id: 'mod5-5', titulo: 'Instagram - Reels e Stories', duracao: '18 min' },
     ]
+  },
+  {
+    id: 'mod6',
+    titulo: 'Equity & Valuation',
+    descricao: 'Estruture seu negócio para valer milhões',
+    icone: 'dollar',
+    cor: '#00BCD4',
+    aulas: [
+      { id: 'mod6-1', titulo: 'O que é Equity e Por Que Importa', duracao: '12 min' },
+      { id: 'mod6-2', titulo: 'Estrutura Jurídica: MEI vs LTDA vs S/A', duracao: '15 min' },
+      { id: 'mod6-3', titulo: 'Cap Table - Divisão Societária', duracao: '18 min' },
+      { id: 'mod6-4', titulo: 'Vesting e Cliff para Sócios', duracao: '15 min' },
+      { id: 'mod6-5', titulo: 'Como Calcular Valuation de SaaS', duracao: '20 min' },
+      { id: 'mod6-6', titulo: 'Múltiplos de Mercado', duracao: '15 min' },
+      { id: 'mod6-7', titulo: 'Preparando para Investidores', duracao: '18 min' },
+      { id: 'mod6-8', titulo: 'Term Sheet e Negociação', duracao: '15 min' },
+      { id: 'mod6-9', titulo: 'Exit - Vendendo sua Empresa', duracao: '20 min' },
+    ]
   }
 ]
 
@@ -153,6 +172,7 @@ export default function AcademiaPage() {
       case 'globe': return <Globe className="w-6 h-6" />
       case 'target': return <Target className="w-6 h-6" />
       case 'trending': return <TrendingUp className="w-6 h-6" />
+      case 'dollar': return <DollarSign className="w-6 h-6" />
       default: return <BookOpen className="w-6 h-6" />
     }
   }
