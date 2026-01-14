@@ -91,7 +91,7 @@ export default function MembroPage() {
     { icon: Target, title: 'Quiz: Descubra Seu Nicho', desc: 'Qual área combina mais com você?', status: 'available', link: '/membro/quiz' },
     { icon: Lightbulb, title: 'A Importância da Pesquisa', desc: 'Por que isso define seu sucesso', status: 'available', link: '/membro/conteudo' },
     { icon: BarChart3, title: 'Pesquisa de Mercado', desc: 'Identificação de dores Brasil/EUA', status: 'available', link: '/membro/pesquisa' },
-    { icon: FileText, title: 'Plano de Mentoria Completo', desc: 'Roadmap de 30 dias a 5 anos', status: 'available' },
+    { icon: FileText, title: 'Plano de Mentoria Completo', desc: 'Roadmap de 30 dias a 5 anos', status: 'available', link: '/membro/roadmap', highlight: true },
     { icon: FileText, title: 'Templates de Validação', desc: 'Scripts e planilhas de validação', status: 'soon' },
     { icon: BarChart3, title: 'Planilha de Métricas SaaS', desc: 'Controle MRR, churn, CAC, LTV', status: 'soon' },
     { icon: PlayCircle, title: 'Aulas Gravadas', desc: 'Gravações das sessões', status: 'soon' },
