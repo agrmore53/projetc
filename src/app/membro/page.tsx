@@ -36,7 +36,13 @@ import {
   Film,
   Brain,
   Megaphone,
-  Scale
+  Scale,
+  BookText,
+  PieChart,
+  Type,
+  Award,
+  LayoutDashboard,
+  Layers
 } from 'lucide-react'
 
 export default function MembroPage() {
@@ -139,6 +145,12 @@ export default function MembroPage() {
     { icon: Brain, title: 'Biblioteca de Gatilhos', desc: '24 gatilhos mentais com exemplos', status: 'available', link: '/membro/gatilhos', highlight: true },
     { icon: Megaphone, title: 'Gerador de Anúncios', desc: 'Copy para Facebook, Google, Instagram', status: 'available', link: '/membro/anuncios', highlight: true },
     { icon: Scale, title: 'Calculadora Break-even', desc: 'Ponto de equilíbrio do seu negócio', status: 'available', link: '/membro/breakeven', highlight: true },
+    { icon: BookText, title: 'Gerador de Playbook', desc: 'Documento completo do processo de vendas', status: 'available', link: '/membro/playbook', highlight: true },
+    { icon: PieChart, title: 'Calculadora de Equity', desc: 'Divisão de cotas e vesting para founders', status: 'available', link: '/membro/equity', highlight: true },
+    { icon: Type, title: 'Gerador de Headlines', desc: '50+ templates de headlines magnéticas', status: 'available', link: '/membro/headlines', highlight: true },
+    { icon: Award, title: 'Certificado de Conclusão', desc: 'Gere seu certificado personalizado', status: 'available', link: '/membro/certificado', highlight: true },
+    { icon: LayoutDashboard, title: 'Dashboard Pessoal', desc: 'Acompanhe seu progresso e metas', status: 'available', link: '/membro/dashboard', highlight: true },
+    { icon: Layers, title: 'Business Canvas', desc: 'Planeje seu negócio em uma página', status: 'available', link: '/membro/canvas', highlight: true },
   ]
 
   const inclusos = [
