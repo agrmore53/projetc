@@ -23,7 +23,10 @@ import {
   BookOpen,
   Users,
   Mail,
-  TrendingUp
+  TrendingUp,
+  Phone,
+  Shield,
+  Layout
 } from 'lucide-react'
 
 export default function MembroPage() {
@@ -112,6 +115,10 @@ export default function MembroPage() {
     { icon: Mail, title: 'E-mails de Follow-up', desc: 'Sequências prontas para cada etapa', status: 'available', link: '/membro/followup', highlight: true },
     { icon: DollarSign, title: 'Calculadora de Precificação', desc: 'Quanto cobrar pelo seu SaaS', status: 'available', link: '/membro/precificacao', highlight: true },
     { icon: TrendingUp, title: 'Simulador de Escala', desc: 'Projete crescimento em 36 meses', status: 'available', link: '/membro/escala', highlight: true },
+    { icon: Phone, title: 'Scripts de Ligação', desc: 'Roteiros para cold call e fechamento', status: 'available', link: '/membro/scripts', highlight: true },
+    { icon: Shield, title: 'Matriz de Objeções', desc: '24 objeções com respostas prontas', status: 'available', link: '/membro/objecoes', highlight: true },
+    { icon: Clock, title: 'Calculadora CAC Payback', desc: 'Tempo para recuperar custo de aquisição', status: 'available', link: '/membro/cac-payback', highlight: true },
+    { icon: Layout, title: 'Gerador de Landing Page', desc: 'Copy pronta para página de vendas', status: 'available', link: '/membro/landing', highlight: true },
   ]
 
   const inclusos = [
