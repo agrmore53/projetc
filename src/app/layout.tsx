@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { AccessLogger } from "@/components/AccessLogger";
 
 export const metadata: Metadata = {
   title: "Mentoria Elite | Do Zero ao Primeiro Milhão",
@@ -17,7 +18,9 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className="antialiased">
-        {children}
+        <AccessLogger>
+          {children}
+        </AccessLogger>
       </body>
     </html>
   );
