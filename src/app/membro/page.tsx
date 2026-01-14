@@ -96,6 +96,9 @@ export default function MembroPage() {
     { icon: BarChart3, title: 'Calculadora de Métricas SaaS', desc: 'MRR, Churn, CAC, LTV automático', status: 'available', link: '/membro/metricas', highlight: true },
     { icon: DollarSign, title: 'Simulador de Valuation', desc: 'Descubra quanto vale sua empresa', status: 'available', link: '/membro/valuation', highlight: true },
     { icon: Target, title: 'Gerador de Pitch Deck', desc: 'Crie apresentação para investidores', status: 'available', link: '/membro/pitch', highlight: true },
+    { icon: DollarSign, title: 'Calculadora de Comissões', desc: 'Simule ganhos, metas e bônus', status: 'available', link: '/membro/comissoes', highlight: true },
+    { icon: BarChart3, title: 'Simulador de Funil', desc: 'Quantos leads para bater a meta?', status: 'available', link: '/membro/funil', highlight: true },
+    { icon: BookOpen, title: 'Biblioteca de Cases', desc: '8 histórias reais para suas vendas', status: 'available', link: '/membro/cases', highlight: true },
   ]
 
   const inclusos = [
