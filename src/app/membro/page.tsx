@@ -94,8 +94,8 @@ export default function MembroPage() {
     { icon: FileText, title: 'Plano de Mentoria Completo', desc: 'Roadmap de 30 dias a 5 anos', status: 'available', link: '/membro/roadmap', highlight: true },
     { icon: FileText, title: 'Templates de Vendas', desc: '20+ scripts prontos para usar', status: 'available', link: '/membro/templates', highlight: true },
     { icon: BarChart3, title: 'Calculadora de Métricas SaaS', desc: 'MRR, Churn, CAC, LTV automático', status: 'available', link: '/membro/metricas', highlight: true },
-    { icon: DollarSign, title: 'Simulador de Valuation', desc: 'Descubra quanto vale sua empresa', status: 'soon' },
-    { icon: Target, title: 'Gerador de Pitch Deck', desc: 'Crie apresentação para investidores', status: 'soon' },
+    { icon: DollarSign, title: 'Simulador de Valuation', desc: 'Descubra quanto vale sua empresa', status: 'available', link: '/membro/valuation', highlight: true },
+    { icon: Target, title: 'Gerador de Pitch Deck', desc: 'Crie apresentação para investidores', status: 'available', link: '/membro/pitch', highlight: true },
   ]
 
   const inclusos = [
