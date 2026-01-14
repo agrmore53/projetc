@@ -48,7 +48,12 @@ import {
   Crosshair,
   FileSpreadsheet,
   ClipboardCheck,
-  Ship
+  Ship,
+  Swords,
+  Trophy,
+  Heart,
+  Gem,
+  Search
 } from 'lucide-react'
 
 export default function MembroPage() {
@@ -163,6 +168,12 @@ export default function MembroPage() {
     { icon: FileSpreadsheet, title: 'Gerador de Case Study', desc: 'Crie cases de sucesso profissionais', status: 'available', link: '/membro/case-study', highlight: true },
     { icon: ClipboardCheck, title: 'Checklist de Qualificação', desc: 'Qualifique leads com BANT ou MEDDIC', status: 'available', link: '/membro/qualificacao', highlight: true },
     { icon: Ship, title: 'Gerador de Onboarding', desc: 'Crie jornadas de onboarding para clientes', status: 'available', link: '/membro/onboarding', highlight: true },
+    { icon: Swords, title: 'Battle Cards', desc: 'Comparativos competitivos para vendas', status: 'available', link: '/membro/battlecards', highlight: true },
+    { icon: Monitor, title: 'Demo Script', desc: 'Roteiro estruturado para demonstracoes', status: 'available', link: '/membro/demo-script', highlight: true },
+    { icon: Trophy, title: 'Calculadora Win Rate', desc: 'Analise taxa de conversao por etapa', status: 'available', link: '/membro/winrate', highlight: true },
+    { icon: Heart, title: 'Biblioteca de Rapport', desc: '16 tecnicas de conexao e quebra-gelo', status: 'available', link: '/membro/rapport', highlight: true },
+    { icon: Gem, title: 'Proposta de Valor', desc: 'Value Proposition Canvas para seu produto', status: 'available', link: '/membro/proposta-valor', highlight: true },
+    { icon: Search, title: 'Checklist Discovery', desc: '25 perguntas para descobrir necessidades', status: 'available', link: '/membro/discovery', highlight: true },
   ]
 
   const inclusos = [
