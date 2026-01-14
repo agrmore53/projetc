@@ -26,7 +26,11 @@ import {
   TrendingUp,
   Phone,
   Shield,
-  Layout
+  Layout,
+  User,
+  Percent,
+  HelpCircle,
+  Presentation
 } from 'lucide-react'
 
 export default function MembroPage() {
@@ -119,6 +123,10 @@ export default function MembroPage() {
     { icon: Shield, title: 'Matriz de Objeções', desc: '24 objeções com respostas prontas', status: 'available', link: '/membro/objecoes', highlight: true },
     { icon: Clock, title: 'Calculadora CAC Payback', desc: 'Tempo para recuperar custo de aquisição', status: 'available', link: '/membro/cac-payback', highlight: true },
     { icon: Layout, title: 'Gerador de Landing Page', desc: 'Copy pronta para página de vendas', status: 'available', link: '/membro/landing', highlight: true },
+    { icon: User, title: 'Gerador de Persona', desc: 'Crie o perfil do cliente ideal', status: 'available', link: '/membro/persona', highlight: true },
+    { icon: Percent, title: 'Calculadora de Desconto', desc: 'Impacto real do desconto na margem', status: 'available', link: '/membro/desconto', highlight: true },
+    { icon: HelpCircle, title: 'Biblioteca SPIN', desc: '55 perguntas para vendas consultivas', status: 'available', link: '/membro/spin', highlight: true },
+    { icon: Presentation, title: 'Gerador de Apresentação', desc: '12 slides para sua apresentação comercial', status: 'available', link: '/membro/apresentacao', highlight: true },
   ]
 
   const inclusos = [
