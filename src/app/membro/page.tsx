@@ -20,7 +20,10 @@ import {
   Target,
   Rocket,
   Video,
-  BookOpen
+  BookOpen,
+  Users,
+  Mail,
+  TrendingUp
 } from 'lucide-react'
 
 export default function MembroPage() {
@@ -105,6 +108,10 @@ export default function MembroPage() {
     { icon: FileText, title: 'Gerador de Contratos', desc: 'Contratos SaaS, serviços e consultoria', status: 'available', link: '/membro/contratos', highlight: true },
     { icon: Target, title: 'Calculadora de Metas', desc: 'Planeje suas vendas diárias e semanais', status: 'available', link: '/membro/metas', highlight: true },
     { icon: BarChart3, title: 'Tracker de Atividades', desc: 'Registre ligações, visitas e vendas', status: 'available', link: '/membro/tracker', highlight: true },
+    { icon: Users, title: 'CRM de Vendas', desc: 'Gerencie leads, status e histórico', status: 'available', link: '/membro/crm', highlight: true },
+    { icon: Mail, title: 'E-mails de Follow-up', desc: 'Sequências prontas para cada etapa', status: 'available', link: '/membro/followup', highlight: true },
+    { icon: DollarSign, title: 'Calculadora de Precificação', desc: 'Quanto cobrar pelo seu SaaS', status: 'available', link: '/membro/precificacao', highlight: true },
+    { icon: TrendingUp, title: 'Simulador de Escala', desc: 'Projete crescimento em 36 meses', status: 'available', link: '/membro/escala', highlight: true },
   ]
 
   const inclusos = [
