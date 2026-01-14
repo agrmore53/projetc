@@ -205,6 +205,8 @@ export default function MembroPage() {
     { icon: Sparkles, title: 'User Stories', desc: 'Escreva historias no formato correto', status: 'available', link: '/membro/user-stories', highlight: true },
     { icon: Layers, title: 'Sprint Planner', desc: 'Planeje e acompanhe sprints', status: 'available', link: '/membro/sprint-planner', highlight: true },
     { icon: Megaphone, title: 'Release Notes', desc: 'Comunique lancamentos profissionalmente', status: 'available', link: '/membro/release-notes', highlight: true },
+    { icon: Mail, title: 'Investor Update', desc: 'Email mensal para investidores', status: 'available', link: '/membro/investor-update', highlight: true },
+    { icon: PieChart, title: 'Cap Table Manager', desc: 'Gerencie estrutura societaria', status: 'available', link: '/membro/cap-table', highlight: true },
   ]
 
   const inclusos = [
