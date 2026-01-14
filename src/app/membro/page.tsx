@@ -66,7 +66,14 @@ import {
   ClipboardList,
   UserPlus,
   Map,
-  Sparkles
+  Sparkles,
+  FlaskConical,
+  CalendarPlus,
+  RefreshCw,
+  TrendingDown,
+  Handshake,
+  Gift,
+  ShieldCheck
 } from 'lucide-react'
 
 export default function MembroPage() {
@@ -207,6 +214,19 @@ export default function MembroPage() {
     { icon: Megaphone, title: 'Release Notes', desc: 'Comunique lancamentos profissionalmente', status: 'available', link: '/membro/release-notes', highlight: true },
     { icon: Mail, title: 'Investor Update', desc: 'Email mensal para investidores', status: 'available', link: '/membro/investor-update', highlight: true },
     { icon: PieChart, title: 'Cap Table Manager', desc: 'Gerencie estrutura societaria', status: 'available', link: '/membro/cap-table', highlight: true },
+    { icon: FileText, title: 'Gerador de Termos de Uso', desc: 'Termos de uso para seu SaaS', status: 'available', link: '/membro/termos-uso', highlight: true },
+    { icon: Shield, title: 'Politica de Privacidade', desc: 'Politica LGPD compliant', status: 'available', link: '/membro/politica-privacidade', highlight: true },
+    { icon: ShieldCheck, title: 'Checklist LGPD', desc: '37 itens de conformidade', status: 'available', link: '/membro/lgpd', highlight: true },
+    { icon: TrendingUp, title: 'Coeficiente Viral', desc: 'Calcule o K-factor do seu produto', status: 'available', link: '/membro/viral', highlight: true },
+    { icon: Gift, title: 'Programa de Referral', desc: 'Construa programa de indicacao', status: 'available', link: '/membro/referral', highlight: true },
+    { icon: FlaskConical, title: 'Calculadora A/B Test', desc: 'Significancia estatistica de testes', status: 'available', link: '/membro/ab-test', highlight: true },
+    { icon: CalendarPlus, title: 'Agenda de Reuniao', desc: 'Templates para reunioes eficientes', status: 'available', link: '/membro/agenda-reuniao', highlight: true },
+    { icon: RefreshCw, title: 'Template Retrospectiva', desc: 'Melhoria continua do time', status: 'available', link: '/membro/retrospectiva', highlight: true },
+    { icon: Grid3X3, title: 'Matriz RACI', desc: 'Responsabilidades claras por tarefa', status: 'available', link: '/membro/raci', highlight: true },
+    { icon: BarChart3, title: 'Analise de Cohort', desc: 'Retencao de usuarios por periodo', status: 'available', link: '/membro/cohort', highlight: true },
+    { icon: TrendingDown, title: 'Curva de Retencao', desc: 'Impacto do churn no negocio', status: 'available', link: '/membro/retencao', highlight: true },
+    { icon: Handshake, title: 'Proposta de Parceria', desc: 'Propostas para parcerias estrategicas', status: 'available', link: '/membro/parceria', highlight: true },
+    { icon: Users, title: 'Calculadora de Afiliados', desc: 'Projete rentabilidade do programa', status: 'available', link: '/membro/afiliados', highlight: true },
   ]
 
   const inclusos = [
