@@ -61,7 +61,12 @@ import {
   ThumbsUp,
   Activity,
   ShieldAlert,
-  ArrowUpRight
+  ArrowUpRight,
+  Briefcase,
+  ClipboardList,
+  UserPlus,
+  Map,
+  Sparkles
 } from 'lucide-react'
 
 export default function MembroPage() {
@@ -192,6 +197,14 @@ export default function MembroPage() {
     { icon: Activity, title: 'Health Score', desc: 'Identifique riscos na sua base', status: 'available', link: '/membro/health-score', highlight: true },
     { icon: ShieldAlert, title: 'Playbook Anti-Churn', desc: '12 estrategias para reter clientes', status: 'available', link: '/membro/anti-churn', highlight: true },
     { icon: ArrowUpRight, title: 'Expansion Revenue', desc: 'Cresca receita com clientes existentes', status: 'available', link: '/membro/expansion', highlight: true },
+    { icon: Briefcase, title: 'Gerador de Vagas', desc: 'Job descriptions para sua startup', status: 'available', link: '/membro/job-description', highlight: true },
+    { icon: ClipboardList, title: 'Scorecard Entrevista', desc: 'Avalie candidatos estruturadamente', status: 'available', link: '/membro/scorecard', highlight: true },
+    { icon: UserPlus, title: 'Onboarding Funcionario', desc: 'Plano de integracao 30 dias', status: 'available', link: '/membro/onboarding-funcionario', highlight: true },
+    { icon: Users, title: 'Template de 1:1', desc: 'Reunioes one-on-one estruturadas', status: 'available', link: '/membro/one-on-one', highlight: true },
+    { icon: Map, title: 'Roadmap de Produto', desc: 'Planeje features por trimestre', status: 'available', link: '/membro/product-roadmap', highlight: true },
+    { icon: Sparkles, title: 'User Stories', desc: 'Escreva historias no formato correto', status: 'available', link: '/membro/user-stories', highlight: true },
+    { icon: Layers, title: 'Sprint Planner', desc: 'Planeje e acompanhe sprints', status: 'available', link: '/membro/sprint-planner', highlight: true },
+    { icon: Megaphone, title: 'Release Notes', desc: 'Comunique lancamentos profissionalmente', status: 'available', link: '/membro/release-notes', highlight: true },
   ]
 
   const inclusos = [
