@@ -92,10 +92,10 @@ export default function MembroPage() {
     { icon: Lightbulb, title: 'A Importância da Pesquisa', desc: 'Por que isso define seu sucesso', status: 'available', link: '/membro/conteudo' },
     { icon: BarChart3, title: 'Pesquisa de Mercado', desc: 'Identificação de dores Brasil/EUA', status: 'available', link: '/membro/pesquisa' },
     { icon: FileText, title: 'Plano de Mentoria Completo', desc: 'Roadmap de 30 dias a 5 anos', status: 'available', link: '/membro/roadmap', highlight: true },
-    { icon: FileText, title: 'Templates de Validação', desc: 'Scripts e planilhas de validação', status: 'soon' },
-    { icon: BarChart3, title: 'Planilha de Métricas SaaS', desc: 'Controle MRR, churn, CAC, LTV', status: 'soon' },
-    { icon: PlayCircle, title: 'Aulas Gravadas', desc: 'Gravações das sessões', status: 'soon' },
-    { icon: MessageSquare, title: 'Scripts de Vendas', desc: 'Modelos de abordagem e fechamento', status: 'soon' },
+    { icon: FileText, title: 'Templates de Vendas', desc: '20+ scripts prontos para usar', status: 'available', link: '/membro/templates', highlight: true },
+    { icon: BarChart3, title: 'Calculadora de Métricas SaaS', desc: 'MRR, Churn, CAC, LTV automático', status: 'available', link: '/membro/metricas', highlight: true },
+    { icon: DollarSign, title: 'Simulador de Valuation', desc: 'Descubra quanto vale sua empresa', status: 'soon' },
+    { icon: Target, title: 'Gerador de Pitch Deck', desc: 'Crie apresentação para investidores', status: 'soon' },
   ]
 
   const inclusos = [
