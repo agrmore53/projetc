@@ -53,7 +53,11 @@ import {
   Trophy,
   Heart,
   Gem,
-  Search
+  Search,
+  Compass,
+  Grid3X3,
+  FileBarChart,
+  Plane
 } from 'lucide-react'
 
 export default function MembroPage() {
@@ -174,6 +178,12 @@ export default function MembroPage() {
     { icon: Heart, title: 'Biblioteca de Rapport', desc: '16 tecnicas de conexao e quebra-gelo', status: 'available', link: '/membro/rapport', highlight: true },
     { icon: Gem, title: 'Proposta de Valor', desc: 'Value Proposition Canvas para seu produto', status: 'available', link: '/membro/proposta-valor', highlight: true },
     { icon: Search, title: 'Checklist Discovery', desc: '25 perguntas para descobrir necessidades', status: 'available', link: '/membro/discovery', highlight: true },
+    { icon: Target, title: 'Gerador de OKRs', desc: 'Defina objetivos e resultados-chave', status: 'available', link: '/membro/okrs', highlight: true },
+    { icon: Compass, title: 'Simulador de Cenarios', desc: 'Projete pessimista, realista e otimista', status: 'available', link: '/membro/cenarios', highlight: true },
+    { icon: Grid3X3, title: 'Matriz de Priorizacao', desc: 'ICE e RICE para priorizar iniciativas', status: 'available', link: '/membro/priorizacao', highlight: true },
+    { icon: FileBarChart, title: 'Relatorio Mensal', desc: 'Reports para investidores e stakeholders', status: 'available', link: '/membro/relatorio', highlight: true },
+    { icon: Plane, title: 'Calculadora de Runway', desc: 'Quanto tempo seu dinheiro vai durar?', status: 'available', link: '/membro/runway', highlight: true },
+    { icon: FileText, title: 'Gerador de SOP', desc: 'Standard Operating Procedures', status: 'available', link: '/membro/sop', highlight: true },
   ]
 
   const inclusos = [
