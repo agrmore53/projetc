@@ -102,6 +102,9 @@ export default function MembroPage() {
     { icon: DollarSign, title: 'Calculadora de ROI', desc: 'Mostre o retorno do investimento', status: 'available', link: '/membro/roi', highlight: true },
     { icon: FileText, title: 'Gerador de Propostas', desc: 'Propostas profissionais em segundos', status: 'available', link: '/membro/propostas', highlight: true },
     { icon: Target, title: 'Checklist do Fundador', desc: '50+ tarefas do zero ao milhão', status: 'available', link: '/membro/checklist', highlight: true },
+    { icon: FileText, title: 'Gerador de Contratos', desc: 'Contratos SaaS, serviços e consultoria', status: 'available', link: '/membro/contratos', highlight: true },
+    { icon: Target, title: 'Calculadora de Metas', desc: 'Planeje suas vendas diárias e semanais', status: 'available', link: '/membro/metas', highlight: true },
+    { icon: BarChart3, title: 'Tracker de Atividades', desc: 'Registre ligações, visitas e vendas', status: 'available', link: '/membro/tracker', highlight: true },
   ]
 
   const inclusos = [
