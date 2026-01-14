@@ -99,6 +99,9 @@ export default function MembroPage() {
     { icon: DollarSign, title: 'Calculadora de Comissões', desc: 'Simule ganhos, metas e bônus', status: 'available', link: '/membro/comissoes', highlight: true },
     { icon: BarChart3, title: 'Simulador de Funil', desc: 'Quantos leads para bater a meta?', status: 'available', link: '/membro/funil', highlight: true },
     { icon: BookOpen, title: 'Biblioteca de Cases', desc: '8 histórias reais para suas vendas', status: 'available', link: '/membro/cases', highlight: true },
+    { icon: DollarSign, title: 'Calculadora de ROI', desc: 'Mostre o retorno do investimento', status: 'available', link: '/membro/roi', highlight: true },
+    { icon: FileText, title: 'Gerador de Propostas', desc: 'Propostas profissionais em segundos', status: 'available', link: '/membro/propostas', highlight: true },
+    { icon: Target, title: 'Checklist do Fundador', desc: '50+ tarefas do zero ao milhão', status: 'available', link: '/membro/checklist', highlight: true },
   ]
 
   const inclusos = [
