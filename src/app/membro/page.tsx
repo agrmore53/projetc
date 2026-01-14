@@ -30,7 +30,13 @@ import {
   User,
   Percent,
   HelpCircle,
-  Presentation
+  Presentation,
+  BookMarked,
+  MessageCircle,
+  Film,
+  Brain,
+  Megaphone,
+  Scale
 } from 'lucide-react'
 
 export default function MembroPage() {
@@ -127,6 +133,12 @@ export default function MembroPage() {
     { icon: Percent, title: 'Calculadora de Desconto', desc: 'Impacto real do desconto na margem', status: 'available', link: '/membro/desconto', highlight: true },
     { icon: HelpCircle, title: 'Biblioteca SPIN', desc: '55 perguntas para vendas consultivas', status: 'available', link: '/membro/spin', highlight: true },
     { icon: Presentation, title: 'Gerador de Apresentação', desc: '12 slides para sua apresentação comercial', status: 'available', link: '/membro/apresentacao', highlight: true },
+    { icon: BookMarked, title: 'Gerador de E-book', desc: 'Estrutura completa de lead magnet', status: 'available', link: '/membro/ebook', highlight: true },
+    { icon: MessageCircle, title: 'Simulador de Negociação', desc: 'Pratique cenários reais de vendas', status: 'available', link: '/membro/negociacao', highlight: true },
+    { icon: Film, title: 'Gerador de Script VSL', desc: 'Roteiro de vídeo de vendas em 10 seções', status: 'available', link: '/membro/vsl-script', highlight: true },
+    { icon: Brain, title: 'Biblioteca de Gatilhos', desc: '24 gatilhos mentais com exemplos', status: 'available', link: '/membro/gatilhos', highlight: true },
+    { icon: Megaphone, title: 'Gerador de Anúncios', desc: 'Copy para Facebook, Google, Instagram', status: 'available', link: '/membro/anuncios', highlight: true },
+    { icon: Scale, title: 'Calculadora Break-even', desc: 'Ponto de equilíbrio do seu negócio', status: 'available', link: '/membro/breakeven', highlight: true },
   ]
 
   const inclusos = [
