@@ -42,7 +42,13 @@ import {
   Type,
   Award,
   LayoutDashboard,
-  Layers
+  Layers,
+  ListOrdered,
+  GitBranch,
+  Crosshair,
+  FileSpreadsheet,
+  ClipboardCheck,
+  Ship
 } from 'lucide-react'
 
 export default function MembroPage() {
@@ -151,6 +157,12 @@ export default function MembroPage() {
     { icon: Award, title: 'Certificado de Conclusão', desc: 'Gere seu certificado personalizado', status: 'available', link: '/membro/certificado', highlight: true },
     { icon: LayoutDashboard, title: 'Dashboard Pessoal', desc: 'Acompanhe seu progresso e metas', status: 'available', link: '/membro/dashboard', highlight: true },
     { icon: Layers, title: 'Business Canvas', desc: 'Planeje seu negócio em uma página', status: 'available', link: '/membro/canvas', highlight: true },
+    { icon: ListOrdered, title: 'Sequência de E-mails', desc: 'Campanhas de e-mail automatizadas', status: 'available', link: '/membro/sequencia-emails', highlight: true },
+    { icon: GitBranch, title: 'Simulador de Pipeline', desc: 'Visualize e preveja suas vendas', status: 'available', link: '/membro/pipeline', highlight: true },
+    { icon: Crosshair, title: 'Biblioteca de Fechamentos', desc: '16 técnicas de fechamento comprovadas', status: 'available', link: '/membro/fechamentos', highlight: true },
+    { icon: FileSpreadsheet, title: 'Gerador de Case Study', desc: 'Crie cases de sucesso profissionais', status: 'available', link: '/membro/case-study', highlight: true },
+    { icon: ClipboardCheck, title: 'Checklist de Qualificação', desc: 'Qualifique leads com BANT ou MEDDIC', status: 'available', link: '/membro/qualificacao', highlight: true },
+    { icon: Ship, title: 'Gerador de Onboarding', desc: 'Crie jornadas de onboarding para clientes', status: 'available', link: '/membro/onboarding', highlight: true },
   ]
 
   const inclusos = [
