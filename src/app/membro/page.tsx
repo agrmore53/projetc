@@ -57,7 +57,11 @@ import {
   Compass,
   Grid3X3,
   FileBarChart,
-  Plane
+  Plane,
+  ThumbsUp,
+  Activity,
+  ShieldAlert,
+  ArrowUpRight
 } from 'lucide-react'
 
 export default function MembroPage() {
@@ -184,6 +188,10 @@ export default function MembroPage() {
     { icon: FileBarChart, title: 'Relatorio Mensal', desc: 'Reports para investidores e stakeholders', status: 'available', link: '/membro/relatorio', highlight: true },
     { icon: Plane, title: 'Calculadora de Runway', desc: 'Quanto tempo seu dinheiro vai durar?', status: 'available', link: '/membro/runway', highlight: true },
     { icon: FileText, title: 'Gerador de SOP', desc: 'Standard Operating Procedures', status: 'available', link: '/membro/sop', highlight: true },
+    { icon: ThumbsUp, title: 'Calculadora de NPS', desc: 'Meca a satisfacao dos clientes', status: 'available', link: '/membro/nps', highlight: true },
+    { icon: Activity, title: 'Health Score', desc: 'Identifique riscos na sua base', status: 'available', link: '/membro/health-score', highlight: true },
+    { icon: ShieldAlert, title: 'Playbook Anti-Churn', desc: '12 estrategias para reter clientes', status: 'available', link: '/membro/anti-churn', highlight: true },
+    { icon: ArrowUpRight, title: 'Expansion Revenue', desc: 'Cresca receita com clientes existentes', status: 'available', link: '/membro/expansion', highlight: true },
   ]
 
   const inclusos = [
