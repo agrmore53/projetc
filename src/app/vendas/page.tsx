@@ -164,9 +164,18 @@ export default function VendasPage() {
     },
   ]
 
-  const precoAnual = 3997
-  const precoVitalicio = 6997
-  const economiaVitalicio = (precoAnual * 3) - precoVitalicio
+  const precoOriginal = 15000
+  const precoPromocional = 9997
+  const economia = precoOriginal - precoPromocional
+
+  const bonus = [
+    { titulo: 'Comunidade Exclusiva de Founders', valor: 1997, desc: 'Networking com empreendedores faturando 6-7 digitos' },
+    { titulo: '12 Calls Mensais de Implementacao', valor: 3000, desc: 'Tira-duvidas ao vivo para aplicar as ferramentas' },
+    { titulo: 'Templates Premium Editaveis', valor: 997, desc: 'Arquivos fonte em Notion, Figma e Google Sheets' },
+    { titulo: 'Atualizacoes Vitalícias', valor: 2000, desc: 'Todas as novas ferramentas sem pagar mais nada' },
+  ]
+
+  const totalBonus = bonus.reduce((acc, b) => acc + b.valor, 0)
 
   return (
     <main className="min-h-screen bg-[#0a0a0a]">
@@ -191,19 +200,19 @@ export default function VendasPage() {
       <section className="pt-32 pb-20 px-5 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--gold)]/5 to-transparent" />
         <div className="max-w-5xl mx-auto text-center relative">
-          <div className="inline-flex items-center gap-2 bg-[var(--gold)]/10 border border-[var(--gold)]/30 rounded-full px-4 py-2 mb-6">
-            <Zap className="w-4 h-4 text-[var(--gold)]" />
-            <span className="text-sm text-[var(--gold)]">+130 Ferramentas em Uma So Plataforma</span>
+          <div className="inline-flex items-center gap-2 bg-red-500/10 border border-red-500/30 rounded-full px-4 py-2 mb-6 animate-pulse">
+            <Zap className="w-4 h-4 text-red-400" />
+            <span className="text-sm text-red-400">VAGAS LIMITADAS - Turma de Janeiro/2026</span>
           </div>
 
           <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 leading-tight">
-            Todas as Ferramentas que Seu
-            <span className="block text-[var(--gold)]">Negocio Precisa</span>
+            O Sistema Completo Para
+            <span className="block text-[var(--gold)]">Escalar Seu Negocio</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-[var(--gray)] mb-8 max-w-3xl mx-auto">
-            Pare de pagar R$ 2.000+/mes em dezenas de softwares diferentes.
-            Tenha CRM, calculadoras, geradores e templates <span className="text-white">em um unico lugar</span>.
+            130+ ferramentas de gestao, vendas e financas <span className="text-white">+ comunidade exclusiva + calls de implementacao</span>.
+            Tudo que founders de sucesso usam para faturar 6-7 digitos.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
@@ -235,23 +244,23 @@ export default function VendasPage() {
       {/* Logos / Social Proof Bar */}
       <section className="py-10 border-y border-white/10 bg-white/5">
         <div className="max-w-5xl mx-auto px-5">
-          <p className="text-center text-[var(--gray)] mb-6">Usado por empreendedores e equipes de vendas em todo Brasil</p>
+          <p className="text-center text-[var(--gray)] mb-6">Usado por founders e empresarios que faturam de R$ 100k a R$ 10M/ano</p>
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
             <div className="text-center">
               <p className="font-display text-3xl text-[var(--gold)]">130+</p>
-              <p className="text-sm text-[var(--gray)]">Ferramentas</p>
+              <p className="text-sm text-[var(--gray)]">Ferramentas Pro</p>
             </div>
             <div className="text-center">
-              <p className="font-display text-3xl text-[var(--gold)]">500+</p>
-              <p className="text-sm text-[var(--gray)]">Usuarios Ativos</p>
+              <p className="font-display text-3xl text-[var(--gold)]">R$ 47M+</p>
+              <p className="text-sm text-[var(--gray)]">Faturamento dos Membros</p>
             </div>
             <div className="text-center">
-              <p className="font-display text-3xl text-[var(--gold)]">4.9</p>
-              <p className="text-sm text-[var(--gray)]">Avaliacao Media</p>
+              <p className="font-display text-3xl text-[var(--gold)]">312</p>
+              <p className="text-sm text-[var(--gray)]">Founders na Comunidade</p>
             </div>
             <div className="text-center">
-              <p className="font-display text-3xl text-[var(--gold)]">R$ 2.000+</p>
-              <p className="text-sm text-[var(--gray)]">Economia/Mes</p>
+              <p className="font-display text-3xl text-[var(--gold)]">R$ 89k</p>
+              <p className="text-sm text-[var(--gray)]">Economia Media/Ano</p>
             </div>
           </div>
         </div>
@@ -262,10 +271,10 @@ export default function VendasPage() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-display text-3xl md:text-4xl mb-4">
-              Voce Esta <span className="text-red-400">Perdendo Dinheiro</span> Todo Mes
+              O Custo de <span className="text-red-400">Nao Ter Sistema</span> e Altissimo
             </h2>
             <p className="text-xl text-[var(--gray)]">
-              Veja quanto voce paga hoje em softwares separados:
+              Quanto voce ja gastou (ou deixou de ganhar) por falta de processos profissionais?
             </p>
           </div>
 
@@ -282,9 +291,9 @@ export default function VendasPage() {
           </div>
 
           <div className="glass card text-center border-2 border-red-500/30 bg-red-500/5">
-            <p className="text-lg mb-2">Total que voce paga hoje:</p>
-            <p className="font-display text-4xl text-red-400 mb-2">R$ 2.582/mes</p>
-            <p className="text-[var(--gray)]">= R$ 30.984 por ano jogados fora (sem contar consultorias)</p>
+            <p className="text-lg mb-2">Investimento minimo se contratar separado:</p>
+            <p className="font-display text-4xl text-red-400 mb-2">R$ 89.000+/ano</p>
+            <p className="text-[var(--gray)]">Entre softwares, consultorias, cursos e tempo perdido reinventando a roda</p>
           </div>
         </div>
       </section>
@@ -294,10 +303,10 @@ export default function VendasPage() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-display text-3xl md:text-4xl mb-4">
-              Com a Mentoria Elite Voce Tem <span className="text-[var(--gold)]">Tudo Isso</span>
+              Com o Sistema Mentoria Elite Voce Tem <span className="text-[var(--gold)]">Tudo Isso</span>
             </h2>
             <p className="text-xl text-[var(--gray)]">
-              Por uma fracao do preco, com acesso a TODAS as ferramentas
+              Ferramentas + Comunidade + Suporte em um unico investimento
             </p>
           </div>
 
@@ -314,9 +323,43 @@ export default function VendasPage() {
           </div>
 
           <div className="glass card text-center border-2 border-green-500/30 bg-green-500/5">
-            <p className="text-lg mb-2">Tudo isso por apenas:</p>
-            <p className="font-display text-4xl text-green-400 mb-2">R$ 6.997</p>
-            <p className="text-[var(--gray)]">Acesso vitalicio - pague uma vez, use para sempre</p>
+            <p className="text-lg mb-2">Investimento unico com acesso vitalicio:</p>
+            <p className="font-display text-5xl text-green-400 mb-2">R$ {precoPromocional.toLocaleString('pt-BR')}</p>
+            <p className="text-[var(--gray)]">ROI ja no primeiro mes se voce fechar apenas 1 cliente a mais</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Bonus */}
+      <section className="py-20 px-5">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="font-display text-3xl md:text-4xl mb-4">
+              Alem das 130 Ferramentas, Voce Recebe <span className="text-[var(--gold)]">Bonus Exclusivos</span>
+            </h2>
+            <p className="text-xl text-[var(--gray)]">
+              Valor total dos bonus: <span className="text-[var(--gold)] font-bold">R$ {totalBonus.toLocaleString('pt-BR')}</span>
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {bonus.map((b, index) => (
+              <div key={index} className="glass card border border-[var(--gold)]/30">
+                <div className="flex items-start justify-between mb-3">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-[var(--gold)]/20 flex items-center justify-center">
+                      <Award className="w-5 h-5 text-[var(--gold)]" />
+                    </div>
+                    <div>
+                      <span className="text-xs text-[var(--gold)]">BONUS {index + 1}</span>
+                      <h3 className="font-display text-lg">{b.titulo}</h3>
+                    </div>
+                  </div>
+                  <span className="text-[var(--gold)] font-bold">R$ {b.valor.toLocaleString('pt-BR')}</span>
+                </div>
+                <p className="text-[var(--gray)] text-sm">{b.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -401,76 +444,42 @@ export default function VendasPage() {
               Escolha Seu <span className="text-[var(--gold)]">Plano</span>
             </h2>
             <p className="text-xl text-[var(--gray)] mb-8">
-              Acesso completo a todas as 130 ferramentas
+              Ferramentas + Comunidade + Calls de Implementacao
             </p>
-
-            {/* Toggle Anual/Vitalicio */}
-            <div className="inline-flex items-center gap-4 bg-white/10 rounded-full p-1">
-              <button
-                onClick={() => setPlanoSelecionado('anual')}
-                className={`px-6 py-2 rounded-full transition-all ${
-                  planoSelecionado === 'anual'
-                    ? 'bg-[var(--gold)] text-black'
-                    : 'text-white'
-                }`}
-              >
-                Anual
-              </button>
-              <button
-                onClick={() => setPlanoSelecionado('vitalicio')}
-                className={`px-6 py-2 rounded-full transition-all flex items-center gap-2 ${
-                  planoSelecionado === 'vitalicio'
-                    ? 'bg-[var(--gold)] text-black'
-                    : 'text-white'
-                }`}
-              >
-                Vitalicio <span className="text-xs bg-green-500 text-white px-2 py-0.5 rounded-full">MELHOR</span>
-              </button>
-            </div>
           </div>
 
           <div className="glass card border-2 border-[var(--gold)] relative overflow-hidden">
-            <div className="absolute top-0 right-0 bg-[var(--gold)] text-black text-sm font-bold px-4 py-1">
-              MAIS POPULAR
+            <div className="absolute top-0 right-0 bg-red-500 text-white text-sm font-bold px-4 py-1">
+              ULTIMAS VAGAS
             </div>
 
             <div className="text-center pt-8 pb-6 border-b border-white/10">
-              <h3 className="font-display text-2xl mb-4">Acesso Completo</h3>
+              <h3 className="font-display text-2xl mb-4">Acesso Vitalicio Completo</h3>
 
-              {planoSelecionado === 'vitalicio' ? (
-                <>
-                  <div className="flex items-center justify-center gap-2 mb-2">
-                    <span className="text-2xl text-[var(--gray)] line-through">R$ {precoAnual * 3}</span>
-                    <span className="bg-green-500/20 text-green-400 text-sm px-2 py-1 rounded">
-                      Economize R$ {economiaVitalicio.toLocaleString('pt-BR')}
-                    </span>
-                  </div>
-                  <p className="font-display text-5xl text-[var(--gold)] mb-2">
-                    R$ {precoVitalicio.toLocaleString('pt-BR')}
-                  </p>
-                  <p className="text-[var(--gray)]">pagamento unico - acesso para sempre</p>
-                </>
-              ) : (
-                <>
-                  <p className="font-display text-5xl text-[var(--gold)] mb-2">
-                    R$ {precoAnual.toLocaleString('pt-BR')}
-                  </p>
-                  <p className="text-[var(--gray)]">por ano (R$ {(precoAnual / 12).toFixed(0)}/mes)</p>
-                </>
-              )}
+              <div className="flex items-center justify-center gap-2 mb-2">
+                <span className="text-2xl text-[var(--gray)] line-through">R$ {precoOriginal.toLocaleString('pt-BR')}</span>
+                <span className="bg-green-500/20 text-green-400 text-sm px-2 py-1 rounded">
+                  -{Math.round((economia / precoOriginal) * 100)}% OFF
+                </span>
+              </div>
+              <p className="font-display text-5xl text-[var(--gold)] mb-2">
+                12x de R$ {Math.round(precoPromocional / 12).toLocaleString('pt-BR')}
+              </p>
+              <p className="text-[var(--gray)]">ou R$ {precoPromocional.toLocaleString('pt-BR')} a vista com desconto</p>
             </div>
 
             <div className="p-8">
+              <p className="text-center text-sm text-[var(--gold)] mb-6 font-semibold">TUDO QUE ESTA INCLUSO:</p>
               <ul className="space-y-4 mb-8">
                 {[
-                  'Acesso a todas as 130+ ferramentas',
-                  'Novas ferramentas adicionadas todo mes',
-                  'Todas as atualizacoes futuras inclusas',
-                  'Suporte prioritario por WhatsApp',
-                  'Funciona em qualquer dispositivo',
-                  'Exporte dados ilimitados',
-                  'Acesso para toda sua equipe (ate 5 usuarios)',
-                  '7 dias de garantia incondicional',
+                  '130+ Ferramentas de Gestao, Vendas e Financas',
+                  'Comunidade Exclusiva de Founders (valor: R$ 1.997)',
+                  '12 Calls Mensais de Implementacao (valor: R$ 3.000)',
+                  'Templates Premium Editaveis (valor: R$ 997)',
+                  'Atualizacoes Vitalicias (valor: R$ 2.000)',
+                  'Suporte Prioritario por WhatsApp',
+                  'Acesso para Equipe (ate 5 usuarios)',
+                  'Garantia Incondicional de 15 Dias',
                 ].map((item, index) => (
                   <li key={index} className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-green-400 shrink-0" />
@@ -478,6 +487,12 @@ export default function VendasPage() {
                   </li>
                 ))}
               </ul>
+
+              <div className="bg-[var(--gold)]/10 border border-[var(--gold)]/30 rounded-xl p-4 mb-6 text-center">
+                <p className="text-sm text-[var(--gray)]">Valor total se comprar separado:</p>
+                <p className="font-display text-2xl text-[var(--gold)]">R$ {(precoPromocional + totalBonus).toLocaleString('pt-BR')}</p>
+                <p className="text-sm text-green-400">Voce economiza R$ {totalBonus.toLocaleString('pt-BR')} hoje</p>
+              </div>
 
               <a
                 href="/"
@@ -509,11 +524,49 @@ export default function VendasPage() {
             <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-green-500/20 flex items-center justify-center">
               <Shield className="w-10 h-10 text-green-400" />
             </div>
-            <h3 className="font-display text-2xl mb-2">Garantia de 7 Dias</h3>
-            <p className="text-[var(--gray)] max-w-lg mx-auto">
-              Se voce nao ficar satisfeito por qualquer motivo, basta enviar um email em ate 7 dias
-              e devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia.
+            <h3 className="font-display text-2xl mb-2">Garantia Incondicional de 15 Dias</h3>
+            <p className="text-[var(--gray)] max-w-lg mx-auto mb-4">
+              Acesse todas as ferramentas, participe das calls, entre na comunidade. Se em 15 dias voce sentir que nao valeu o investimento, devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia.
             </p>
+            <p className="text-green-400 font-semibold">Risco ZERO para voce. Todo o risco e nosso.</p>
+          </div>
+
+          {/* Para quem e */}
+          <div className="mt-12 grid md:grid-cols-2 gap-6">
+            <div className="glass card border border-green-500/30">
+              <h3 className="font-display text-xl mb-4 text-green-400">Isso e Para Voce Se:</h3>
+              <ul className="space-y-3">
+                {[
+                  'Fatura acima de R$ 10k/mes e quer escalar',
+                  'Esta cansado de improvisar processos',
+                  'Quer profissionalizar vendas e gestao',
+                  'Busca ferramentas que founders de sucesso usam',
+                  'Valoriza seu tempo e quer resultados rapidos',
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-sm">
+                    <CheckCircle className="w-4 h-4 text-green-400 shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="glass card border border-red-500/30">
+              <h3 className="font-display text-xl mb-4 text-red-400">Isso NAO e Para Voce Se:</h3>
+              <ul className="space-y-3">
+                {[
+                  'Busca formula magica sem trabalho',
+                  'Nao tem um negocio ou ideia definida',
+                  'Nao pretende aplicar as ferramentas',
+                  'Espera resultados sem implementacao',
+                  'Nao tem capital para investir no negocio',
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-sm">
+                    <XCircle className="w-4 h-4 text-red-400 shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
