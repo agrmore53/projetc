@@ -73,7 +73,13 @@ import {
   TrendingDown,
   Handshake,
   Gift,
-  ShieldCheck
+  ShieldCheck,
+  Flame,
+  Gauge,
+  AlertTriangle,
+  Grid2X2,
+  Kanban,
+  Calculator
 } from 'lucide-react'
 
 export default function MembroPage() {
@@ -227,6 +233,17 @@ export default function MembroPage() {
     { icon: TrendingDown, title: 'Curva de Retencao', desc: 'Impacto do churn no negocio', status: 'available', link: '/membro/retencao', highlight: true },
     { icon: Handshake, title: 'Proposta de Parceria', desc: 'Propostas para parcerias estrategicas', status: 'available', link: '/membro/parceria', highlight: true },
     { icon: Users, title: 'Calculadora de Afiliados', desc: 'Projete rentabilidade do programa', status: 'available', link: '/membro/afiliados', highlight: true },
+    { icon: Calculator, title: 'Margem de Contribuicao', desc: 'Rentabilidade por produto', status: 'available', link: '/membro/margem-contribuicao', highlight: true },
+    { icon: Flame, title: 'Calculadora Burn Rate', desc: 'Quanto tempo seu dinheiro dura', status: 'available', link: '/membro/burn-rate', highlight: true },
+    { icon: PieChart, title: 'Calculadora Market Share', desc: 'Sua participacao no mercado', status: 'available', link: '/membro/market-share', highlight: true },
+    { icon: Gauge, title: 'Customer Effort Score', desc: 'Meca o esforco do cliente', status: 'available', link: '/membro/ces', highlight: true },
+    { icon: ClipboardList, title: 'Pesquisa de Satisfacao', desc: 'Crie pesquisas para clientes', status: 'available', link: '/membro/pesquisa-satisfacao', highlight: true },
+    { icon: TrendingUp, title: 'Playbook Upsell', desc: 'Cresca com clientes existentes', status: 'available', link: '/membro/upsell', highlight: true },
+    { icon: Mail, title: 'Comunicado Interno', desc: 'Comunicados para sua equipe', status: 'available', link: '/membro/comunicado-interno', highlight: true },
+    { icon: HelpCircle, title: 'Gerador de FAQ', desc: 'Perguntas frequentes do produto', status: 'available', link: '/membro/faq', highlight: true },
+    { icon: AlertTriangle, title: 'Comunicado de Crise', desc: 'Comunique incidentes profissionalmente', status: 'available', link: '/membro/comunicado-crise', highlight: true },
+    { icon: Grid2X2, title: 'Matriz de Eisenhower', desc: 'Priorize por urgencia e importancia', status: 'available', link: '/membro/eisenhower', highlight: true },
+    { icon: Kanban, title: 'Quadro Kanban', desc: 'Organize tarefas visualmente', status: 'available', link: '/membro/kanban', highlight: true },
   ]
 
   const inclusos = [
