@@ -34,7 +34,7 @@ import {
 
 export default function VendasPage() {
   const [faqAberto, setFaqAberto] = useState<number | null>(null)
-  const [planoSelecionado, setPlanoSelecionado] = useState<'mensal' | 'anual'>('anual')
+  const [planoSelecionado, setPlanoSelecionado] = useState<'anual' | 'vitalicio'>('vitalicio')
 
   const ferramentasDestaque = [
     { categoria: 'Vendas', quantidade: 45, icon: Target, cor: 'text-green-400' },
@@ -90,43 +90,43 @@ export default function VendasPage() {
   const depoimentos = [
     {
       nome: 'Ricardo Mendes',
-      cargo: 'Founder, TechFlow SaaS',
+      cargo: 'Founder, TechFlow SaaS - R$ 2M ARR',
       foto: 'RM',
-      texto: 'Economizei mais de R$ 3.000/mes cancelando assinaturas de outros softwares. Tudo que preciso esta aqui.',
+      texto: 'Ja tinha gasto mais de R$ 50.000 em consultorias de valuation e pricing. Com a plataforma, faco tudo sozinho e com muito mais agilidade.',
       estrelas: 5
     },
     {
       nome: 'Amanda Silva',
-      cargo: 'Head de Vendas, StartupX',
+      cargo: 'Diretora Comercial, 47 vendedores',
       foto: 'AS',
-      texto: 'Meu time de vendas dobrou a conversao usando os scripts e templates. Ferramenta indispensavel.',
+      texto: 'Implementamos os playbooks e scripts em todo o time. Nosso ticket medio subiu 40% em 3 meses. ROI absurdo.',
       estrelas: 5
     },
     {
       nome: 'Carlos Eduardo',
-      cargo: 'CEO, Consultoria Digital',
+      cargo: 'CEO, Consultoria - 8 anos de mercado',
       foto: 'CE',
-      texto: 'Uso para criar propostas, contratos e apresentacoes. Profissionalizou minha operacao inteira.',
+      texto: 'Uso para criar propostas de R$ 50k+ para clientes enterprise. A profissionalizacao que as ferramentas trazem fecha negocio.',
       estrelas: 5
     },
     {
       nome: 'Juliana Costa',
-      cargo: 'Gestora Comercial',
+      cargo: 'CFO, Startup Series A',
       foto: 'JC',
-      texto: 'O CRM e os trackers salvaram minha gestao. Consigo acompanhar tudo em um lugar so.',
+      texto: 'DRE, fluxo de caixa, cap table, projecoes... tudo que preciso para reportar para investidores esta aqui. Indispensavel.',
       estrelas: 5
     },
   ]
 
   const comparativo = [
-    { item: 'CRM de Vendas', concorrente: 'R$ 197/mes', nosso: true },
-    { item: 'Gerador de Propostas', concorrente: 'R$ 97/mes', nosso: true },
-    { item: 'Calculadoras Financeiras', concorrente: 'R$ 147/mes', nosso: true },
-    { item: 'Templates de Contratos', concorrente: 'R$ 297/mes', nosso: true },
-    { item: 'Gerador de Landing Pages', concorrente: 'R$ 197/mes', nosso: true },
-    { item: 'Dashboard de Metricas', concorrente: 'R$ 247/mes', nosso: true },
-    { item: 'Biblioteca de Scripts', concorrente: 'R$ 97/mes', nosso: true },
-    { item: 'Gerador de Pitch Deck', concorrente: 'R$ 147/mes', nosso: true },
+    { item: 'CRM de Vendas (Pipedrive, HubSpot)', concorrente: 'R$ 497/mes', nosso: true },
+    { item: 'Gerador de Propostas (PandaDoc, Proposify)', concorrente: 'R$ 297/mes', nosso: true },
+    { item: 'Suite Financeira (Conta Azul, Omie)', concorrente: 'R$ 397/mes', nosso: true },
+    { item: 'Templates Juridicos (advogado)', concorrente: 'R$ 2.000/contrato', nosso: true },
+    { item: 'Construtor de Landing Pages (Unbounce)', concorrente: 'R$ 497/mes', nosso: true },
+    { item: 'Dashboard BI (Tableau, PowerBI)', concorrente: 'R$ 397/mes', nosso: true },
+    { item: 'Treinamento de Vendas (cursos)', concorrente: 'R$ 3.000+', nosso: true },
+    { item: 'Consultoria de Pricing/Valuation', concorrente: 'R$ 5.000+', nosso: true },
   ]
 
   const faqs = [
@@ -164,9 +164,9 @@ export default function VendasPage() {
     },
   ]
 
-  const precoMensal = 97
-  const precoAnual = 697
-  const economiaAnual = (precoMensal * 12) - precoAnual
+  const precoAnual = 3997
+  const precoVitalicio = 6997
+  const economiaVitalicio = (precoAnual * 3) - precoVitalicio
 
   return (
     <main className="min-h-screen bg-[#0a0a0a]">
@@ -283,8 +283,8 @@ export default function VendasPage() {
 
           <div className="glass card text-center border-2 border-red-500/30 bg-red-500/5">
             <p className="text-lg mb-2">Total que voce paga hoje:</p>
-            <p className="font-display text-4xl text-red-400 mb-2">R$ 1.426/mes</p>
-            <p className="text-[var(--gray)]">= R$ 17.112 por ano jogados fora</p>
+            <p className="font-display text-4xl text-red-400 mb-2">R$ 2.582/mes</p>
+            <p className="text-[var(--gray)]">= R$ 30.984 por ano jogados fora (sem contar consultorias)</p>
           </div>
         </div>
       </section>
@@ -315,8 +315,8 @@ export default function VendasPage() {
 
           <div className="glass card text-center border-2 border-green-500/30 bg-green-500/5">
             <p className="text-lg mb-2">Tudo isso por apenas:</p>
-            <p className="font-display text-4xl text-green-400 mb-2">R$ 97/mes</p>
-            <p className="text-[var(--gray)]">Economize R$ 1.329/mes = R$ 15.948/ano</p>
+            <p className="font-display text-4xl text-green-400 mb-2">R$ 6.997</p>
+            <p className="text-[var(--gray)]">Acesso vitalicio - pague uma vez, use para sempre</p>
           </div>
         </div>
       </section>
@@ -404,27 +404,27 @@ export default function VendasPage() {
               Acesso completo a todas as 130 ferramentas
             </p>
 
-            {/* Toggle Mensal/Anual */}
+            {/* Toggle Anual/Vitalicio */}
             <div className="inline-flex items-center gap-4 bg-white/10 rounded-full p-1">
               <button
-                onClick={() => setPlanoSelecionado('mensal')}
-                className={`px-6 py-2 rounded-full transition-all ${
-                  planoSelecionado === 'mensal'
-                    ? 'bg-[var(--gold)] text-black'
-                    : 'text-white'
-                }`}
-              >
-                Mensal
-              </button>
-              <button
                 onClick={() => setPlanoSelecionado('anual')}
-                className={`px-6 py-2 rounded-full transition-all flex items-center gap-2 ${
+                className={`px-6 py-2 rounded-full transition-all ${
                   planoSelecionado === 'anual'
                     ? 'bg-[var(--gold)] text-black'
                     : 'text-white'
                 }`}
               >
-                Anual <span className="text-xs bg-green-500 text-white px-2 py-0.5 rounded-full">-40%</span>
+                Anual
+              </button>
+              <button
+                onClick={() => setPlanoSelecionado('vitalicio')}
+                className={`px-6 py-2 rounded-full transition-all flex items-center gap-2 ${
+                  planoSelecionado === 'vitalicio'
+                    ? 'bg-[var(--gold)] text-black'
+                    : 'text-white'
+                }`}
+              >
+                Vitalicio <span className="text-xs bg-green-500 text-white px-2 py-0.5 rounded-full">MELHOR</span>
               </button>
             </div>
           </div>
@@ -437,25 +437,25 @@ export default function VendasPage() {
             <div className="text-center pt-8 pb-6 border-b border-white/10">
               <h3 className="font-display text-2xl mb-4">Acesso Completo</h3>
 
-              {planoSelecionado === 'anual' ? (
+              {planoSelecionado === 'vitalicio' ? (
                 <>
                   <div className="flex items-center justify-center gap-2 mb-2">
-                    <span className="text-2xl text-[var(--gray)] line-through">R$ {precoMensal * 12}</span>
+                    <span className="text-2xl text-[var(--gray)] line-through">R$ {precoAnual * 3}</span>
                     <span className="bg-green-500/20 text-green-400 text-sm px-2 py-1 rounded">
-                      Economize R$ {economiaAnual}
+                      Economize R$ {economiaVitalicio.toLocaleString('pt-BR')}
                     </span>
                   </div>
                   <p className="font-display text-5xl text-[var(--gold)] mb-2">
-                    R$ {precoAnual}
+                    R$ {precoVitalicio.toLocaleString('pt-BR')}
                   </p>
-                  <p className="text-[var(--gray)]">pagamento unico anual (R$ {(precoAnual / 12).toFixed(0)}/mes)</p>
+                  <p className="text-[var(--gray)]">pagamento unico - acesso para sempre</p>
                 </>
               ) : (
                 <>
                   <p className="font-display text-5xl text-[var(--gold)] mb-2">
-                    R$ {precoMensal}
+                    R$ {precoAnual.toLocaleString('pt-BR')}
                   </p>
-                  <p className="text-[var(--gray)]">por mes</p>
+                  <p className="text-[var(--gray)]">por ano (R$ {(precoAnual / 12).toFixed(0)}/mes)</p>
                 </>
               )}
             </div>
@@ -463,13 +463,13 @@ export default function VendasPage() {
             <div className="p-8">
               <ul className="space-y-4 mb-8">
                 {[
-                  'Acesso a todas as 130 ferramentas',
-                  'Novas ferramentas adicionadas regularmente',
-                  'Atualizacoes gratuitas inclusas',
-                  'Suporte por email e WhatsApp',
+                  'Acesso a todas as 130+ ferramentas',
+                  'Novas ferramentas adicionadas todo mes',
+                  'Todas as atualizacoes futuras inclusas',
+                  'Suporte prioritario por WhatsApp',
                   'Funciona em qualquer dispositivo',
-                  'Exporte dados para qualquer lugar',
-                  'Cancele quando quiser',
+                  'Exporte dados ilimitados',
+                  'Acesso para toda sua equipe (ate 5 usuarios)',
                   '7 dias de garantia incondicional',
                 ].map((item, index) => (
                   <li key={index} className="flex items-center gap-3">
@@ -487,10 +487,14 @@ export default function VendasPage() {
                 Quero Meu Acesso Agora
               </a>
 
-              <div className="flex items-center justify-center gap-6 mt-6 text-sm text-[var(--gray)]">
+              <div className="flex flex-wrap items-center justify-center gap-4 mt-6 text-sm text-[var(--gray)]">
                 <div className="flex items-center gap-2">
                   <CreditCard className="w-4 h-4" />
-                  <span>Pix ou Cartao</span>
+                  <span>Ate 12x no cartao</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <DollarSign className="w-4 h-4" />
+                  <span>Desconto no Pix</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Shield className="w-4 h-4" />
